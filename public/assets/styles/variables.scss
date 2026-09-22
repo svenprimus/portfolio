@@ -1,0 +1,40 @@
+$color-base-light: #f8f9fa;
+$color-base-dark: #0e1013;
+$color-high-1: #bae011;
+$color-high-2: #7e4ae7;
+$color-high-3: #e08c05;
+
+$size-font-btn: 18px;
+$size-font-p-default: 18px;
+$size-font-p-about: 20px;
+$size-font-p-legal: 16px;
+$size-font-nav: 18px;
+$size-font-h1: clamp(64px, calc(100svw - 400px) * 64 / 1000 + 64px, 128px);
+$size-font-h2: clamp(48px, calc(100svw - 400px) * 16 / 1000 + 48px, 64px);
+$size-font-h3: clamp(20px, calc(100svw - 400px) * 4 / 1000 + 20px, 24px);
+$size-font-h4: clamp(18px, calc(100svw - 400px) * 2 / 1000 + 18px, 20px);
+$size-font-foto: 24px;
+$size-font-peel: 40px;
+$size-font-form: 24px;
+
+$size-line-h-btn: 120%;
+$size-line-h-p-default: 100%;
+$size-line-h-p-contact: 120%;
+$size-line-h-nav: 120%;
+$size-line-h-title: 120%;
+$size-line-h-headline: 100%;
+$size-line-h-h3: 120%;
+
+$size-socials: 40px;
+$size-socials-testimonial: 24px;
+$size-skills: clamp(56px, calc(100svw - 400px) * 16 / 1000 + 56px, 72px);
+$size-sticker: clamp(120px, calc(100svw - 400px) * 48 / 1000 + 120px, 168px);
+$size-checkbox: 18px;
+
+$width-preview: clamp(300px, calc(100svw - 300px) * 260 / 1000 + 300px, 560px); 
+$height-preview: clamp(240px, calc(100svw - 300px) * 160 / 1000 + 240px, 400px); 
+
+$width-testimon: clamp(300px, calc(100svw - 300px) * 220 / 1000 + 340px, 560px); 
+
+$padding-btn: 24px;
+$height-btn: 40px;
