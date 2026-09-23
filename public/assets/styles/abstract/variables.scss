@@ -47,6 +47,7 @@ $width-testimon: clamp(300px, calc(100svw - 300px) * 220 / 1000 + 340px, 560px);
 $width-preview: clamp(300px, calc(100svw - 300px) * 260 / 1000 + 300px, 560px); 
 $height-preview: clamp(240px, calc(100svw - 300px) * 160 / 1000 + 240px, 400px); 
 
+$padding-header-inline: clamp(16px, calc(100svw - 600px) * 56 / 800 + 16px, 72px);
 $padding-btn: 24px;
 $height-btn: 40px;
 
