@@ -1,0 +1,22 @@
+@use '../public/assets/styles/all_styles.scss' as all;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+
+.content-limit-1440p {
+    padding-inline: clamp(16px, calc((100vw - 400px) * 56 / 840 + 16px), 72px);
+    @include all.content-limit {
+        padding-inline: max(calc(50% - 720px), 72px);
+    }
+}
