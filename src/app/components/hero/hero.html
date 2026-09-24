@@ -2,7 +2,7 @@
     <div class="section-hero__content">
         <section class="headline-top">
             <div>
-                <button class="btn1d">Hello World</button>
+                <app-button [is3D]="false" [isDark]="false" [btnText]="'Hello World'"></app-button>
                 <h1>Frontend</h1>
             </div>
             <app-profile-figure class="figure-desktop"></app-profile-figure>
@@ -10,7 +10,7 @@
         <section class="headline-bot">
             <div>
                 <h1>DEVELOPER</h1>
-                <button class="btn3d">Get In Touch</button>
+                <app-button [is3D]="true" [isDark]="false" [btnText]="'Get In Touch'"></app-button>
             </div>
         </section>
         <section class="figure-mobile-wrapper">

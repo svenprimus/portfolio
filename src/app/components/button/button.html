@@ -1,0 +1,8 @@
+<button
+    [class.btn3d]="is3D() == true"
+    [class.btn1d]="is3D() != true"
+    [class.btnDark]="isDark() == true"
+    [class.btnLight]="isDark() != true"
+>
+    {{ btnText() }}
+</button>
