@@ -1,0 +1,34 @@
+@use '../../../../public/assets/styles/all_styles.scss' as *;
+
+.logo {
+    @include flex-center;
+    position: relative;
+    height: 100%;
+    max-height: $height-header;
+    max-width: $height-header;
+    
+    img {
+        transition: all 180ms ease-in-out;
+        left: 0;
+        height: 100%;
+        max-height: $height-header;
+        max-width: $height-header;
+    }
+
+    img:nth-child(1) {
+        opacity: 1;
+    }
+    img:nth-child(2) {
+        opacity: 0;
+        position: absolute;
+    }
+
+    &:hover {
+        img:nth-child(1) {
+            opacity: 0;
+        }
+        img:nth-child(2) {
+            opacity: 1;
+        }
+    }
+}

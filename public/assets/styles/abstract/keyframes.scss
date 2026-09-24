@@ -1,0 +1,41 @@
+@keyframes color-blend {
+    0% {
+        filter: grayscale(100%);
+    }
+    30% {
+        filter: none;
+    }
+    40% {
+        filter: grayscale(55%);
+    }
+    50% {
+        filter: none;
+    }
+    70% {
+        filter: grayscale(65%);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+@keyframes color-unblend {
+    0% {
+        filter: none;
+    }
+    30% {
+        filter: grayscale(65%);
+    }
+    40% {
+        filter: none;
+    }
+    50% {
+        filter: grayscale(55%);
+    }
+    70% {
+        filter: none;
+    }
+    100% {
+        filter: grayscale(100%);
+    }
+}

@@ -1,0 +1,66 @@
+@use '../abstract/mixin.scss' as *;
+@use '../abstract/variables.scss' as *;
+
+.btn1d::after,
+button {
+    @include flex-center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    user-select: none;
+    touch-action: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+
+    img {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.btn1d,
+.btn3d {
+    width: auto;
+    height: $height-btn;
+    padding-inline: $padding-btn;
+    border-radius: $radius-btn;
+    font-family: 'Bricolage Grotesque';
+    font-size: $font-size-btn;
+    font-weight: $font-weight-btn;
+    line-height: $font-height-btn;
+}
+
+.btn3d {
+    box-shadow: 2px 4px 0px 0px $color-base-light;
+    transition: all 100ms ease-in;
+}
+
+.btn3d:hover {
+    box-shadow: none;
+    transform: translate(2px, 4px);
+}
+
+.btn1d {
+    position: relative;
+    transition: all 100ms ease-in;
+    box-shadow: none !important;
+}
+
+.btnLight {
+    color: $color-base-light;
+    border: $size-btn-border solid $color-base-light;
+    border-color: $color-base-light;
+    box-shadow: 2px 4px 0px 0px $color-base-light;
+}
+
+.btnDark {
+    color: $color-base-dark;
+    border: $size-btn-border solid $color-base-dark;
+    border-color: $color-base-dark;
+    box-shadow: 2px 4px 0px 0px $color-base-dark;
+}

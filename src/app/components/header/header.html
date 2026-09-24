@@ -1,0 +1,26 @@
+<header class="section-header" [style.opacity]="opacity" [style.background-color]="bg">
+    <nav class="header-nav">
+        <app-logo class="logo-mobile"></app-logo>
+        <app-header-list class="header-list"></app-header-list>
+        <button class="mobile-btn" (click)="showMenu()">
+            <img src="./assets/icons/misc/menu.svg" alt="menu button" />
+            <img src="./assets/icons/misc/menu-push.svg" alt="menu button pushed" />
+        </button>
+    </nav>
+    <app-socials class="socials-desktop" [flexDir]="'column'" [bgColor]="bg"></app-socials>
+</header>
+
+<header [class]="classListNavMobile">
+    <div class="header-nav-mobile--logo-wrapper">
+        <app-logo class="logo-mobile"></app-logo>
+        <button class="mobile-btn" (click)="hideMenu()">
+            <img src="./assets/icons/misc/close.svg" alt="menu button" />
+            <img src="./assets/icons/misc/close-push.svg" alt="menu button pushed" />
+        </button>
+    </div>
+
+    <nav>
+        <app-header-list class="header-list-mobile"></app-header-list>
+        <app-socials class="socials-mobile" [flexDir]="'row'" [bgColor]="bg"></app-socials>
+    </nav>
+</header>

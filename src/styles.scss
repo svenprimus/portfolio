@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../public/assets/styles/all_styles.scss' as all;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    background-color: all.$color-base-light;
+}
+
+h1 {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-h1;
+    font-weight: all.$font-weight-h1;
+    line-height: all.$font-height-h1-2-4;
+    color: all.$color-base-light;
+}
+
+a,
+input {
+    cursor: pointer;
+}
+
+a {
+    color: all.$color-base-light;
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-nav;
+    font-weight: all.$font-weight-nav;
+    line-height: all.$font-height-nav;
+}
+
+ul,
+li {
+    @include all.flex-center;
+    list-style-type: none;
+}
+
+.d-none {
+    display: none !important;
+}

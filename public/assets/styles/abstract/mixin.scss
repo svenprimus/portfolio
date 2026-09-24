@@ -1,0 +1,27 @@
+@use './functions.scss' as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin content-limit {
+    @media screen and (min-width: 1441px) {
+        @content;
+    }
+}
+
+@mixin content-limit-1440p($min: 16, $max: 120) {
+    padding-inline: clamp-px($min, $max, 1440, 400);
+    @include content-limit {
+        padding-inline: max(calc((100% - 1440px + $max * 2px) / 2), $max * 1px);
+    }
+}
