@@ -53,14 +53,14 @@ button {
 
 .btnLight {
     color: $color-base-light;
-    border: 1px solid $color-base-light;
+    border: $size-btn-border solid $color-base-light;
     border-color: $color-base-light;
     box-shadow: 2px 4px 0px 0px $color-base-light;
 }
 
 .btnDark {
     color: $color-base-dark;
-    border: 1px solid $color-base-dark;
+    border: $size-btn-border solid $color-base-dark;
     border-color: $color-base-dark;
     box-shadow: 2px 4px 0px 0px $color-base-dark;
 }

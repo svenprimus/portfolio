@@ -1,11 +1,24 @@
 <section class="section-socials" [style.flex-direction]="flexDir()">
-    <a [style.background-color]="bgColor()" href="https://www.linkedin.com/in/sven-primus-691738190" target="_blank">
-        <img src="./assets/icons/misc/linkedin.svg" alt="linkedin link" />
-    </a>
-    <a [style.background-color]="bgColor()" href="https://github.com/svenprimus" target="_blank">
-        <img src="./assets/icons/misc/github.svg" alt="github link" />
-    </a>
-    <a [style.background-color]="bgColor()" href="mailto:svenprimus@gmail.com">
-        <img src="./assets/icons/misc/mail.svg" alt="mail link" />
-    </a>
+    <div class="hover-wrapper">
+        <div class="hoverable"></div>
+        <a
+            [style.background-color]="bgColor()"
+            href="https://www.linkedin.com/in/sven-primus-691738190"
+            target="_blank"
+        >
+            <img src="./assets/icons/misc/linkedin.svg" alt="linkedin link" />
+        </a>
+    </div>
+    <div class="hover-wrapper">
+        <div class="hoverable"></div>
+        <a [style.background-color]="bgColor()" href="https://github.com/svenprimus" target="_blank">
+            <img src="./assets/icons/misc/github.svg" alt="github link" />
+        </a>
+    </div>
+    <div class="hover-wrapper">
+        <div class="hoverable"></div>
+        <a [style.background-color]="bgColor()" href="mailto:svenprimus@gmail.com">
+            <img src="./assets/icons/misc/mail.svg" alt="mail link" />
+        </a>
+    </div>
 </section>

@@ -6,7 +6,8 @@
 
     a {
         @include flex-center;
-        border: 1px solid $color-base-light;
+        position: relative;
+        border: $size-btn-border solid $color-base-light;
         border-radius: 50%;
         width: $size-socials;
         height: $size-socials;
@@ -15,5 +16,28 @@
             width: $size-socials-innerImg;
             height: $size-socials-innerImg;
         }
+
+        transition: all 300ms ease-out;
+    }
+    
+    .hover-wrapper {
+        @include flex-center;
+        position: relative;
+
+        &:has(a:hover) .hoverable {
+            transform: scaleX(1) scaleY(1);
+        }
+    }
+
+    .hoverable {
+        position: absolute;
+        border-radius: 50%;
+        width: $size-socials;
+        height: $size-socials;
+        background: $color-high-2;
+        transform-origin: bottom;
+        transform: scaleX(0) scaleY(0);
+
+        transition: all 200ms ease-in;
     }
 }
