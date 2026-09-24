@@ -10,11 +10,11 @@ $font-size-p-about: 20px;
 $font-size-p-legal: 16px;
 $font-size-nav: 18px;
 
-$font-size-h1: clamp(64px, calc(100svw - 400px) * 64 / 1000 + 64px, 128px);
+$font-size-h1: clamp(48px, calc(100svw - 700px) * 80 / 200 + 48px, 128px);
 $font-size-h2: clamp(48px, calc(100svw - 400px) * 16 / 1000 + 48px, 64px);
 $font-size-h3: clamp(20px, calc(100svw - 400px) * 4 / 1000 + 20px, 24px);
 $font-size-h4: clamp(18px, calc(100svw - 400px) * 2 / 1000 + 18px, 20px);
-$font-size-foto: 24px;
+$font-size-fig: 24px;
 $font-size-peel: 40px;
 $font-size-form: 24px;
 
@@ -25,6 +25,7 @@ $font-height-nav: 120%;
 $font-height-title: 120%;
 $font-height-h1-2-4: 100%;
 $font-height-h3: 120%;
+$font-height-fig: 120%;
 
 $font-weight-btn: 500;
 $font-weight-p: 400;
@@ -33,7 +34,7 @@ $font-weight-h1: 700;
 $font-weight-h2: 700;
 $font-weight-h3: 400;
 $font-weight-h4: 500;
-$font-weight-foto: 700;
+$font-weight-fig: 700;
 $font-weight-peel: 400;
 $font-weight-form: 500;
 
@@ -43,13 +44,18 @@ $size-skills: clamp(56px, calc(100svw - 400px) * 16 / 1000 + 56px, 72px);
 $size-sticker: clamp(120px, calc(100svw - 400px) * 48 / 1000 + 120px, 168px);
 $size-checkbox: 18px;
 
-$width-testimon: clamp(300px, calc(100svw - 300px) * 220 / 1000 + 340px, 560px); 
-$width-preview: clamp(300px, calc(100svw - 300px) * 260 / 1000 + 300px, 560px); 
-$height-preview: clamp(240px, calc(100svw - 300px) * 160 / 1000 + 240px, 400px); 
+$width-testimon: clamp(300px, calc(100svw - 300px) * 220 / 1000 + 340px, 560px);
+$width-preview: clamp(300px, calc(100svw - 300px) * 260 / 1000 + 300px, 560px);
+$height-preview: clamp(240px, calc(100svw - 300px) * 160 / 1000 + 240px, 400px);
 
 $padding-header-inline: clamp(16px, calc(100svw - 600px) * 56 / 800 + 16px, 72px);
+$padding-hero-top: clamp(72px, calc(100svw - 600px) * 38 / 800 + 72px, 104px);
+
 $padding-btn: 24px;
 $height-btn: 40px;
+$height-header: 80px;
+$width-polaroid: 200px;
+$width-headline: clamp(0px, calc(100svw - 400px) * 965 / 600 , 865px);
 
 $radius-btn: 100px;
 $radius-preview: 20px;

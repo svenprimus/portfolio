@@ -4,6 +4,13 @@
     align-items: center;
 }
 
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin content-limit {
     @media screen and (min-width: 1441px) {
         @content;

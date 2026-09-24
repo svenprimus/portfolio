@@ -1,10 +1,16 @@
 @use '../../../../public/assets/styles/all_styles.scss' as *;
 
+.section-header {
+    position: fixed;
+    width: 100%;
+    height: $height-header;
+}
+
 .header-nav {
-    background-color: black; // TODO remove!
     @include flex-center;
     padding-inline: $padding-header-inline;
-    height: 80px;
+    height: $height-header;
+    width: 100%;
 
     .logo {
         @include flex-center;

@@ -29,16 +29,16 @@ button {
     height: $height-btn;
     padding-inline: $padding-btn;
     border-radius: $radius-btn;
-    border: 1px solid $color-base-dark;
+    border: 1px solid $color-base-light;
     font-family: 'Bricolage Grotesque';
     font-size: $font-size-btn;
     font-weight: $font-weight-btn;
     line-height: $font-height-btn;
-    color: $color-base-dark;
+    color: $color-base-light;
 }
 
 .btn3d {
-    box-shadow: 2px 4px 0px 0px $color-base-dark;
+    box-shadow: 2px 4px 0px 0px $color-base-light;
     transition: all 100ms ease-in;
 }
 

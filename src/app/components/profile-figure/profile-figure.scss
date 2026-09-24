@@ -1,0 +1,66 @@
+@use '../../../../public/assets/styles/all_styles.scss' as *;
+
+.profile-figure {
+    @include flex-column;
+    justify-content: flex-start;
+    position: relative;
+    width: $width-polaroid;
+    height: 244px;
+    transform: rotate(8deg);
+
+    img {
+        width: $width-polaroid;
+        max-height: 244px;
+        object-fit: contain;
+    }
+
+    img:nth-child(1) {
+        filter: grayscale(100%);
+        animation: color-unblend 800ms ease-in-out forwards;
+
+        &:hover {
+            animation: color-blend 800ms ease-out forwards;
+        }
+    }
+
+    &:has(img:hover) .profile-caption > div figcaption {
+        &:nth-child(1) {
+            opacity: 0;
+        }
+        &:nth-child(2) {
+            opacity: 1;
+        }
+    }
+
+    img:nth-child(2) {
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .profile-caption {
+        @include flex-center;
+        position: absolute;
+        width: $width-polaroid;
+        bottom: 18px;
+        gap: 10px;
+
+        figcaption {
+            font-family: 'Kalam';
+            font-size: $font-size-fig;
+            font-weight: $font-weight-fig;
+            line-height: $font-height-fig;
+            color: $color-base-dark;
+            transition: all 150ms ease-in-out;
+        }
+
+        div {
+            position: relative;
+            figcaption:nth-child(2) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+        }
+    }
+}

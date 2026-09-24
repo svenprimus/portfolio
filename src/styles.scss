@@ -14,7 +14,16 @@ body {
     min-height: 100svh;
 }
 
-a, input {
+h1 {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-h1;
+    font-weight: all.$font-weight-h1;
+    line-height: all.$font-height-h1-2-4;
+    color: all.$color-base-light;
+}
+
+a,
+input {
     cursor: pointer;
 }
 
