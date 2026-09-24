@@ -1,3 +1,10 @@
-.footer-test {
-    height: 150svh;
+@use '../../../../public/assets/styles/all_styles.scss' as *;
+
+.section-footer {
+    @include content-limit-1440p(16, 72);
+    @include flex-center;
+    position: fixed;
+    width: 100%;
+    height: $height-footer;
+    bottom: 0;
 }

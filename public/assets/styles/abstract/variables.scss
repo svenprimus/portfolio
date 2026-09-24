@@ -54,13 +54,16 @@ $height-preview: clamp-px(240, 400, 1400, 300);
 
 $padding-header-inline: clamp-px(16, 72, 1400, 600);
 $padding-hero-top: clamp-px(72, 104, 1400, 600);
+$padding-section-block: clamp-px(88, 144, 1400, 400);
+$padding-skills-block: clamp-px(88, 170, 1400, 400);
 
 $padding-btn: 24px;
 $height-btn: 40px;
 $height-header: clamp-px(64, 80, 1400, 600);
+$height-footer: clamp-px(64, 80, 1400, 600);
 
 $width-polaroid: 200px;
-$width-headline: clamp-px(310, 865, 1400, 320);
+$width-headline: clamp-px(188, 232, 1400, 400);
 
 $radius-btn: 100px;
 $radius-preview: 20px;
