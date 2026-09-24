@@ -66,13 +66,15 @@
     display: none;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: $media-query-small) {
     .headline-top,
     .headline-bot,
     .section-hero__content {
         align-items: flex-start;
     }
+}
 
+@media screen and (max-width: $media-query-sm) {
     .figure-desktop {
         display: none;
     }

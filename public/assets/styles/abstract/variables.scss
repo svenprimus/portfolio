@@ -12,7 +12,7 @@ $font-size-p-about: 20px;
 $font-size-p-legal: 16px;
 $font-size-nav: 18px;
 
-$font-size-h1: clamp-px(48, 128, 900, 700);
+$font-size-h1: clamp-px(48, 128, 1200, 700);
 $font-size-h2: clamp-px(48, 64, 1400, 400);
 $font-size-h3: clamp-px(20, 24, 1400, 400);
 $font-size-h4: clamp-px(18, 20, 1400, 400);
@@ -56,9 +56,13 @@ $padding-hero-top: clamp-px(72, 104, 1400, 600);
 
 $padding-btn: 24px;
 $height-btn: 40px;
-$height-header: 80px;
+$height-header: clamp-px(64, 80, 1400, 600);
+
 $width-polaroid: 200px;
-$width-headline: clamp-px(0, 865, 1400, 400);
+$width-headline: clamp-px(310, 865, 1400, 320);
 
 $radius-btn: 100px;
 $radius-preview: 20px;
+
+$media-query-s: 400px;
+$media-query-sm: 600px;

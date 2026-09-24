@@ -1,61 +1,26 @@
 <header class="section-header" [style.opacity]="opacity" [style.background-color]="bg">
     <nav class="header-nav">
-        <a class="logo logo-mobile" href="#page-top" aria-label="go to top of page">
-            <img src="./assets/icons/logo/logo-for-dark.svg" alt="Logo Sven Primus" />
-            <img src="./assets/icons/logo/logo-for-dark-hover.svg" alt="Logo Sven Primus" />
-        </a>
-        <ul class="nav-list">
-            <li>
-                <a class="logo logo-desktop" href="#page-top" aria-label="go to top of page">
-                    <img src="./assets/icons/logo/logo-for-dark.svg" alt="Logo Sven Primus" />
-                    <img src="./assets/icons/logo/logo-for-dark-hover.svg" alt="Logo Sven Primus" />
-                </a>
-            </li>
-            <li>
-                <img class="nav-about" src="./assets/design/00_hand-drawn-lines/00_header/1.webp" aria-hidden="true" />
-                <a href="TODO">About Me </a>
-            </li>
-            <li>
-                <img class="nav-skills" src="./assets/design/00_hand-drawn-lines/00_header/2.webp" aria-hidden="true" />
-                <a href="TODO">Skills </a>
-            </li>
-            <li>
-                <img
-                    class="nav-projects"
-                    src="./assets/design/00_hand-drawn-lines/00_header/3.webp"
-                    aria-hidden="true"
-                />
-                <a href="TODO">Projects </a>
-            </li>
-            <li>
-                <img
-                    class="nav-contact"
-                    src="./assets/design/00_hand-drawn-lines/00_header/4.webp"
-                    aria-hidden="true"
-                />
-                <a href="TODO">Contact </a>
-            </li>
-            <li class="lang-slider">
-                <button class="lang-hover-btn" disabled>
-                    <img
-                        class="lang-hover"
-                        src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
-                        aria-hidden="true"
-                    />
-                    <label for="language">EN</label>
-                </button>
-                <input class="slider" id="language" name="language" type="range" min="0" max="1" value="0" />
-                <button class="lang-hover-btn">
-                    <img
-                        class="lang-hover lang-hover--rotate"
-                        src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
-                        aria-hidden="true"
-                    />
-                    <label for="language">DE</label>
-                </button>
-            </li>
-        </ul>
-        <button class="mobile-btn"><img src="./assets/icons/misc/menu.svg" alt="menu button" /></button>
+        <app-logo class="logo-mobile"></app-logo>
+        <app-header-list class="header-list"></app-header-list>
+        <button class="mobile-btn" (click)="showMenu()">
+            <img src="./assets/icons/misc/menu.svg" alt="menu button" />
+            <img src="./assets/icons/misc/menu-push.svg" alt="menu button pushed" />
+        </button>
     </nav>
-    <app-socials class="socials-desktop" [bgColor] = "bg"></app-socials>
+    <app-socials class="socials-desktop" [flexDir]="'column'" [bgColor]="bg"></app-socials>
+</header>
+
+<header [class]="classListNavMobile">
+    <div class="header-nav-mobile--logo-wrapper">
+        <app-logo class="logo-mobile"></app-logo>
+        <button class="mobile-btn" (click)="hideMenu()">
+            <img src="./assets/icons/misc/close.svg" alt="menu button" />
+            <img src="./assets/icons/misc/close-push.svg" alt="menu button pushed" />
+        </button>
+    </div>
+
+    <nav>
+        <app-header-list class="header-list-mobile"></app-header-list>
+        <app-socials class="socials-mobile" [flexDir]="'row'" [bgColor]="bg"></app-socials>
+    </nav>
 </header>

@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class Socials {
   readonly bgColor = input.required<string>();
+  readonly flexDir = input.required<string>();
 }

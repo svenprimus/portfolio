@@ -27,6 +27,14 @@ input {
     cursor: pointer;
 }
 
+a {
+    color: all.$color-base-light;
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-nav;
+    font-weight: all.$font-weight-nav;
+    line-height: all.$font-height-nav;
+}
+
 ul,
 li {
     @include all.flex-center;

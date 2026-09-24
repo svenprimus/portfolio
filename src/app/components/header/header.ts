@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Socials } from '../socials/socials';
+import { Logo } from '../logo/logo';
+import { HeaderList } from '../header-list/header-list';
 
 @Component({
-    imports: [Socials],
+    imports: [Socials, Logo, HeaderList],
     selector: 'app-header',
     host: { '(window:scroll)': 'fadeInOut()' },
     styleUrl: './header.scss',
@@ -12,6 +14,8 @@ export class Header {
     opacity: number = 1.0;
     lastY: number | null = null;
     bg: string = 'transparent';
+    classListNavMobile = 'header-nav-mobile';
+    classMobileDropdown = 'dropdown';
 
     // TODO load default values from SCSS variables (?)
     fadeInOut() {
@@ -22,5 +26,13 @@ export class Header {
         this.lastY = scroll;
         const bgOpacity = Math.max(0, Math.min(255, Math.round((scroll / (2 * 80)) * 255)));
         this.bg = scroll > 2 * 80 ? '#0e101380' : '#0e1013' + bgOpacity.toString(16);
+    }
+
+    showMenu() {
+        this.classListNavMobile += ` ${this.classMobileDropdown}`;
+    }
+
+    hideMenu() {
+        this.classListNavMobile = this.classListNavMobile.replace(` ${this.classMobileDropdown}`, '');
     }
 }
