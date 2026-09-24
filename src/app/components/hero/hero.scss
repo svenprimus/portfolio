@@ -11,7 +11,9 @@
     &__content {
         padding-top: $height-header;
         @include flex-column;
-        gap: clamp(16px, calc(100svw - 700px) * 8 / 200 + 16px, 24px);
+        @include content-limit-1440p(16, 72);
+        width: 100%;
+        gap: clamp-px(16, 24, 700, 900);
     }
 }
 
@@ -21,12 +23,12 @@
     justify-content: space-between;
     width: $width-headline;
     padding-top: $padding-hero-top;
-    gap: clamp(24px, calc(100svw - 700px) * 38 / 200 + 24px, 60px);
+    gap: clamp-px(24, 60, 700, 900);
 
     > div {
         height: 100%;
         > button {
-            margin-bottom: clamp(16px, calc(100svw - 700px) * 16 / 200 + 16px, 32px);
+            margin-bottom: clamp-px(16, 32, 700, 900);
         }
     }
 }
@@ -40,7 +42,13 @@
     div {
         @include flex-column;
         align-items: flex-end;
-        gap: clamp(16px, calc(100svw - 700px) * -16 / 200 + 32px, 32px);
+        position: relative;
+        gap: clamp-px(16, 32, 700, 900);
+    }
+
+    .socials-desktop {
+        position: absolute;
+        left: 0;
     }
 }
 

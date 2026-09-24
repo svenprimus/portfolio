@@ -36,10 +36,3 @@ li {
 .d-none {
     display: none !important;
 }
-
-.content-limit-1440p {
-    padding-inline: clamp(16px, calc((100vw - 400px) * 56 / 840 + 16px), 72px);
-    @include all.content-limit {
-        padding-inline: max(calc(50% - 720px), 72px);
-    }
-}

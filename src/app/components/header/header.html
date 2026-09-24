@@ -1,4 +1,4 @@
-<header class="section-header content-limit-1440p">
+<header class="section-header" [style.opacity]="opacity" [style.background-color]="bg">
     <nav class="header-nav">
         <a class="logo logo-mobile" href="#page-top" aria-label="go to top of page">
             <img src="./assets/icons/logo/logo-for-dark.svg" alt="Logo Sven Primus" />
@@ -57,4 +57,5 @@
         </ul>
         <button class="mobile-btn"><img src="./assets/icons/misc/menu.svg" alt="menu button" /></button>
     </nav>
+    <app-socials class="socials-desktop" [bgColor] = "bg"></app-socials>
 </header>

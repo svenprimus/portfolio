@@ -1,14 +1,21 @@
 @use '../../../../public/assets/styles/all_styles.scss' as *;
 
 .section-header {
+    @include content-limit-1440p(16, 72);
     position: fixed;
     width: 100%;
     height: $height-header;
+    z-index: 2;
+}
+
+.socials-desktop {
+    position: absolute;
+    top: calc(100svh - 100px);
+    transform: translateY(-100%);
 }
 
 .header-nav {
     @include flex-center;
-    padding-inline: $padding-header-inline;
     height: $height-header;
     width: 100%;
 

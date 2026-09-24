@@ -1,0 +1,19 @@
+@use '../../../../public/assets/styles/all_styles.scss' as *;
+
+.section-socials {
+    @include flex-column;
+    gap: 8px;
+
+    a {
+        @include flex-center;
+        border: 1px solid $color-base-light;
+        border-radius: 50%;
+        width: $size-socials;
+        height: $size-socials;
+
+        img {
+            width: $size-socials-innerImg;
+            height: $size-socials-innerImg;
+        }
+    }
+}
