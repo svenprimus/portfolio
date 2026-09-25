@@ -55,6 +55,27 @@ p {
     color: all.$color-base-light;
 }
 
+button {
+    @include all.flex-center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    user-select: none;
+    touch-action: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+
+    img {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
 a,
 input {
     cursor: pointer;
