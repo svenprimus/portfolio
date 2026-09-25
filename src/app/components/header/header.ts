@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Socials } from '../socials/socials';
-import { Logo } from '../logo/logo';
-import { HeaderList } from '../header-list/header-list';
+import { Socials } from '../elements/socials/socials';
+import { Logo } from '../elements/logo/logo';
+import { HeaderList } from '../elements/header-list/header-list';
 
 @Component({
     imports: [Socials, Logo, HeaderList],

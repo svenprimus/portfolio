@@ -1,4 +1,4 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
 
 .section-testimonials {
     @include content-limit-1440p(16, 120);

@@ -1,4 +1,4 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
 
 .section-skills {
     @include content-limit-1440p(16, 120);
@@ -6,7 +6,7 @@
     width: 100%; 
     height: 100%;
     padding-block: $padding-skills-block;
-    background-image: url('../../../../public/assets/design/01_backgrounds/02_skills.webp');
+    background-image: url('../../../../../public/assets/design/01_backgrounds/02_skills.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;

@@ -1,6 +1,6 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
 
-.section-projects {
+.section-about {
     @include content-limit-1440p(16, 120);
     @include flex-center;
     padding-block: $padding-section-block;

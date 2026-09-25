@@ -1,4 +1,4 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
 
 .section-contact {
     @include content-limit-1440p(16, 120);
@@ -7,7 +7,7 @@
     height: 100%;
     padding-top: $padding-section-block;
     padding-bottom: calc($padding-section-block + $height-footer);
-    background-image: url('../../../../public/assets/design/01_backgrounds/03_contact.webp');
+    background-image: url('../../../../../public/assets/design/01_backgrounds/03_contact.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;

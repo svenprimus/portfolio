@@ -1,7 +1,8 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
 
 .section-hero {
-    background-image: url('../../../../public/assets/design/01_backgrounds/01_hero.webp');
+    @include flex-center;
+    background-image: url('../../../../../public/assets/design/01_backgrounds/01_hero.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -12,7 +13,8 @@
         padding-top: $height-header;
         @include flex-column;
         @include content-limit-1440p(16, 72);
-        width: 100%;
+        width: $width-headline;
+
         gap: clamp-px(16, 24, 700, 900);
     }
 }
