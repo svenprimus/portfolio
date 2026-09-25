@@ -37,13 +37,11 @@
 
 .headline-bot {
     width: $width-headline;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    @include flex-column-end;
 
     div {
-        @include flex-column;
-        align-items: flex-end;
+        @include flex-column-end;
+
         position: relative;
         gap: clamp-px(16, 32, 700, 900);
     }

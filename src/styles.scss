@@ -23,6 +23,38 @@ h1 {
     color: all.$color-base-light;
 }
 
+h2 {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-h2;
+    font-weight: all.$font-weight-h2;
+    line-height: all.$font-height-h1-2-4;
+    color: all.$color-base-light;
+}
+
+h3 {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-h3;
+    font-weight: all.$font-weight-h3;
+    line-height: all.$font-height-h3;
+    color: all.$color-base-light;
+}
+
+h4 {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-h4;
+    font-weight: all.$font-weight-h4;
+    line-height: all.$font-height-h1-2-4;
+    color: all.$color-base-light;
+}
+
+p {
+    font-family: 'Bricolage Grotesque';
+    font-size: all.$font-size-p-default;
+    font-weight: all.$font-weight-p;
+    line-height: all.$font-height-p-default;
+    color: all.$color-base-light;
+}
+
 a,
 input {
     cursor: pointer;

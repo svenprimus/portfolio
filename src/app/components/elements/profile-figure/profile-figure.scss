@@ -1,8 +1,8 @@
 @use '../../../../../public/assets/styles/all_styles.scss' as *;
 
 .profile-figure {
-    @include flex-column;
-    justify-content: flex-start;
+    @include flex-column-top;
+
     position: relative;
     width: $width-polaroid;
     height: 244px;
