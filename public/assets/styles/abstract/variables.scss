@@ -48,6 +48,7 @@ $size-skills: clamp-px(56, 72, 1400, 400);
 $size-sticker: clamp-px(120, 168, 1400, 400);
 $size-checkbox: 18px;
 $size-btn-border: 1px;
+$size-peel-sticker: 200px;
 
 $padding-header-inline: clamp-px(16, 72, 1400, 600);
 $padding-hero-top: clamp-px(72, 104, 1400, 600);
@@ -61,6 +62,8 @@ $width-testimon: clamp-px(300, 512, 1400, 300);
 $width-preview: clamp-px(300, 560, 1400, 300);
 $width-location: clamp-px(300, 560, 1400, 300);
 $width-location-underline: clamp-px(227, 303, 1400, 400);
+$width-skills-headline: clamp-px(184, 245, 1400, 400);
+$width-skills-box-item: 96px;
 
 $height-btn: 40px;
 $height-preview: clamp-px(240, 400, 1400, 300);
@@ -73,3 +76,5 @@ $radius-preview: 20px;
 
 $media-query-s: 400px;
 $media-query-sm: 600px;
+
+$gap-skills-box-item: clamp-px(16, 40, 1400, 400);

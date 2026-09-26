@@ -1,3 +1,97 @@
 <article class="section-skills">
-    <p style="color: white">section-skills</p>
+    <div class="section-skills-intro">
+        <div>
+            <h4>MY STACK</h4>
+            <h2>Skill set</h2>
+            <img src="./assets/design/00_hand-drawn-lines/02_skills/circle.webp" aria-hidden="true" />
+        </div>
+        <div>
+            <p>A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. </p>
+            <img src="./assets/design/02_ripped-paper/bg-skills.webp" aria-hidden="true" />
+        </div>
+    </div>
+    <div class="skills-content">
+        <div class="skills-column-wrapper">
+            <div class="skills-wrapper">
+                <figure>
+                    <img src="./assets/icons/skills/html.svg" alt="HTML icon" />
+                    <figcaption>HTML</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/css.svg" alt="CSS icon" />
+                    <figcaption>CSS</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/js.svg" alt="JavaScript icon" />
+                    <figcaption>JavaScript</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/ts.svg" alt="TypeScript icon" />
+                    <figcaption>TypeScript</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/angular.svg" alt="Angular icon" />
+                    <figcaption>Angular</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/supabase.svg" alt="Supabase icon" />
+                    <figcaption>Supabase</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/git.svg" alt="Git icon" />
+                    <figcaption>Git</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/rest-api.svg" alt="REST-API icon" />
+                    <figcaption>REST-API</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/scrum.svg" alt="Scrum icon" />
+                    <figcaption>Scrum</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/icons/skills/material-design.svg" alt="Material Design icon" />
+                    <figcaption>Material Design</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div id="peel-wrapper" class="peel-wrapper" (click)="peelOff()">
+            <div class="peel-layer-1" [class.d-none]="visibleLayerNow() != 1">
+                <img
+                    class="peel-layer-img"
+                    src="./assets/design/03_stickers/01_skills-peel-off/3_final.webp"
+                    aria-hidden="true"
+                />
+                <p>Also, I'm interested in diving into:</p>
+                <div>
+                    <figure>
+                        <img src="./assets/icons/skills/react-transparent.svg" alt="react icon" />
+                        <figcaption>React</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./assets/icons/skills/vue-transparent.svg" alt="vue icon" />
+                        <figcaption>Vue.js</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="peel-layer-2" [class.d-none]="visibleLayerNow() != 2 && visibleLayerNow() != 3">
+                <img
+                    class="peel-layer-img"
+                    src="./assets/design/03_stickers/01_skills-peel-off/2_transition.webp"
+                    aria-hidden="true"
+                />
+            </div>
+            <div class="peel-layer-3" [class.d-none]="visibleLayerNow() != 3">
+                <img
+                    id="peel-img"
+                    class="peel-layer-img"
+                    src="./assets/design/03_stickers/01_skills-peel-off/1_default-cut.webp"
+                    alt="peel sticker"
+                />
+                <img class="peel-layer-arrow" src="./assets/design/03_stickers/arrow.webp" aria-hidden="true" />
+                <label for="#peel-img">Pull to peel</label>
+            </div>
+        </div>
+    </div>
 </article>
