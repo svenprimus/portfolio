@@ -3,7 +3,43 @@
 .section-projects {
     @include content-limit-1440p(16, 120);
     @include flex-center;
+    flex-wrap: wrap;
     padding-block: $padding-section-block;
     width: 100%;
     height: 100%;
+}
+
+.section-projects-headline {
+    > div {
+        @include flex-column-end;
+        gap: 8px;
+        position: relative;
+
+        @include media-sm {
+            align-items: flex-end;
+        }
+
+        > img {
+            position: absolute;
+            width: $width-preview-underline;
+            bottom: 0;
+            transform: translateY(100%);
+            z-index: 1;
+
+            // animation: drawCircle 3.4s ease-in-out infinite;
+        }
+
+        > h4,
+        > h2 {
+            color: $color-base-dark;
+        }
+
+        > h2 {
+            white-space: nowrap;
+            display: flex;
+            align-items: flex-end;
+            z-index: 2;
+            height: clamp-px(58, 80, 1400, 400);
+        }
+    }
 }
