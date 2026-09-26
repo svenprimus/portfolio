@@ -40,7 +40,7 @@
     }
 }
 
-@keyframes drawCircle {
+@keyframes draw-circle {
     0% {
         clip-path: polygon(50% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
     }
@@ -82,5 +82,32 @@
     }
     100% {
         clip-path: polygon(50% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    }
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(0);
+    }
+    90% {
+        transform: translateY(60px);
+    }
+    100% {
+        transform: translateY(60px);
+    }
+}
+
+@keyframes draw-line {
+    20% {
+        clip-path: inset(0 100% 0 0);
+    }
+    30% {
+        clip-path: inset(0);
+    }
+    100% {
+        clip-path: inset(0);
     }
 }
