@@ -42,53 +42,9 @@
             transform: translateY(3%) scalex(-1);
             z-index: 1;
 
-            animation: drawCircle 3s ease infinite;
+            animation: drawCircle 3.4s ease-in-out infinite;
         }
 
-        @keyframes drawCircle {
-            0% {
-                clip-path: polygon(50% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
-            }
-            2.5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
-            }
-            5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-            }
-            7.5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 100% 100%, 100% 0, 100% 0, 100% 0);
-            }
-            10% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            12.5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            82.5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 100%, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            85% {
-                clip-path: polygon(50% 50%, 50% 50%, 0 100%, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            87.5% {
-                clip-path: polygon(50% 50%, 50% 50%, 100% 100%, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            90% {
-                clip-path: polygon(50% 50%, 50% 50%, 100% 0, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            92.5% {
-                clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            95% {
-                clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 0, 0 0, 0 50%);
-            }
-            97.5% {
-                clip-path: polygon(50% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
-            }
-            100% {
-                clip-path: polygon(50% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
-            }
-        }
         > h2 {
             white-space: nowrap;
             display: flex;

@@ -1,4 +1,4 @@
-<article class="section-skills">
+<article id="section-skills" class="section-skills">
     <div class="section-skills-intro">
         <div>
             <h4>MY STACK</h4>
@@ -6,7 +6,12 @@
             <img src="./assets/design/00_hand-drawn-lines/02_skills/circle.webp" aria-hidden="true" />
         </div>
         <div>
-            <p>A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. </p>
+            <p>
+                <br />I create modern, responsive, and engaging web experiences with JavaScript, TypeScript, Angular,
+                HTML, and SCSS. With a strong foundation in software engineering and a proven ability to master and
+                adapt to new technologies, I turn new challenges into opportunities to build, learn, and improve. My
+                background in C++ and embedded systems adds a strong engineering perspective to my frontend expertise.
+            </p>
             <img src="./assets/design/02_ripped-paper/bg-skills.webp" aria-hidden="true" />
         </div>
     </div>
@@ -56,7 +61,7 @@
             </div>
         </div>
 
-        <div id="peel-wrapper" class="peel-wrapper" (click)="peelOff()">
+        <div id="peel-wrapper" class="peel-wrapper" (click)="togglePeel()">
             <div class="peel-layer-1" [class.d-none]="visibleLayerNow() != 1">
                 <img
                     class="peel-layer-img"
