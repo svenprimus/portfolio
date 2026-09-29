@@ -18,26 +18,22 @@ export class SectionSkills {
     }
 
     peelOff() {
-        const first = setTimeout(() => {
+        setTimeout(() => {
             this.visibleLayerNow.set(2);
-            clearTimeout(first);
         }, 100);
 
-        const second = setTimeout(() => {
+        setTimeout(() => {
             this.visibleLayerNow.set(1);
-            clearTimeout(second);
         }, 200);
     }
 
     stickOn() {
-        const first = setTimeout(() => {
+        setTimeout(() => {
             this.visibleLayerNow.set(2);
-            clearTimeout(first);
         }, 100);
 
-        const second = setTimeout(() => {
+        setTimeout(() => {
             this.visibleLayerNow.set(3);
-            clearTimeout(second);
         }, 200);
     }
 }
