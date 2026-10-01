@@ -32,9 +32,7 @@
         margin-bottom: 16px;
     }
 
-    > section {
-        margin-bottom: clamp-px(40, 88, 1400, 400);
-    }
+    gap: clamp-px(40, 88, 1400, 400) 0;
 }
 
 .section-projects-headline {

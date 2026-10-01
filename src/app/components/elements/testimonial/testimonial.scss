@@ -25,6 +25,7 @@
 
 .testimonial-content {
     width: $width-testimon;
+    min-height: 320px;
     height: 100%;
     top: 0;
     @include flex-column-start;
