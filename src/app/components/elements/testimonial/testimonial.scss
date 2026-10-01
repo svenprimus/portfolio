@@ -1,0 +1,77 @@
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
+
+.testimonial {
+    position: relative;
+    > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 1;
+    }
+
+    h4,
+    p {
+        color: $color-base-dark;
+        line-height: 120%;
+        z-index: 2;
+        transition: all 100ms ease-in;
+    }
+
+    h4 {
+        font-weight: 700;
+    }
+}
+
+.testimonial-content {
+    width: $width-testimon;
+    height: 100%;
+    top: 0;
+    @include flex-column-start;
+    justify-content: space-between;
+    padding-block: clamp-px(32, 48);
+    padding-inline: clamp-px(16, 40);
+
+    .testimonial-role,
+    .testimonial-profile {
+        font-weight: 500;
+    }
+
+    .testimonial-role {
+        font-size: 16px;
+    }
+
+    .testimonial-content-details {
+        z-index: 2;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+
+        > a {
+            @include flex-center;
+            > img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+.testimonial-hover {
+    opacity: 0;
+    transition: all 100ms ease-in;
+}
+
+.testimonial:hover {
+    .testimonial-hover {
+        opacity: 1;
+    }
+
+    h4,
+    .testimonial-role {
+        color: white;
+    }
+}

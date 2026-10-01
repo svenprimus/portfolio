@@ -120,3 +120,15 @@
         clip-path: inset(0);
     }
 }
+
+@keyframes draw-line-revserse {
+    20% {
+        clip-path: inset(0 0 0 100%);
+    }
+    30% {
+        clip-path: inset(0);
+    }
+    100% {
+        clip-path: inset(0);
+    }
+}

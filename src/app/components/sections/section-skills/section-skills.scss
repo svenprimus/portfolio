@@ -26,7 +26,7 @@
         align-items: flex-end;
     }
 
-    div:nth-child(1) {
+    header {
         @include flex-column-end;
         gap: 8px;
         position: relative;
@@ -54,7 +54,7 @@
         }
     }
 
-    div:nth-child(2) {
+    div {
         @include flex-column-end;
         gap: 8px;
         position: relative;

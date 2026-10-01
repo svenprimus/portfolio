@@ -1,0 +1,17 @@
+<aside class="testimonial" [style.transform]="'rotate(' + rotation + 'deg)'">
+    <img src="{{ imgSrc }}" alt="crumpled sticky note" />
+    <img class="testimonial-hover" src="./assets/design/03_stickers/02_testimonials/Hover.webp" aria-hidden="true" />
+    <div class="testimonial-content">
+        <p><ng-content></ng-content><br /><br /></p>
+        <div class="testimonial-content-details">
+            <div>
+                <h4>{{ author() }}</h4>
+                <p class="testimonial-role">{{ role() }}</p>
+            </div>
+            <a href="{{ linkedInUrl() }}" target="_blank">
+                <img src="./assets/icons/misc/linkedin-dark.svg" alt="linkedin link" />
+                <p class="testimonial-profile">Profile</p>
+            </a>
+        </div>
+    </div>
+</aside>
