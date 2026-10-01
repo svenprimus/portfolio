@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Hero } from '../hero/hero';
-import { SectionAbout } from '../section-about/section-about';
-import { SectionSkills } from '../section-skills/section-skills';
-import { SectionProjects } from '../section-projects/section-projects';
-import { SectionTestimonials } from '../section-testimonials/section-testimonials';
-import { SectionContact } from '../section-contact/section-contact';
+import { SectionHero } from '../sections/section-hero/section-hero';
+import { SectionAbout } from '../sections/section-about/section-about';
+import { SectionSkills } from '../sections/section-skills/section-skills';
+import { SectionProjects } from '../sections/section-projects/section-projects';
+import { SectionTestimonials } from '../sections/section-testimonials/section-testimonials';
+import { SectionContact } from '../sections/section-contact/section-contact';
 
 @Component({
-    imports: [Hero, SectionAbout, SectionSkills, SectionProjects, SectionTestimonials, SectionContact],
+    imports: [SectionHero, SectionAbout, SectionSkills, SectionProjects, SectionTestimonials, SectionContact],
     selector: 'app-content-main',
     styleUrl: './content-main.scss',
     templateUrl: './content-main.html',

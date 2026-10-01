@@ -1,4 +1,5 @@
 @use './functions.scss' as *;
+@use './variables.scss' as *;
 
 @mixin flex-center {
     display: flex;
@@ -6,11 +7,40 @@
     align-items: center;
 }
 
+@mixin flex-start {
+    @include flex-center;
+    justify-content: flex-start;
+}
+
+@mixin flex-end {
+    @include flex-center;
+    justify-content: flex-end;
+}
+
 @mixin flex-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@mixin flex-column-end {
+    @include flex-column;
+    align-items: flex-end;
+}
+
+@mixin flex-column-start {
+    @include flex-column;
+    align-items: flex-start;
+}
+
+@mixin flex-column-top {
+    @include flex-column;
+    justify-content: flex-start;
+}
+
+@mixin light-shader {
+    filter: drop-shadow(0 0 1px $color-base-dark);
 }
 
 @mixin content-limit {
@@ -23,5 +53,17 @@
     padding-inline: clamp-px($min, $max, 1440, 400);
     @include content-limit {
         padding-inline: max(calc((100% - 1440px + $max * 2px) / 2), $max * 1px);
+    }
+}
+
+@mixin media-s {
+    @media screen and (max-width: $media-query-s) {
+        @content;
+    }
+}
+
+@mixin media-sm {
+    @media screen and (max-width: $media-query-sm) {
+        @content;
     }
 }

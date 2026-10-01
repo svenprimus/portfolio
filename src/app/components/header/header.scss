@@ -28,9 +28,8 @@
     transform: translateY(-100%);
     transition: transform 300ms ease-out;
 
-    @include flex-column;
+    @include flex-column-top;
     @include content-limit-1440p(16, 72);
-    justify-content: flex-start;
     width: 100%;
     height: 656px;
     position: fixed;
