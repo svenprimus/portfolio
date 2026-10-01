@@ -136,6 +136,8 @@
 
         figure {
             @include flex-column;
+            @include light-shader;
+
             gap: 4px;
             width: $width-skills-box-item;
         }
