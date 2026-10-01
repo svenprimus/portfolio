@@ -4,5 +4,5 @@
     [class.btnDark]="isDark() == true"
     [class.btnLight]="isDark() != true"
 >
-    {{ btnText() }}
+    <ng-content></ng-content>
 </button>
