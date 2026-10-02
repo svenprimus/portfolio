@@ -1,27 +1,5 @@
 @use '../../../../../public/assets/styles/all_styles.scss' as *;
 
-.btn1d::after {
-    @include flex-center;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    text-decoration: none;
-    user-select: none;
-    touch-action: none;
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-
-    img {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -webkit-user-drag: none;
-        user-select: none;
-        pointer-events: none;
-    }
-}
-
-.btn1d,
 .btn3d {
     width: auto;
     height: $height-btn;
@@ -45,13 +23,6 @@
 .btn3d:active {
     box-shadow: none;
     transform: translate(2px, 4px);
-}
-
-.btn1d {
-    position: relative;
-    transition: all 100ms ease-in;
-    box-shadow: none !important;
-    cursor: auto;
 }
 
 .btnLight {

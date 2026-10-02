@@ -39,8 +39,8 @@
     justify-content: flex-start;
 }
 
-@mixin light-shader {
-    filter: drop-shadow(0 0 1px $color-base-dark);
+@mixin light-shader ($color: $color-base-dark) {
+    filter: drop-shadow(0 0 1px $color);
 }
 
 @mixin content-limit {

@@ -15,18 +15,18 @@ export class Header {
     pointerEvents: string = 'all';
     lastY: number | null = null;
     bg: string = 'transparent';
+
     classListNavMobile = 'header-nav-mobile';
     classMobileDropdown = 'dropdown';
 
-    // TODO load default values from SCSS variables (?)
     fadeInOut() {
         const scroll = window.scrollY;
         this.lastY ??= scroll;
         const delta = scroll - this.lastY;
         this.opacity = Math.max(0, Math.min(1, this.opacity - delta / (2 * 80)));
         this.lastY = scroll;
-        const bgOpacity = Math.max(0, Math.min(255, Math.round((scroll / (2 * 80)) * 255)));
-        this.bg = scroll > 2 * 80 ? '#0e101380' : '#0e1013' + bgOpacity.toString(16);
+        const bgOpacity = Math.max(0, Math.min(Math.round(255 * 0.85), Math.round((scroll / (2 * 80)) * 255)));
+        this.bg = scroll < 10 ? 'transparent' : '#0e1013' + bgOpacity.toString(16);
         this.pointerEvents = this.opacity < 0.2 ? 'none' : 'all';
     }
 

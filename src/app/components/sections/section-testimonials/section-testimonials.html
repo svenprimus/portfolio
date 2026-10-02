@@ -1,3 +1,40 @@
 <article class="section-testimonials">
-    <p>section-testimonials</p>
+    <header class="section-testimonials-header">
+        <div>
+            <img src="./assets/design/00_hand-drawn-lines/04_testimonials/arrow-left.webp" aria-hidden="true" />
+            <h4>IN THEIR WORDS:</h4>
+        </div>
+        <h2>Colleagues' Thoughts</h2>
+    </header>
+    <div class="testimonial-wrapper">
+        <app-testimonial
+            [author]="'Wanja Mueller'"
+            [role]="'Fullstack Developer'"
+            [linkedInUrl]="'https://www.linkedin.com/in/wanjamueller/'"
+            >I had the pleasure of working with Sven on a complex front-end project, and I learned an enormous amount
+            from him in the process. He already has real-world coding experience and works with exceptional attention to
+            detail and precision—nothing escapes his notice. His performance and guidance were a key reason we were able
+            to complete the project so successfully. I thoroughly enjoyed working with him, both professionally and
+            personally.
+        </app-testimonial>
+        <app-testimonial
+            [author]="'Eva Bojorges'"
+            [role]="'Community @ Docker  | Speaker | Machine Learning Engineer'"
+            [linkedInUrl]="'https://www.linkedin.com/in/eva-bojorges'"
+            >Sven has built and led international teams, communicates clearly in remote settings, and still stays
+            hands-on with production code. He's a thoughtful leader, a strong problem solver, and someone I'd
+            confidently recommend for senior engineering or leadership roles in remote-first teams.
+        </app-testimonial>
+        <app-testimonial
+            [author]="'Christian Luca Civello'"
+            [role]="'Software developer embedded systems'"
+            [linkedInUrl]="'https://www.linkedin.com/in/christian-luca-civello-8857aa94'"
+            >He acted as the company supervisor for my bachelor's thesis. From the very beginning, I appreciated his
+            deep technical knowledge, structured approach, and willingness to support and mentor. After I finished my
+            bachelor's degree, we worked closely together as colleagues. In this phase, I experienced firsthand his
+            outstanding capabilities as an embedded systems software developer. Following his promotion to Software
+            Development Manager, he continued to excel, demonstrating strong leadership, clear communication, and sound
+            technical judgment. In my view, his performance as both a developer and a manager is truly outstanding.
+        </app-testimonial>
+    </div>
 </article>

@@ -1,3 +1,59 @@
 <article class="section-contact">
-    <p style="color: white">section-contact</p>
+    <div id="section-contact" class="section-contact-content">
+        <img
+            class="contact-sticker contact-img-mobile"
+            src="./assets/design/03_stickers/00_round/sticker-brand-orange.webp"
+            alt="branded by Sven Primus sticker"
+        />
+        <section class="section-contact-content-column section-contact-intro">
+            <h4>CONTACT ME</h4>
+            <h2>Ready to work together?</h2>
+            <p>
+                I'm always open to new opportunities where I can contribute my frontend expertise, creativity, and
+                software engineering experience. Whether it's joining an existing team or starting a new project.<br /><br />
+                I'm excited to bring ideas to life, create meaningful solutions, and keep growing along the way.
+            </p>
+            <img
+                class="contact-arrow contact-img-desktop"
+                src="./assets/design/00_hand-drawn-lines/05_contact/arrow-right.webp"
+                aria-hidden="true"
+            />
+        </section>
+        <form class="section-contact-content-column section-contact-form">
+            <div class="contact-input-wrapper contact-input-wrapper-1">
+                <label for="contact-name">What's yor name?</label>
+                <input type="text" id="contact-name" />
+            </div>
+            <div class="contact-input-wrapper contact-input-wrapper-2">
+                <label for="contact-mail">What's yor email?</label>
+                <input type="text" id="contact-mail" />
+            </div>
+            <div class="contact-input-wrapper contact-input-wrapper-3">
+                <label for="contact-msg">How can I help you?</label>
+                <input type="text" id="contact-msg" />
+            </div>
+            <div class="privacy-policy-check">
+                <div class="privacy-policy-check-wrapper">
+                    <input type="checkbox" id="contact-legal" />
+                </div>
+                <label for="contact-legal"
+                    >I've read the <a href="#TODO">privacy policy</a> and agree to the processing of my data as
+                    outlined.
+                </label>
+            </div>
+            <img
+                class="contact-sticker contact-sticker-absolute contact-img-desktop"
+                src="./assets/design/03_stickers/00_round/sticker-brand-orange.webp"
+                alt="branded by Sven Primus sticker"
+            />
+            <div class="section-contact-send">
+                <img
+                    class="contact-arrow contact-img-mobile"
+                    src="./assets/design/00_hand-drawn-lines/05_contact/arrow-right.webp"
+                    aria-hidden="true"
+                />
+                <app-button [isDark]="false" [minWidth]="'154px'">Send</app-button>
+            </div>
+        </form>
+    </div>
 </article>

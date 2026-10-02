@@ -1,8 +1,8 @@
 <button
-    [class.btn3d]="is3D() == true"
-    [class.btn1d]="is3D() != true"
+    class="btn3d"
     [class.btnDark]="isDark() == true"
     [class.btnLight]="isDark() != true"
+    [style.min-width]="minWidth()"
 >
-    {{ btnText() }}
+    <ng-content></ng-content>
 </button>

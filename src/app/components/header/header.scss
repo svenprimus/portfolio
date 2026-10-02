@@ -5,7 +5,7 @@
     position: fixed;
     width: 100%;
     height: $height-header;
-    z-index: 2;
+    z-index: 10;
 }
 
 .socials-desktop {
@@ -34,7 +34,7 @@
     height: 656px;
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 10;
 
     background-image: url('../../../../public/assets/design/01_backgrounds/01_hero.webp');
     background-repeat: no-repeat;

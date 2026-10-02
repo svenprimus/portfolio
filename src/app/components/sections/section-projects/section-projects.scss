@@ -3,8 +3,14 @@
 .section-projects {
     @include content-limit-1440p(16, 120);
     @include flex-center;
+
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @include media-sm {
+        justify-content: center;
+    }
+
     padding-block: $padding-section-block;
     width: 100%;
     height: 100%;
@@ -26,9 +32,7 @@
         margin-bottom: 16px;
     }
 
-    > section {
-        margin-bottom: clamp-px(40, 88, 1400, 400);
-    }
+    gap: clamp-px(40, 88, 1400, 400) 0;
 }
 
 .section-projects-headline {
@@ -36,7 +40,7 @@
     gap: clamp-px(56, 72, 1400, 400);
     width: $width-preview;
 
-    > div {
+    > header {
         @include flex-column-start;
         gap: 8px;
         position: relative;
@@ -53,7 +57,6 @@
             z-index: 1;
 
             clip-path: inset(0 100% 0 0);
-            // transition: clip-path 180ms ease-out;
             animation: draw-line 2000ms ease-out infinite alternate;
         }
 
@@ -98,7 +101,7 @@
         .highlight-sticker {
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: 60px;
             width: $size-sticker;
             height: $size-sticker;
             z-index: 2;
@@ -106,7 +109,7 @@
 
         &:hover {
             .project-preview-highlight {
-                transform: scale(1.35);
+                animation: hoverzoom 250ms forwards;
             }
 
             .project-preview-img {
@@ -127,7 +130,7 @@
             height: 100%;
             top: 0;
             opacity: 0;
-            background: linear-gradient(transparent 50%, $color-base-dark 100%);
+            background: linear-gradient(transparent 50%, $color-base-dark 140%);
             transition: all 250ms ease-out;
         }
 

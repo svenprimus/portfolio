@@ -4,6 +4,8 @@ $color-base-light: #f8f9fa;
 $color-base-dark: #0e1013;
 $color-high-1: #bae011;
 $color-high-2: #7e4ae7;
+$color-high-2-light: #a380e9;
+$color-high-2-light-hover:#a380e94d;
 $color-high-3: #e08c05;
 
 $font-size-btn: 18px;
@@ -12,8 +14,8 @@ $font-size-p-about: 20px;
 $font-size-p-legal: 16px;
 $font-size-nav: 18px;
 
-$font-size-h1: clamp-px(48, 128, 1050, 600);
-$font-size-h2: clamp-px(48, 64, 1400, 400);
+$font-size-h1: clamp-px(44, 128, 1050, 600);
+$font-size-h2: clamp-px(40, 64, 1400, 680);
 $font-size-h3: clamp-px(20, 24, 1400, 400);
 $font-size-h4: clamp-px(18, 20, 1400, 400);
 $font-size-fig: 24px;
@@ -28,6 +30,7 @@ $font-height-title: 120%;
 $font-height-h1-2-4: 100%;
 $font-height-h3: 120%;
 $font-height-fig: 120%;
+$font-height-form: 120%;
 
 $font-weight-btn: 500;
 $font-weight-p: 400;
@@ -41,7 +44,7 @@ $font-weight-peel: 400;
 $font-weight-form: 500;
 
 $size-socials: 40px;
-$size-location-icon: 40px;
+$size-location-icon: clamp-px(28, 40);
 $size-socials-innerImg: 32px;
 $size-testimonial: 24px;
 $size-skills: clamp-px(56, 72, 1400, 400);
@@ -57,20 +60,21 @@ $padding-skills-block: clamp-px(88, 170, 1400, 400);
 $padding-btn: 24px;
 
 $width-polaroid: 200px;
-$width-headline: clamp-px(310, 865, 1400, 320);
-$width-testimon: clamp-px(300, 512, 1400, 300);
-$width-preview: clamp-px(300, 560, 1400, 300);
-$width-preview-underline: clamp-px(195, 260, 1400, 400);
-$width-location: clamp-px(300, 560, 1400, 300);
-$width-location-underline: clamp-px(227, 303, 1400, 400);
-$width-skills-headline: clamp-px(184, 245, 1400, 400);
+$width-headline: clamp-px(250, 865, 1400, 300);
+$width-testimon: clamp-px(250, 512, 1400, 350);
+$width-preview: clamp-px(253, 560, 1400, 300);
+$width-preview-underline: clamp-px(162, 260, 1400, 300);
+$width-location: clamp-px(275, 560, 1400, 680);
+$width-location-underline: clamp-px(189, 303, 1400, 300);
+$width-skills-headline: clamp-px(153, 245, 1400, 300);
 $width-skills-box-item: 96px;
 
 $height-btn: 40px;
 $height-preview: clamp-px(240, 400, 1400, 300);
 $height-header: clamp-px(64, 80, 1400, 600);
-$height-footer: clamp-px(64, 80, 1400, 600);
+$height-footer: clamp-px(222, 188, 1400, 600);
 $height-location: clamp-px(128, 152, 1400, 300);
+$height-testimonial-largest: 500px;
 
 $radius-btn: 100px;
 $radius-preview: 20px;

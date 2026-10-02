@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { readonly } from '@angular/forms/signals';
 
 @Component({
   imports: [],

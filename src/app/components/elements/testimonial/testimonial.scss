@@ -1,0 +1,101 @@
+@use '../../../../../public/assets/styles/all_styles.scss' as *;
+
+.testimonial {
+    position: relative;
+    > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 1;
+    }
+
+    h4,
+    p,
+    .profile-icon > path {
+        color: $color-base-dark;
+        line-height: 120%;
+        z-index: 2;
+        transition: all 100ms ease-in;
+    }
+
+    h4 {
+        font-weight: 700;
+    }
+}
+
+.testimonial-content {
+    width: $width-testimon;
+    min-height: 320px;
+    height: 100%;
+    top: 0;
+    @include flex-column-start;
+    justify-content: space-between;
+    padding-block: clamp-px(32, 48);
+    padding-inline: clamp-px(16, 40);
+
+    .testimonial-role,
+    .testimonial-profile {
+        font-weight: 500;
+    }
+
+    .testimonial-role {
+        font-size: 16px;
+    }
+
+    .testimonial-content-details {
+        z-index: 2;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+
+        > a {
+            @include flex-center;
+            > .profile-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            &:hover {
+                > .profile-icon > path {
+                    fill: $color-base-light;
+                }
+                p {
+                    color: $color-base-light;
+                }
+            }
+        }
+    }
+
+    @include media-s {
+        p {
+            font-size: clamp-px(15, 18, 400, 300);
+        }
+
+        padding-block: clamp-px(10, 32, 320, 300);
+        padding-inline: clamp-px(8, 16, 400, 300);
+    }
+}
+
+.testimonial-hover {
+    opacity: 0;
+    transition: all 100ms ease-in;
+}
+
+.testimonial:hover {
+    .testimonial-hover {
+        opacity: 1;
+    }
+
+    h4,
+    .testimonial-role {
+        color: white;
+    }
+}
+
+.profile-icon > path {
+    fill: $color-base-dark;
+}
