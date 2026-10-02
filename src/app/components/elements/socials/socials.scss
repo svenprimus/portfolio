@@ -12,14 +12,15 @@
         width: $size-socials;
         height: $size-socials;
 
-        img, svg {
+        img,
+        svg {
             width: $size-socials-innerImg;
             height: $size-socials-innerImg;
         }
 
         transition: all 300ms ease-out;
     }
-    
+
     .hover-wrapper {
         @include flex-center;
         position: relative;

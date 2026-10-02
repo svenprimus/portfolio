@@ -11,7 +11,8 @@
     }
 
     h4,
-    p {
+    p,
+    .profile-icon > path {
         color: $color-base-dark;
         line-height: 120%;
         z-index: 2;
@@ -53,9 +54,18 @@
 
         > a {
             @include flex-center;
-            > img {
+            > .profile-icon {
                 width: 24px;
                 height: 24px;
+            }
+
+            &:hover {
+                > .profile-icon > path {
+                    fill: $color-base-light;
+                }
+                p {
+                    color: $color-base-light;
+                }
             }
         }
     }
@@ -75,4 +85,8 @@
     .testimonial-role {
         color: white;
     }
+}
+
+.profile-icon > path {
+    fill: $color-base-dark;
 }
