@@ -9,16 +9,23 @@
 .section-footer {
     @include content-limit-1440p(16, 120);
     @include flex-start;
+
     position: absolute;
     width: 100%;
     height: $height-footer;
     bottom: 0;
     padding-bottom: 56px;
+
+    @include media-sm {
+        flex-direction: column;
+        align-items: flex-end;
+    }
 }
 
 .footer-legal {
     @include flex-column-start;
     width: 250px;
+    min-height: 80px;
 
     app-logo {
         margin-bottom: 16px;
@@ -36,6 +43,11 @@
             transform: translateY(-25%);
             clip-path: inset(0 100% 0 0);
             transition: clip-path 180ms ease-out;
+
+            @include media-sm {
+                left: 100%;
+                transform: translateX(-100%) translateY(-25%);
+            }
         }
 
         &:has(a:hover) > img {
@@ -48,6 +60,29 @@
         font-weight: $font-weight-nav;
         line-height: $font-height-nav;
     }
+
+    @include media-sm {
+        height: 80px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+        text-align: right;
+
+        app-logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-legal-creator {
+            align-self: center;
+
+            p {
+                @include flex-end;
+                height: 40px;
+            }
+        }
+    }
 }
 
 .footer-nav {
@@ -55,6 +90,10 @@
     align-items: flex-end;
     width: 100%;
     height: 100%;
+
+    @include media-sm {
+        margin-top: 40px;
+    }
 }
 
 .footer-nav-place-wrapper {
@@ -74,7 +113,7 @@
         font-weight: 500;
         width: fit-content;
         height: $size-socials;
-        padding-inline: $padding-btn;
+        padding-inline: clamp-px(10, 24, 800, 300);
         border-radius: $radius-btn;
         transition: all 1s cubic-bezier(0.41, 0.8, 0, 1);
     }
