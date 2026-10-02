@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core';
 export class Button {
     readonly is3D = input.required<boolean>();
     readonly isDark = input.required<boolean>();
+    readonly minWidth = input<string>('0');
 }

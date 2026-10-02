@@ -2,7 +2,7 @@
 
 .section-contact {
     @include content-limit-1440p(16, 120);
-    @include flex-center;
+    @include flex-column;
     width: 100%;
     height: 100%;
     padding-top: $padding-section-block;
@@ -11,4 +11,189 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
+}
+
+.section-contact-content {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp-px(10, 160);
+
+    .section-contact-intro {
+        h4 {
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            margin-bottom: clamp-px(32, 48);
+        }
+
+        p {
+            margin-bottom: clamp-px(40, 48);
+            text-align: justify;
+        }
+    }
+
+    .section-contact-form {
+        padding-top: 144px;
+
+        @for $i from 0 through 2 {
+            &:has(.contact-input-wrapper-#{$i + 1}:hover) {
+                .contact-input-wrapper-#{$i} {
+                    border-bottom: 1px solid $color-high-2;
+                }
+
+                .contact-input-wrapper-#{$i + 1} {
+                    label {
+                        color: $color-high-3;
+                    }
+                    border-bottom: 1px solid $color-high-2;
+                }
+            }
+        }
+    }
+}
+
+.section-contact-content-column {
+    @include flex-column-start;
+    width: 50%;
+    height: 100%;
+
+    .contact-input-wrapper {
+        @include flex-column-start;
+        width: 100%;
+        padding: 16px 24px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid $color-high-1;
+        gap: 8px;
+
+        transition: all 100ms ease-in;
+
+        label,
+        input {
+            font-size: $font-size-form;
+            font-weight: $font-weight-form;
+            line-height: $font-height-form;
+        }
+
+        input {
+            border: none;
+            font-size: $font-size-p-default;
+            font-weight: $font-weight-p;
+            width: 100%;
+        }
+    }
+
+    .contact-input-wrapper,
+    .privacy-policy-check {
+        label,
+        input,
+        a {
+            font-family: 'Bricolage Grotesque';
+            color: $color-base-light;
+            background-color: transparent;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        a {
+            font-size: $font-size-p-legal;
+            font-weight: $font-weight-p;
+            color: $color-high-2-light;
+        }
+        a:hover {
+            color: $color-high-1;
+        }
+    }
+
+    .privacy-policy-check {
+        @include flex-start;
+        align-items: flex-start;
+        margin-block: 40px;
+        width: 100%;
+        gap: 8px;
+
+        input[type='checkbox'] {
+            position: relative;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: transparent;
+
+            color: $color-high-2-light;
+            border: 2px solid $color-high-2-light;
+            border-radius: 2px;
+            width: 18px;
+            height: 18px;
+            margin: 3px;
+            display: grid;
+            place-content: center;
+        }
+
+        input[type='checkbox']::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            transform: scale(0);
+            transition: 100ms transform ease-in-out;
+            background-image: url('../../../../../public/assets/design/00_hand-drawn-lines/00_header/check.webp');
+            background-size: contain;
+            margin: 0 0 2px 2px;
+        }
+
+        input[type='checkbox']:checked::before {
+            transform: scale(1);
+        }
+
+        .privacy-policy-check-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        input[type='checkbox']::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: -5px;
+            left: -5px;
+            opacity: 0;
+            transition: 250ms all ease-in;
+            border-radius: 3px;
+            background: $color-high-2-light-hover;
+            z-index: -1;
+        }
+
+        input[type='checkbox']:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.section-contact-send {
+    width: 100%;
+    @include flex-end;
+}
+
+.contact-arrow {
+    width: clamp-px(152, 280);
+    align-self: flex-end;
+    clip-path: inset(0 100% 0 0);
+    animation: draw-line 3200ms ease-out infinite alternate;
+}
+
+.contact-img-mobile {
+    display: none;
+}
+
+.contact-sticker-absolute {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
