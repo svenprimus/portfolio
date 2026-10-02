@@ -69,6 +69,15 @@
             }
         }
     }
+
+    @include media-s {
+        p {
+            font-size: clamp-px(15, 18, 400, 300);
+        }
+
+        padding-block: clamp-px(10, 32, 320, 300);
+        padding-inline: clamp-px(8, 16, 400, 300);
+    }
 }
 
 .testimonial-hover {
