@@ -29,7 +29,8 @@
 
     > div {
         height: 100%;
-        > button {
+        > button,
+        .hello-wrapper {
             margin-bottom: clamp-px(16, 32, 700, 900);
         }
     }
@@ -66,8 +67,38 @@
     display: none;
 }
 
-.btn-hello {
-    background-color: red;
+// TODO: animation must show "I'M SVEN PRIMUS"
+.hello-wrapper {
+    position: relative;
+    @include flex-end;
+    align-items: flex-center;
+    font-weight: 500;
+    width: fit-content;
+    height: $height-btn;
+    padding-inline: $padding-btn;
+    border-radius: $radius-btn;
+    border: 1px solid $color-base-light;
+    transition: all 1s cubic-bezier(0.41, 0.8, 0, 1);
+
+    > img {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 50%;
+        transform: translateY(-100%) translateX(50%) rotate(-180deg);
+        transition: all 1s cubic-bezier(0.41, 0.8, 0, 1);
+        pointer-events: none;
+        animation: rollout 1s cubic-bezier(0.41, 0.8, 0, 1) forwards;
+    }
+
+    &:hover {
+        background-color: $color-high-2;
+
+        > img {
+            opacity: 1;
+            animation: rollin 1s linear forwards;
+        }
+    }
 }
 
 @media screen and (max-width: $media-query-s) {
