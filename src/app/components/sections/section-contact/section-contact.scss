@@ -1,4 +1,6 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/assets/styles/abstract/functions.scss' as *;
 
 .section-contact {
     @include content-limit-1440p(16, 120);
@@ -80,9 +82,9 @@
 
         label,
         input {
-            font-size: $font-size-form;
-            font-weight: $font-weight-form;
-            line-height: $font-height-form;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 120%
         }
 
         input {
@@ -106,7 +108,7 @@
         }
 
         a {
-            font-size: $font-size-p-legal;
+            font-size: 16px;
             font-weight: $font-weight-p;
             color: $color-high-2-light;
         }

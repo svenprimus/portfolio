@@ -1,11 +1,13 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/assets/styles/abstract/functions.scss' as *;
 
 .section-skills {
     @include content-limit-1440p(16, 120);
     @include flex-column-start;
     width: 100%;
     height: 100%;
-    padding-block: $padding-skills-block;
+    padding-block: clamp-px(88, 170, 1400, 400);
     background-image: url('../../../../../public/assets/design/01_backgrounds/02_skills.webp');
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,23 +23,14 @@
     height: auto;
     gap: 48px;
 
-    @include media-sm {
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
     header {
         @include flex-column-end;
         gap: 8px;
         position: relative;
 
-        @include media-sm {
-            align-items: flex-end;
-        }
-
         > img {
             position: absolute;
-            width: $width-skills-headline;
+            width: clamp-px(153, 245, 1400, 300);
             bottom: 0;
             transform: translateY(3%) scalex(-1);
             z-index: 1;
@@ -78,23 +71,20 @@
 }
 
 .skills-content {
-    @include flex-end;
+    display: flex;
+    justify-content: flex-end;
     align-items: flex-start;
     width: 100%;
     height: 100%;
     gap: 54px;
-
-    @include media-sm {
-        flex-direction: column;
-        align-items: flex-end;
-    }
 
     @include media-s {
         align-items: center;
     }
 
     .skills-column-wrapper {
-        @include flex-end;
+        display: flex;
+        align-items: center;
         justify-content: flex-end;
         width: 100%;
         height: 100%;
@@ -105,7 +95,7 @@
     }
 
     .skills-wrapper {
-        @include flex-start;
+        display: flex;
         align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -117,37 +107,6 @@
         max-width: calc(5 * $width-skills-box-item + 4 * $gap-skills-box-item);
         height: 100%;
         gap: $gap-skills-box-item;
-
-        figcaption {
-            color: $color-base-light;
-            font-family: 'Bricolage Grotesque';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 120%;
-            text-align: center;
-        }
-
-        img {
-            width: $size-skills;
-            height: $size-skills;
-            filter: grayscale(100%);
-            transition: all 50ms ease-in;
-        }
-
-        figure {
-            @include flex-column;
-            @include light-shader;
-
-            gap: 4px;
-            width: $width-skills-box-item;
-        }
-
-        figure:hover {
-            img {
-                filter: grayscale(0);
-                transform: scale(0.78);
-            }
-        }
     }
 
     .peel-wrapper {
@@ -160,10 +119,6 @@
         min-height: $size-peel-sticker;
         overflow: hidden;
         border-radius: 15px;
-
-        @include media-sm {
-            transform: translateY(-70%);
-        }
 
         @include media-s {
             transform: translateY(0);
@@ -215,10 +170,7 @@
                     height: 40px;
                 }
                 figcaption {
-                    color: $color-base-light;
-                    font-family: 'Bricolage Grotesque';
                     font-size: 16px;
-                    font-weight: 400;
                     line-height: 108%;
                 }
             }
@@ -238,12 +190,34 @@
                 width: 80%;
                 text-align: center;
                 font-family: 'Kalam';
-                font-size: $font-size-peel;
+                font-size: 40px;
                 font-weight: 400;
                 line-height: $font-height-fig;
                 color: $color-base-light;
                 z-index: 2;
             }
+        }
+    }
+}
+
+@include media-sm {
+    .section-skills-intro {
+        flex-direction: column;
+        align-items: flex-end;
+
+        header {
+            align-items: flex-end;
+        }
+    }
+    .skills-content {
+        flex-direction: column;
+        align-items: flex-end;
+        .peel-wrapper {
+            transform: translateY(-70%);
+        }
+
+        .skills-column-wrapper {
+            justify-content: center;
         }
     }
 }

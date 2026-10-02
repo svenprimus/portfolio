@@ -1,0 +1,30 @@
+@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+
+figcaption {
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+}
+
+img {
+    width: $size-skills;
+    height: $size-skills;
+    filter: grayscale(100%);
+    transition: all 50ms ease-in;
+}
+
+figure {
+    @include flex-column;
+    @include light-shader;
+
+    gap: 4px;
+    width: $width-skills-box-item;
+}
+
+figure:hover {
+    img {
+        filter: grayscale(0);
+        transform: scale(0.78);
+    }
+}

@@ -1,4 +1,6 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../public/assets/styles/abstract/functions.scss' as *;
 
 .footer-wrapper {
     width: 100%;

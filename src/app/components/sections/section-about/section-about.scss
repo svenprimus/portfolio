@@ -1,4 +1,6 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/assets/styles/abstract/functions.scss' as *;
 
 .section-about {
     @include content-limit-1440p(16, 120);
@@ -82,7 +84,7 @@
         }
 
         > img {
-            width: $width-location-underline;
+            width: clamp-px(189, 303, 1400, 300);
         }
 
         .btn-right {

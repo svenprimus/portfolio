@@ -51,7 +51,7 @@ p {
     font-family: 'Bricolage Grotesque';
     font-size: all.$font-size-p-default;
     font-weight: all.$font-weight-p;
-    line-height: all.$font-height-p-default;
+    line-height: 100%;
     color: all.$color-base-light;
 }
 
@@ -83,7 +83,7 @@ input {
 a {
     color: all.$color-base-light;
     font-family: 'Bricolage Grotesque';
-    font-size: all.$font-size-nav;
+    font-size: 18px;
     font-weight: all.$font-weight-nav;
     line-height: all.$font-height-nav;
 }
@@ -96,4 +96,10 @@ li {
 
 .d-none {
     display: none !important;
+}
+
+figcaption {
+    color: all.$color-base-light;
+    font-family: 'Bricolage Grotesque';
+    font-weight: 400;
 }

@@ -1,4 +1,6 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/assets/styles/abstract/functions.scss' as *;
 
 .section-hero {
     @include flex-center;
@@ -25,7 +27,7 @@ width: 100%;
     align-items: flex-end;
     justify-content: space-between;
     width: $width-headline;
-    padding-top: $padding-hero-top;
+    padding-top: clamp-px(72, 104, 1400, 600);
     gap: clamp-px(24, 60, 700, 900);
 
     > div {
