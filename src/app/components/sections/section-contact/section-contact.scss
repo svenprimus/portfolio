@@ -40,7 +40,7 @@
     }
 
     .section-contact-form {
-        padding-top: 144px;
+        padding-top: clamp-px(128, 144, 1050, 1400);
 
         @for $i from 0 through 2 {
             &:has(.contact-input-wrapper-#{$i + 1}:hover) {
@@ -53,7 +53,7 @@
                         color: $color-high-3;
                     }
                     border-bottom: 1px solid $color-high-2;
-                    
+
                     @if ($i + 1) == 1 {
                         border-top: 1px solid $color-high-2;
                     }
@@ -200,4 +200,38 @@
     position: absolute;
     right: 0;
     top: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .section-contact-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .section-contact-form {
+            padding-top: 40px;
+        }
+    }
+
+    .section-contact-content-column {
+        width: 100%;
+    }
+
+    .contact-img-mobile {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .contact-img-desktop {
+        display: none;
+    }
+
+    .section-contact-send {
+        justify-content: space-between;
+    }
+
+    .contact-arrow {
+        align-self: center;
+        width: clamp-px(80, 152, 400, 300);
+    }
 }
