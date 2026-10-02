@@ -14,10 +14,8 @@
     width: 100%;
 
     &__content {
-        padding-top: $height-header;
         @include flex-column;
-        width: $width-headline;
-width: 100%;
+        width: 100%;
         gap: clamp-px(16, 24, 700, 900);
     }
 }
@@ -27,7 +25,6 @@ width: 100%;
     align-items: flex-end;
     justify-content: space-between;
     width: $width-headline;
-    padding-top: clamp-px(72, 104, 1400, 600);
     gap: clamp-px(24, 60, 700, 900);
 
     > div {
