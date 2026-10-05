@@ -1,5 +1,5 @@
-@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
-@use '../../../../../public/assets/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/mixin.scss' as *;
 
 .profile-figure {
     @include flex-column-top;

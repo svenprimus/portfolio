@@ -1,4 +1,5 @@
-@use '../../../../../public/assets/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/mixin.scss' as *;
 
 .nav-list {
     width: 100%;
