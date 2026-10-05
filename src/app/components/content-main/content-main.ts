@@ -6,6 +6,7 @@ import { SectionProjects } from '../sections/section-projects/section-projects';
 import { SectionTestimonials } from '../sections/section-testimonials/section-testimonials';
 import { SectionContact } from '../sections/section-contact/section-contact';
 import { DarkService } from '../../services/dark_service';
+import { HeaderService } from '../../services/header_service';
 
 @Component({
     imports: [SectionHero, SectionAbout, SectionSkills, SectionProjects, SectionTestimonials, SectionContact],
@@ -15,8 +16,10 @@ import { DarkService } from '../../services/dark_service';
 })
 export class ContentMain {
     darkService = inject(DarkService);
+    headerService = inject(HeaderService);
 
-    ngOnInit(){
+    ngOnInit() {
         this.darkService.setDarkRequired(false);
+        this.headerService.showSocialsOnDesktop(true);
     }
 }

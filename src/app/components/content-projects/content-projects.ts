@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Button } from '../elements/button/button';
 import { DarkService } from '../../services/dark_service';
+import { HeaderService } from '../../services/header_service';
 
 @Component({
     imports: [RouterLink, Button],
@@ -13,6 +14,7 @@ export class ContentProjects {
     private route = inject(ActivatedRoute);
     projectStr: string | null;
     darkService = inject(DarkService);
+    headerService = inject(HeaderService);
 
     constructor() {
         this.projectStr = this.route.snapshot.paramMap.get('name');
@@ -20,5 +22,6 @@ export class ContentProjects {
 
     ngOnInit() {
         this.darkService.setDarkRequired(true);
+        this.headerService.showSocialsOnDesktop(false);
     }
 }

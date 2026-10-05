@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { Socials } from '../elements/socials/socials';
 import { Logo } from '../elements/logo/logo';
 import { HeaderList } from '../elements/header-list/header-list';
+import { HeaderService } from '../../services/header_service';
 
 @Component({
     imports: [Socials, Logo, HeaderList],
@@ -11,6 +12,7 @@ import { HeaderList } from '../elements/header-list/header-list';
     templateUrl: './header.html',
 })
 export class Header {
+    headerService = inject(HeaderService);
     opacity: number = 1.0;
     pointerEvents: string = 'all';
     lastY: number | null = null;
