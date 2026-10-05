@@ -16,7 +16,7 @@ img {
 
 figure {
     @include flex-column;
-    @include light-shader;
+    @include light-text-shader;
 
     gap: 4px;
     width: $width-skills-box-item;

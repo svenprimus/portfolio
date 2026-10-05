@@ -55,3 +55,8 @@
     max-height: $height-preview;
     border-radius: 20px;
 }
+
+.project-nav-btn > label {
+    color: $color-base-light;
+    mix-blend-mode: difference;
+}

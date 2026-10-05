@@ -21,6 +21,10 @@
     }
 }
 
+.nav-option {
+    @include medium-text-shader;
+}
+
 .nav-about,
 .nav-projects {
     width: 105px;

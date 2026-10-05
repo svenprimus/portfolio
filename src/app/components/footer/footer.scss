@@ -61,6 +61,7 @@
     p {
         font-weight: $font-weight-nav;
         line-height: $font-height-nav;
+        @include medium-text-shader;
     }
 
     @include media-sm {
@@ -111,6 +112,7 @@
 
     a {
         @include flex-end;
+        @include medium-text-shader;
         align-items: flex-center;
         font-weight: 500;
         width: fit-content;
