@@ -1,4 +1,5 @@
-@use '../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../public/styles/abstract/mixin.scss' as *;
 
 .section-header {
     @include content-limit-1440p(16, 72);
@@ -10,7 +11,7 @@
 
 .socials-desktop {
     position: absolute;
-    top: calc(100svh - 100px);
+    top: 85svh;
     transform: translateY(-100%);
 }
 

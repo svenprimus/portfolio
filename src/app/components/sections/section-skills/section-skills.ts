@@ -1,7 +1,8 @@
 import { Component, signal } from '@angular/core';
+import { Skill } from '../../elements/skill/skill';
 
 @Component({
-    imports: [],
+    imports: [Skill],
     selector: 'app-section-skills',
     styleUrl: './section-skills.scss',
     templateUrl: './section-skills.html',

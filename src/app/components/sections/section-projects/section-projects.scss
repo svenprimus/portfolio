@@ -1,4 +1,6 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/styles/abstract/functions.scss' as *;
 
 .section-projects {
     @include content-limit-1440p(16, 120);
@@ -51,7 +53,7 @@
 
         > img {
             position: absolute;
-            width: $width-preview-underline;
+            width: clamp-px(162, 260, 1400, 300);
             bottom: 0;
             transform: translateY(100%);
             z-index: 1;

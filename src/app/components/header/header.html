@@ -12,7 +12,12 @@
             <img src="./assets/icons/misc/menu-push.svg" alt="menu button pushed" />
         </button>
     </nav>
-    <app-socials class="socials-desktop" [flexDir]="'column'" [bgColor]="bg"></app-socials>
+    <app-socials
+        [class.d-none]="!headerService.showSocialsDesktop()"
+        class="socials-desktop"
+        [flexDir]="'column'"
+        [bgColor]="bg"
+    ></app-socials>
 </header>
 
 <header [class]="classListNavMobile">

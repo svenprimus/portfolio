@@ -1,4 +1,6 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/mixin.scss' as *;
+@use '../../../../../public/styles/abstract/functions.scss' as *;
 
 .section-testimonials {
     @include content-limit-1440p(16, 120);
@@ -34,7 +36,7 @@
     @include flex-center;
 
     width: 100%;
-    height: $height-testimonial-largest;
+    height: 500px;
     min-height: 320px;
     position: relative;
 

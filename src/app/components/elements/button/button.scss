@@ -1,4 +1,4 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/styles/all_styles.scss' as *;
 
 .btn3d {
     width: auto;
@@ -7,8 +7,8 @@
     border-radius: $radius-btn;
     font-family: 'Bricolage Grotesque';
     font-size: $font-size-btn;
-    font-weight: $font-weight-btn;
-    line-height: $font-height-btn;
+    font-weight: 500;
+    line-height: 120%;
 }
 
 .btn3d {

@@ -1,0 +1,62 @@
+@use '../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../public/styles/abstract/mixin.scss' as *;
+@use '../../../../public/styles/abstract/functions.scss' as *;
+
+.section-project {
+    @include flex-column;
+    @include content-limit-1440p(16, 120);
+    justify-content: space-between;
+    background-color: $color-dark-bg;
+    background-image: url('../../../../public/assets/design/01_backgrounds/04_project.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    min-height: 100svh;
+}
+
+.section-project-content-wrapper {
+    @include flex-center;
+    justify-content: space-between;
+}
+
+.section-project-summary,
+.section-project-preview {
+    @include flex-column-start;
+    width: 100%;
+    height: 100%;
+}
+
+.top-project-nav-wrapper {
+    @include flex-start;
+    width: 100%;
+    margin-top: calc($height-header + 48px);
+}
+
+.bot-project-nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $height-footer;
+}
+
+.project-nav-arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.section-project-links {
+    @include flex-end;
+    width: 100%;
+}
+
+.section-project-preview-img {
+    width: $width-preview;
+    max-height: $height-preview;
+    border-radius: 20px;
+}
+
+.project-nav-btn > label {
+    color: $color-base-light;
+    mix-blend-mode: difference;
+}

@@ -1,0 +1,60 @@
+<section class="section-project">
+    <button [routerLink]="['']" class="top-project-nav-wrapper">
+        <img
+            class="project-nav-arrow"
+            id="project-arrow-back"
+            src="./assets/design/00_hand-drawn-lines/03_portfolio/arrow-left.webp"
+            alt="arrow back"
+        />
+        <label for="project-arrow-back"><b>Go Back</b></label>
+    </button>
+    <article class="section-project-content-wrapper">
+        <section class="section-project-summary">
+            <h2>{{ projectStr }}</h2>
+            <h3>Description</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque distinctio quas natus repellendus,
+                assumenda totam minima laborum enim ipsa voluptates.
+            </p>
+            <h3>Implementation Details</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim
+                recusandae nobis. Optio amet quasi odit ipsa cumque rem corporis consectetur repudiandae itaque dolores
+                autem sit, vel quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus
+                reiciendis accusantium? Repellendus minima, provident facilis explicabo unde dolorem voluptate quidem!
+            </p>
+            <p><b>Duration:</b> 5 weeks</p>
+        </section>
+        <section class="section-project-preview">
+            <img
+                class="section-project-preview-img"
+                src="./assets/img/preview-pollo-loco.webp"
+                alt="preview of {{ projectStr }}"
+            />
+            <nav class="section-project-links">
+                <app-button [isDark]="false">GitHub</app-button>
+                <app-button [isDark]="false">Live Test</app-button>
+            </nav>
+        </section>
+    </article>
+    <nav class="bot-project-nav-wrapper">
+        <button class="project-nav-btn">
+            <img
+                class="project-nav-arrow"
+                id="project-arrow-left"
+                src="./assets/design/00_hand-drawn-lines/03_portfolio/arrow-left.webp"
+                alt="arrow left"
+            />
+            <label for="project-arrow-left"><b>Previous Project</b></label>
+        </button>
+        <button class="project-nav-btn">
+            <label for="project-arrow-right"><b>Next Project</b></label>
+            <img
+                class="project-nav-arrow"
+                id="project-arrow-right"
+                src="./assets/design/00_hand-drawn-lines/03_portfolio/arrow-right.webp"
+                alt="arrow right"
+            />
+        </button>
+    </nav>
+</section>

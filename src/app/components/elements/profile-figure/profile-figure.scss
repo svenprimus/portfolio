@@ -1,4 +1,5 @@
-@use '../../../../../public/assets/styles/all_styles.scss' as *;
+@use '../../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../../public/styles/abstract/mixin.scss' as *;
 
 .profile-figure {
     @include flex-column-top;
@@ -46,8 +47,8 @@
 
         figcaption {
             font-family: 'Kalam';
-            font-size: $font-size-fig;
-            font-weight: $font-weight-fig;
+            font-size: 24px;
+            font-weight: 700;
             line-height: $font-height-fig;
             color: $color-base-dark;
             transition: all 150ms ease-in-out;
