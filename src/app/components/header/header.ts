@@ -2,7 +2,7 @@ import { Component,inject } from '@angular/core';
 import { Socials } from '../elements/socials/socials';
 import { Logo } from '../elements/logo/logo';
 import { HeaderList } from '../elements/header-list/header-list';
-import { HeaderService } from '../../services/header_service';
+import { HeaderService } from '../../services/header-service';
 
 @Component({
     imports: [Socials, Logo, HeaderList],

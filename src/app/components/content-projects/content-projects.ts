@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Button } from '../elements/button/button';
-import { DarkService } from '../../services/dark_service';
-import { HeaderService } from '../../services/header_service';
+import { DarkService } from '../../services/dark-service';
+import { HeaderService } from '../../services/header-service';
 
 @Component({
     imports: [RouterLink, Button],

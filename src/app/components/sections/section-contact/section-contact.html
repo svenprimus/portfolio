@@ -19,18 +19,41 @@
                 aria-hidden="true"
             />
         </section>
-        <form class="section-contact-content-column section-contact-form">
+        <form
+            [formGroup]="contactForm"
+            (ngSubmit)="formSubmit()"
+            class="section-contact-content-column section-contact-form"
+        >
             <div class="contact-input-wrapper contact-input-wrapper-1">
                 <label for="contact-name">What's yor name?</label>
-                <input type="text" id="contact-name" />
+                <input
+                    type="text"
+                    id="contact-name"
+                    formControlName="name"
+                    (focus)="onInputFocus('name')"
+                    (blur)="onNameBlur()"
+                    [class.form-error]="this.isError.name"
+                />
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-2">
                 <label for="contact-mail">What's yor email?</label>
-                <input type="text" id="contact-mail" />
+                <input
+                    type="text"
+                    id="contact-mail"
+                    formControlName="mail"
+                    (focus)="onInputFocus('mail')"
+                    [class.form-error]="contactForm.get('mail')?.invalid"
+                />
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-3">
                 <label for="contact-msg">How can I help you?</label>
-                <input type="text" id="contact-msg" />
+                <input
+                    type="text"
+                    id="contact-msg"
+                    formControlName="msg"
+                    (focus)="onInputFocus('msg')"
+                    [class.form-error]="contactForm.get('msg')?.invalid"
+                />
             </div>
             <div class="privacy-policy-check">
                 <div class="privacy-policy-check-wrapper">

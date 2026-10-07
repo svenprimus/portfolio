@@ -5,8 +5,8 @@ import { SectionSkills } from '../sections/section-skills/section-skills';
 import { SectionProjects } from '../sections/section-projects/section-projects';
 import { SectionTestimonials } from '../sections/section-testimonials/section-testimonials';
 import { SectionContact } from '../sections/section-contact/section-contact';
-import { DarkService } from '../../services/dark_service';
-import { HeaderService } from '../../services/header_service';
+import { DarkService } from '../../services/dark-service';
+import { HeaderService } from '../../services/header-service';
 
 @Component({
     imports: [SectionHero, SectionAbout, SectionSkills, SectionProjects, SectionTestimonials, SectionContact],
