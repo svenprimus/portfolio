@@ -56,7 +56,12 @@
     border-radius: 20px;
 }
 
-.project-nav-btn > label {
+label {
     color: $color-base-light;
     mix-blend-mode: difference;
+    font-family: 'Bricolage Grotesque';
+    font-weight: 500;
+    font-size: 18px;
+    outline: none;
+    text-shadow: none;
 }
