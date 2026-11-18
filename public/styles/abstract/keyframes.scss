@@ -109,6 +109,15 @@
     }
 }
 
+@keyframes hoverunzoom {
+    0% {
+        transform: translateY(30px) scale(1.35);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @keyframes draw-line {
     20% {
         clip-path: inset(0 100% 0 0);

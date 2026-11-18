@@ -97,7 +97,7 @@
         .project-preview-highlight {
             object-fit: contain;
             transform: scale(1.2);
-            animation: levitate 2s infinite alternate;
+            animation: hoverunzoom 250ms forwards, levitate 2s infinite 250ms alternate;
         }
 
         .highlight-sticker {
