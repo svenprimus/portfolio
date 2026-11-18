@@ -11,7 +11,9 @@ img {
     width: $size-skills;
     height: $size-skills;
     filter: grayscale(100%);
-    transition: all 50ms ease-in;
+    &:not(:hover) {
+        animation: skillunhover 1000ms ease-in forwards;
+    }
 }
 
 figure {
@@ -24,7 +26,37 @@ figure {
 
 figure:hover {
     img {
+        animation: skillhover 1000ms ease-in forwards;
+    }
+}
+
+@keyframes skillhover {
+    0% {
+        transform: scale(1);
+        filter: grayscale(100%);
+    }
+    5% {
+        transform: scale(0.85);
+    }
+    50% {
         filter: grayscale(0);
+    }
+    100% {
         transform: scale(0.78);
+        filter: grayscale(0);
+    }
+}
+
+@keyframes skillunhover {
+    0% {
+        transform: scale(0.78);
+        filter: grayscale(0);
+    }
+    50% {
+        filter: grayscale(0);
+    }
+    100% {
+        transform: scale(1);
+        filter: grayscale(100%);
     }
 }

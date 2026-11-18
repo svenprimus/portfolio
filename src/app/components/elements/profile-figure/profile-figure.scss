@@ -2,20 +2,19 @@
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 
 .profile-figure {
-    @include flex-column-top;
+    @include flex-column-start;
+    justify-content: flex-start;
 
     position: relative;
     width: $width-polaroid;
-    height: 244px;
+    min-width: $width-polaroid;
+    height: $height-polaroid;
+    min-height: $height-polaroid;
     transform: rotate(8deg);
 
-    img {
-        width: $width-polaroid;
-        max-height: 244px;
-        object-fit: contain;
-    }
-
     img:nth-child(1) {
+        max-width: $width-polaroid;
+        margin-top: 3px;
         filter: grayscale(100%);
         animation: color-unblend 800ms ease-in-out forwards;
 
@@ -34,6 +33,10 @@
     }
 
     img:nth-child(2) {
+        width: $width-polaroid;
+        min-width: $width-polaroid;
+        height: $height-polaroid;
+        min-height: $height-polaroid;
         position: absolute;
         pointer-events: none;
     }
@@ -42,7 +45,7 @@
         @include flex-center;
         position: absolute;
         width: $width-polaroid;
-        bottom: 18px;
+        bottom: 12px;
         gap: 10px;
 
         figcaption {

@@ -8,7 +8,7 @@
     a {
         @include flex-center;
         position: relative;
-        border: $size-btn-border solid $color-base-light;
+        outline: $size-btn-border solid $color-base-light;
         border-radius: 50%;
         width: $size-socials;
         height: $size-socials;
@@ -31,6 +31,13 @@
         }
     }
 
+    .background-helper {
+        position: absolute;
+        border-radius: 50%;
+        width: $size-socials;
+        height: $size-socials;
+    }
+
     .hoverable {
         position: absolute;
         border-radius: 50%;
@@ -39,7 +46,6 @@
         background: $color-high-2;
         transform-origin: bottom;
         transform: scaleX(0) scaleY(0);
-
         transition: all 200ms ease-in;
     }
 }

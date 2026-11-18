@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { DarkService } from '../../../services/dark_service';
+import { DarkService } from '../../../services/dark-service';
 
 @Component({
     imports: [],

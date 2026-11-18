@@ -1,4 +1,4 @@
-@use '../public/styles/all_styles.scss' as all;
+@use '../public/styles/all-styles.scss' as all;
 
 * {
     margin: 0;
@@ -73,6 +73,13 @@ button {
         -webkit-user-drag: none;
         user-select: none;
     }
+}
+
+img {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 a,
