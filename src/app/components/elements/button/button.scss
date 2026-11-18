@@ -18,11 +18,15 @@
 
 .btn3d:hover {
     background-color: $color-high-3;
+    transform: translate(2px, 4px);
+    box-shadow: none;
+
+
 }
 
 .btn3d:active {
-    box-shadow: none;
-    transform: translate(2px, 4px);
+    border: none;
+
 }
 
 .btnLight {

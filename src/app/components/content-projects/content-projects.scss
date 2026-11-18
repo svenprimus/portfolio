@@ -29,8 +29,13 @@
 
 .top-project-nav-wrapper {
     @include flex-start;
+    gap: 8px;
     width: 100%;
     margin-top: calc($height-header + 48px);
+}
+
+.project-nav-btn {
+    gap: 8px;
 }
 
 .bot-project-nav-wrapper {
@@ -43,6 +48,7 @@
 .project-nav-arrow {
     width: 24px;
     height: 24px;
+    transition: transform 100ms ease-in;
 }
 
 .section-project-links {
@@ -64,4 +70,28 @@ label {
     font-size: 18px;
     outline: none;
     text-shadow: none;
+}
+
+.left-hover:not(:disabled):hover {
+    label {
+        cursor: pointer;
+        color: $color-high-3;
+        mix-blend-mode: normal;
+    }
+
+    img {
+        transform: translateX(-5px);
+    }
+}
+
+.right-hover:not(:disabled):hover {
+    label {
+        cursor: pointer;
+        color: $color-high-3;
+        mix-blend-mode: normal;
+    }
+
+    img {
+        transform: translateX(5px);
+    }
 }
