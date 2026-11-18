@@ -21,5 +21,6 @@ export class ContentMain {
     ngOnInit() {
         this.darkService.setDarkRequired(false);
         this.headerService.showSocialsOnDesktop(true);
+        this.headerService.setFixed(true);
     }
 }

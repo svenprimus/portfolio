@@ -22,7 +22,7 @@
 }
 
 .nav-option {
-    @include medium-text-shader;
+    mix-blend-mode: difference;
 }
 
 .nav-about,

@@ -23,5 +23,6 @@ export class ContentProjects {
     ngOnInit() {
         this.darkService.setDarkRequired(true);
         this.headerService.showSocialsOnDesktop(false);
+        this.headerService.setFixed(false);
     }
 }

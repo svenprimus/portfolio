@@ -3,9 +3,13 @@
 
 .section-header {
     @include content-limit-1440p(16, 72);
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: $height-header;
+}
+
+.fixed {
+    position: fixed;
     z-index: 10;
 }
 
