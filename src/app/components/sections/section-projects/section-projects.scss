@@ -5,6 +5,7 @@
 .section-projects {
     @include content-limit-1440p(16, 120);
     @include flex-center;
+    position: relative;
 
     justify-content: space-between;
     flex-wrap: wrap;
@@ -35,6 +36,12 @@
     }
 
     gap: clamp-px(40, 88, 1400, 400) 0;
+}
+
+.section-anchor {
+    position: absolute;
+    user-select: none;
+    top: calc(0.5 * $padding-section-block);
 }
 
 .section-projects-headline {
@@ -97,7 +104,9 @@
         .project-preview-highlight {
             object-fit: contain;
             transform: scale(1.2);
-            animation: hoverunzoom 250ms forwards, levitate 2s infinite 250ms alternate;
+            animation:
+                hoverunzoom 250ms forwards,
+                levitate 2s infinite 250ms alternate;
         }
 
         .highlight-sticker {
