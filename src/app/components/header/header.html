@@ -3,6 +3,7 @@
     [style.opacity]="headerService.isFixed() ? opacity : '1'"
     [style.background-color]="headerService.isFixed() ? bg : 'transparent'"
     [style.pointer-events]="pointerEvents"
+    [style.backdrop-filter]="bg === 'transparent' ? 'none' : 'blur(5px)'"
     [class.fixed]="headerService.isFixed()"
 >
     <nav class="header-nav">
