@@ -41,6 +41,7 @@
 .section-anchor {
     position: absolute;
     user-select: none;
+    visibility: hidden;
     top: calc(0.5 * $padding-section-block);
 }
 
