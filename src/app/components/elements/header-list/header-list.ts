@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { Logo } from '../logo/logo';
+import { HeaderService } from '../../../services/header-service';
 
 @Component({
     imports: [Logo],
@@ -8,4 +9,5 @@ import { Logo } from '../logo/logo';
     templateUrl: './header-list.html',
 })
 export class HeaderList {
+    headerService = inject(HeaderService);
 }

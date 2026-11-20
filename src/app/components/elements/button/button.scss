@@ -1,5 +1,9 @@
 @use '../../../../../public/styles/all-styles.scss' as *;
 
+button {
+    white-space: nowrap;
+}
+
 .btn3d {
     width: auto;
     height: $height-btn;
@@ -20,25 +24,30 @@
     background-color: $color-high-3;
     transform: translate(2px, 4px);
     box-shadow: none;
-
-
 }
 
 .btn3d:active {
-    border: none;
-
+    border: $size-btn-border solid transparent;
 }
 
 .btnLight {
     color: $color-base-light;
     border: $size-btn-border solid $color-base-light;
-    border-color: $color-base-light;
     box-shadow: 2px 4px 0px 0px $color-base-light;
 }
 
 .btnDark {
     color: $color-base-dark;
     border: $size-btn-border solid $color-base-dark;
-    border-color: $color-base-dark;
     box-shadow: 2px 4px 0px 0px $color-base-dark;
+}
+
+.blend {
+    transition: transform 100ms ease-in;
+    @include blend;
+
+    &:hover {
+        @include unblend;
+        background-color: $color-high-3;
+    }
 }

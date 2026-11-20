@@ -6,11 +6,16 @@
     position: absolute;
     width: 100%;
     height: $height-header;
+
+    @media screen and (max-width: $media-query-sm) {
+        background-image: linear-gradient($color-base-dark-medium, transparent);
+    }
 }
 
 .fixed {
     position: fixed;
     z-index: 10;
+    background-image: none;
 }
 
 .socials-desktop {

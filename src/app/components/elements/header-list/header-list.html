@@ -1,4 +1,4 @@
-<ul class="nav-list">
+<ul class="nav-list" [class.extra-shader]="!headerService.isFixed()">
     <li>
         <app-logo class="logo-desktop"></app-logo>
     </li>
@@ -19,22 +19,22 @@
         <a class="nav-option" href="#section-contact">Contact </a>
     </li>
     <li class="lang-slider">
-        <button class="lang-hover-btn" disabled>
+        <button class="lang-hover-btn" >
             <img
                 class="lang-hover"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
                 aria-hidden="true"
             />
-            <label for="language">EN</label>
+            <label [class.label-shader]="!headerService.isFixed()" for="language">EN</label>
         </button>
         <input class="slider" id="language" name="language" type="range" min="0" max="1" value="0" />
-        <button class="lang-hover-btn">
+        <button class="lang-hover-btn" disabled>
             <img
                 class="lang-hover lang-hover--rotate"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
                 aria-hidden="true"
             />
-            <label for="language">DE</label>
+            <label [class.label-shader]="!headerService.isFixed()" for="language">DE</label>
         </button>
     </li>
 </ul>

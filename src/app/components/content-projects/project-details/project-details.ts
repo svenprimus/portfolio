@@ -11,10 +11,13 @@ import { Skill } from '../../elements/skill/skill';
 })
 export class ProjectDetails {
     private route = inject(ActivatedRoute);
-    projectStr: string | null;
+    projectStr: string | null = null;
+    underlineSrc: string = './assets/design/00_hand-drawn-lines/01_about-me/line.webp';
 
     constructor() {
         this.projectStr = this.route.snapshot.paramMap.get('name');
+        if (this.projectStr?.length && this.projectStr?.length <= 6) {
+            this.underlineSrc = this.underlineSrc.replace('line.webp', 'line-short.webp');
+        }
     }
-
 }

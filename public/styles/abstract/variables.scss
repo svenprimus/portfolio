@@ -2,6 +2,7 @@
 
 $color-base-light: #f8f9fa;
 $color-base-dark: #0e1013;
+$color-base-dark-medium: rgba(14, 16, 19, 0.5);
 $color-high-1: #bae011;
 $color-high-2: #7e4ae7;
 $color-high-2-light: #a380e9;
@@ -46,6 +47,7 @@ $width-polaroid: 200px;
 $width-headline: clamp-px(250, 865, 1400, 300);
 $width-testimon: clamp-px(250, 512, 1400, 350);
 $width-preview: clamp-px(253, 560, 1400, 300);
+$width-preview-details: clamp-px(253, 560, 1400, 680);
 $width-location: clamp-px(275, 560, 1400, 680);
 $width-skills-box-item: 96px;
 
@@ -58,7 +60,12 @@ $height-location: clamp-px(128, 152, 1400, 300);
 
 $radius-btn: 100px;
 
-$media-query-s: 400px;
-$media-query-sm: 600px;
+$media-raw-s: 400;
+$media-raw-sm: 600;
+$media-raw-m: 780;
+
+$media-query-s: $media-raw-s * 1px;
+$media-query-sm: $media-raw-sm * 1px;
+$media-query-m: $media-raw-m * 1px;
 
 $gap-skills-box-item: clamp-px(16, 40, 1400, 400);

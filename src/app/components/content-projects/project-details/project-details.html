@@ -1,7 +1,16 @@
 <!-- in that component use yet another service to fetch data by name -->
 <article class="section-project-content-wrapper">
     <section class="section-project-summary">
-        <h2>{{ projectStr }}</h2>
+        <header>
+            <h2>{{ projectStr }}</h2>
+            <img
+                class="underline"
+                [style.width]="projectStr?.length + 'ch'"
+                src="{{ underlineSrc }}"
+                aria-hidden="true"
+            />
+        </header>
+
         <div class="section-project-summary-description">
             <h3>Description</h3>
             <p>
@@ -12,14 +21,16 @@
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim
                 recusandae nobis. Optio amet quasi odit ipsa cumque rem corporis consectetur repudiandae itaque dolores
-                autem sit, vel quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus
-                reiciendis accusantium? Repellendus minima, provident facilis explicabo unde dolorem voluptate quidem!
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaafasss quibusdam debitis maxime delectus
-                obcaecati culpa distinctio laudantium repellendus reiciendis accusantium? Repellendus minima, provident
-                facilis explicabo unde dolorem voluptate quidem! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaa quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus reiciendis
-                accusantium? Repellendus minima, provident facilis explicabo unde dolorem voluptate quidem!
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaa
+                autem sit, vel quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus Lorem
+                ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim recusandae nobis.
+                Optio amet qua dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim
+                recusandae nobis. Optio amet qua dolor, sit amet consectetur adipisicing elit. Consectetur ipsum
+                voluptatum totam enim recusandae nobis. Optio amet qua dolor, sit amet consectetur adipisicing elit.
+                Consectetur ipsum voluptatum totam enim recusandae nobis. Optio amet qua dolor, sit amet consectetur
+                adipisicing elit. Consectetur ipsum voluptatum totam enim recusandae nobis. Optio amet qua dolor, sit
+                amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim recusandae nobis. Optio amet
+                qua1
             </p>
         </div>
         <div class="section-project-summary-details">
@@ -34,6 +45,7 @@
         </div>
     </section>
     <section class="section-project-preview">
+        <div class="placeholder"></div>
         <img
             class="section-project-preview-img"
             src="./assets/img/preview-pollo-loco.webp"
@@ -41,8 +53,8 @@
         />
         <img class="brand" src="./assets/design/03_stickers/00_round/sticker-brand-green.webp" alt="brand sticker" />
         <nav class="section-project-links">
-            <app-button [isDark]="false">GitHub</app-button>
-            <app-button [isDark]="false">Live Test</app-button>
+            <app-button [isDark]="false" [blend]="true">GitHub</app-button>
+            <app-button [isDark]="false" [blend]="true">Live Test</app-button>
         </nav>
     </section>
 </article>

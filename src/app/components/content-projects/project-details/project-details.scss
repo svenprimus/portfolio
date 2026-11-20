@@ -2,27 +2,37 @@
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 @use '../../../../../public/styles/abstract/functions.scss' as *;
 
+:host {
+    min-height: 0;
+    height: 100%;
+}
+
 .section-project-content-wrapper {
     @include flex-center;
     justify-content: space-between;
-    gap: clamp-px(25, 150, 1400, 800);
+    gap: clamp-px(25, 135, 1400, 800);
+    height: 100%;
 }
 
-// .section-project-summary {
-//     overflow-y: auto;
-//     scrollbar-gutter: stable;
-// }
+.section-project-summary-description {
+    @include scrollbar-light(4, 8);
+    overflow-y: auto;
+    padding-right: 5px;
+}
 
 .section-project-summary,
 .section-project-preview {
-    @include flex-column-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
     width: 100%;
     height: 100%;
 }
 
 .section-project-preview-img {
     anchor-name: --preview;
-    width: $width-preview;
+    width: $width-preview-details;
     max-height: $height-preview;
     border-radius: 20px;
 }
@@ -39,14 +49,26 @@
 .section-project-links {
     @include flex-end;
     width: 100%;
-    margin-top: clamp-px(32, 48);
     gap: 32px;
+}
+
+h2 {
+    width: fit-content;
+}
+
+.underline {
+    height: 20px;
+    font-size: $font-size-h2;
+
+    clip-path: inset(0 100% 0 0);
+    animation: draw-line 2000ms ease-out infinite alternate;
 }
 
 h2,
 h3,
 p {
     color: $color-base-dark;
+    @include blend;
 }
 
 h2,
@@ -63,9 +85,40 @@ h3 {
     margin-top: 1rem;
 }
 
+.section-project-summary-details > p {
+    margin-top: 0;
+}
+
 .section-project-summary-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding-block: 1rem;
+}
+
+@media screen and (max-width: $media-query-m) {
+    :host {
+        @include scrollbar-light;
+        overflow-y: auto;
+    }
+
+    .section-project-summary-description {
+        overflow-y: block;
+    }
+
+    .section-project-content-wrapper {
+        flex-direction: column;
+    }
+
+    .section-project-preview-img {
+        width: 100%;
+        max-height: none;
+    }
+
+    .brand {
+        position-area: right top;
+        transform: translateX(-110%) translateY(110%);
+        width: 15svw;
+        height: 15svw;
+    }
 }
