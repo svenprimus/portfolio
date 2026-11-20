@@ -31,7 +31,13 @@ export class Header {
         const bgOpacity = Math.max(0, Math.min(Math.round(255 * 0.85), Math.round((scroll / (2 * 80)) * 255)));
         this.bg.set(scroll < 10 ? 'transparent' : '#0e1013' + bgOpacity.toString(16));
         this.pointerEvents = this.opacity() < 0.2 ? 'none' : 'all';
-        this.lastScrollEvent = Date.now();
+        this.setLastScrollEvent();
+    }
+
+    fadeIn() {
+        this.bg.set('#0e1013d9');
+        this.opacity.set(1.0);
+        this.pointerEvents = 'all';
     }
 
     fadeAfterTimeout() {
@@ -39,9 +45,14 @@ export class Header {
             if (Date.now() - this.lastScrollEvent > 5000 && this.bg() !== 'transparent') {
                 this.bg.set('transparent');
                 this.opacity.set(0);
-                this.lastScrollEvent = Date.now();
+                this.pointerEvents = 'none';
+                this.setLastScrollEvent();
             }
         }, 5000);
+    }
+
+    setLastScrollEvent() {
+        this.lastScrollEvent = Date.now();
     }
 
     showMenu() {

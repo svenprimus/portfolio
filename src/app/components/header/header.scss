@@ -41,7 +41,7 @@
     transform: translateY(-100%);
     transition: transform 300ms ease-out;
 
-    @include flex-column-top;
+    display: none;
     @include content-limit-1440p(16, 72);
     width: 100%;
     height: 656px;
@@ -69,6 +69,7 @@
 
 .dropdown {
     transform: translateY(0);
+    display: none;
 }
 
 .header-list-mobile,
@@ -112,5 +113,13 @@
     .socials-desktop,
     .header-list {
         display: none;
+    }
+
+    .header-nav-mobile {
+        @include flex-column-top;
+    }
+
+    .dropdown {
+        display: flex;
     }
 }

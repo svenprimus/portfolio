@@ -2,9 +2,10 @@
     class="section-header"
     [style.opacity]="headerService.isFixed() ? opacity() : '1'"
     [style.background-color]="headerService.isFixed() ? bg() : 'transparent'"
-    [style.pointer-events]="pointerEvents"
     [style.backdrop-filter]="!headerService.isFixed() || bg() === 'transparent' ? 'none' : 'blur(5px)'"
     [class.fixed]="headerService.isFixed()"
+    (mouseover)="fadeIn(); setLastScrollEvent()"
+    (mouseout)="fadeAfterTimeout()"
 >
     <nav class="header-nav">
         <app-logo class="logo-mobile"></app-logo>
@@ -19,6 +20,7 @@
         class="socials-desktop"
         [flexDir]="'column'"
         [bgColor]="bg()"
+        [style.pointer-events]="pointerEvents"
     ></app-socials>
 </header>
 
