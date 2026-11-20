@@ -85,6 +85,8 @@
 
         > img {
             width: clamp-px(189, 303, 1400, 300);
+            clip-path: inset(0 100% 0 0);
+            animation: draw-line 2000ms ease-out infinite alternate;
         }
 
         .btn-right {
