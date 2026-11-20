@@ -1,4 +1,4 @@
 <figure [class.big]="!isSmall()" [class.small]="isSmall()">
     <img src="{{ src() }}" alt="{{ alt() }}" />
-    <figcaption><ng-content></ng-content></figcaption>
+    <figcaption>{{ label() }}</figcaption>
 </figure>
