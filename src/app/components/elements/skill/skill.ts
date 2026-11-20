@@ -8,6 +8,7 @@ import { Component, computed, input } from '@angular/core';
 })
 export class Skill {
     readonly skillStr = input.required<string>();
+    readonly isSmall = input<boolean>(false);
 
     src = computed(() => {
         return this.srcMap.get(this.skillStr())?.src;

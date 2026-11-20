@@ -1,32 +1,49 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 
-figcaption {
-    font-size: 18px;
-    line-height: 120%;
-    text-align: center;
-}
-
-img {
-    width: $size-skills;
-    height: $size-skills;
-    filter: grayscale(100%);
-    &:not(:hover) {
-        animation: skillunhover 1000ms ease-in forwards;
-    }
-}
-
-figure {
+.big {
     @include flex-column;
     @include light-text-shader;
 
     gap: 4px;
     width: $width-skills-box-item;
+
+    &:hover {
+        img {
+            animation: skillhover 1000ms ease-in forwards;
+        }
+    }
+
+    figcaption {
+        font-size: 18px;
+        line-height: 120%;
+        text-align: center;
+    }
+
+    img {
+        width: $size-skills;
+        height: $size-skills;
+        filter: grayscale(100%);
+        &:not(:hover) {
+            animation: skillunhover 1000ms ease-in forwards;
+        }
+    }
 }
 
-figure:hover {
+.small {
+    @include flex-start;
+
+    figcaption {
+        font-size: 16px;
+        line-height: 120%;
+        color: $color-base-dark;
+    }
+
     img {
-        animation: skillhover 1000ms ease-in forwards;
+        width: $size-skills-small;
+        height: $size-skills-small;
+        margin-right: 5px;
+        @include light-shader;
     }
 }
 
