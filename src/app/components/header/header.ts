@@ -3,6 +3,7 @@ import { Socials } from '../elements/socials/socials';
 import { Logo } from '../elements/logo/logo';
 import { HeaderList } from '../elements/header-list/header-list';
 import { HeaderService } from '../../services/header-service';
+import { DarkService } from '../../services/dark-service';
 
 @Component({
     imports: [Socials, Logo, HeaderList],
@@ -13,6 +14,7 @@ import { HeaderService } from '../../services/header-service';
 })
 export class Header {
     headerService = inject(HeaderService);
+    darkService = inject(DarkService);
     opacity = signal<number>(1.0);
     bg = signal<string>('transparent');
     pointerEvents: string = 'all';
