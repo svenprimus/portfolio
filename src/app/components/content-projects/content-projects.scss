@@ -4,6 +4,7 @@
 
 .section-project {
     @include flex-column;
+    justify-content: space-between;
     gap: clamph-px(16, 40, 1000, 780);
     background-color: $color-dark-bg;
     background-image: url('../../../../public/assets/design/01_backgrounds/04_project.webp');
@@ -36,7 +37,7 @@ app-project-details {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: calc($height-header + clamph-px(-40, 48, 800, 600));
+    margin-bottom: calc($height-header + clamph-px(-40, 48, 1000, 780));
     flex-shrink: 0;
 }
 
@@ -85,6 +86,16 @@ label {
 }
 
 @media screen and (max-width: $media-query-m) {
+    app-project-details,
+    .top-project-nav-wrapper,
+    .bot-project-nav-wrapper {
+        @include content-limit-1440p(16, 72);
+    }
+
+    .bot-project-nav-wrapper {
+        margin-bottom: 32px;
+    }
+
     .section-project {
         // height: auto;
         background-image: url('../../../../public/assets/design/01_backgrounds/04_project-rotated.webp');

@@ -50,6 +50,7 @@
     @include flex-end;
     width: 100%;
     gap: 32px;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -103,11 +104,12 @@ h3 {
     }
 
     .section-project-summary-description {
-        overflow-y: block;
+        overflow-y: visible;
     }
 
     .section-project-content-wrapper {
         flex-direction: column;
+        height: fit-content;
     }
 
     .section-project-preview-img {
@@ -116,9 +118,6 @@ h3 {
     }
 
     .brand {
-        position-area: right top;
-        transform: translateX(-110%) translateY(110%);
-        width: 15svw;
-        height: 15svw;
+        display: none;
     }
 }
