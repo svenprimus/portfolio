@@ -6,6 +6,9 @@
     position: absolute;
     width: 100%;
     height: $height-header;
+    transition:
+        opacity $delay-header-fadeout ease-in-out,
+        background-color $delay-header-fadeout ease-in-out;
 
     @media screen and (max-width: $media-query-sm) {
         background-image: linear-gradient($color-base-dark-medium, transparent);

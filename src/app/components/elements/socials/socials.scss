@@ -36,6 +36,7 @@
         border-radius: 50%;
         width: $size-socials;
         height: $size-socials;
+        transition: all $delay-header-fadeout ease-in-out;
     }
 
     .hoverable {

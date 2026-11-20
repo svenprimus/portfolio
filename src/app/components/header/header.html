@@ -1,9 +1,9 @@
 <header
     class="section-header"
-    [style.opacity]="headerService.isFixed() ? opacity : '1'"
-    [style.background-color]="headerService.isFixed() ? bg : 'transparent'"
+    [style.opacity]="headerService.isFixed() ? opacity() : '1'"
+    [style.background-color]="headerService.isFixed() ? bg() : 'transparent'"
     [style.pointer-events]="pointerEvents"
-    [style.backdrop-filter]="!headerService.isFixed() || bg === 'transparent' ? 'none' : 'blur(5px)'"
+    [style.backdrop-filter]="!headerService.isFixed() || bg() === 'transparent' ? 'none' : 'blur(5px)'"
     [class.fixed]="headerService.isFixed()"
 >
     <nav class="header-nav">
@@ -18,7 +18,7 @@
         [class.d-none]="!headerService.showSocialsDesktop()"
         class="socials-desktop"
         [flexDir]="'column'"
-        [bgColor]="bg"
+        [bgColor]="bg()"
     ></app-socials>
 </header>
 
@@ -33,6 +33,6 @@
 
     <nav>
         <app-header-list class="header-list-mobile"></app-header-list>
-        <app-socials class="socials-mobile" [flexDir]="'row'" [bgColor]="bg"></app-socials>
+        <app-socials class="socials-mobile" [flexDir]="'row'" [bgColor]="bg()"></app-socials>
     </nav>
 </header>
