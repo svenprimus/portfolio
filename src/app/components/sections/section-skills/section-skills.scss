@@ -30,8 +30,9 @@
 
         > img {
             position: absolute;
-            width: clamp-px(153, 245, 1400, 300);
+            width: clamp-px(153, 245, 1400, 680);
             bottom: 0;
+            left: 0;
             transform: translateY(3%) scalex(-1);
             z-index: 1;
 
@@ -43,7 +44,6 @@
             display: flex;
             align-items: flex-end;
             z-index: 2;
-            height: clamp-px(58, 80, 1400, 400);
         }
     }
 
@@ -54,9 +54,8 @@
         max-width: clamp-px(600, 656, 1400, 400);
 
         > p {
-            @include flex-center;
             color: $color-base-dark;
-            padding: 40px clamp-px(16, 32, 1400, 400);
+            padding: 48px clamp-px(24, 32, 1400, 400);
             z-index: 2;
         }
 
@@ -76,7 +75,7 @@
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    gap: 54px;
+    gap: clamp-px(40, 54);
 
     @include media-s {
         align-items: center;
@@ -119,10 +118,6 @@
         min-height: $size-peel-sticker;
         overflow: hidden;
         border-radius: 15px;
-
-        @include media-s {
-            transform: translateY(0);
-        }
 
         .peel-layer-1,
         .peel-layer-2,
@@ -209,9 +204,11 @@
             align-items: flex-end;
         }
     }
+
     .skills-content {
         flex-direction: column;
         align-items: flex-end;
+
         .peel-wrapper {
             transform: translateY(-70%);
         }
@@ -219,5 +216,19 @@
         .skills-column-wrapper {
             justify-content: center;
         }
+    }
+}
+
+@include media-s {
+    .skills-content {
+        .peel-wrapper {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .section-skills-intro > div > p {
+        padding-block: 70px;
     }
 }

@@ -4,16 +4,11 @@
 
 .section-projects {
     @include content-limit-1440p(16, 120);
-    @include flex-center;
     position: relative;
 
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    @include media-sm {
-        justify-content: center;
-    }
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($width-preview, 1fr));
+    gap: clamp-px(40, 60, 1440, 1100);
     padding-block: $padding-section-block;
     width: 100%;
     height: 100%;
@@ -34,8 +29,6 @@
         margin-top: clamp-px(22, 32, 1400, 400);
         margin-bottom: 16px;
     }
-
-    gap: clamp-px(40, 88, 1400, 400) 0;
 }
 
 .section-anchor {
@@ -48,16 +41,11 @@
 .section-projects-headline {
     @include flex-column-start;
     gap: clamp-px(56, 72, 1400, 400);
-    width: $width-preview;
 
     > header {
         @include flex-column-start;
         gap: 8px;
         position: relative;
-
-        @include media-sm {
-            align-items: flex-end;
-        }
 
         > img {
             position: absolute;
@@ -75,25 +63,26 @@
             display: flex;
             align-items: flex-end;
             z-index: 2;
-            height: clamp-px(58, 80, 1400, 400);
         }
     }
 }
 
 .project-preview {
-    width: $width-preview;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
     .project-preview-img-wrapper {
         height: $height-preview;
         position: relative;
         border-radius: 20px;
-
+        align-self: center;
         overflow: hidden;
 
         .project-preview-highlight,
         .project-preview-img {
-            width: $width-preview;
-            height: $height-preview;
+            width: 100%;
+            height: 100%;
             border-radius: 20px;
             transition: all 250ms ease-out;
         }
@@ -113,7 +102,7 @@
         .highlight-sticker {
             position: absolute;
             left: 0;
-            bottom: 60px;
+            bottom: clamp-px(0, 60);
             width: $size-sticker;
             height: $size-sticker;
             z-index: 2;
@@ -153,6 +142,27 @@
             z-index: 4;
             opacity: 0;
             transition: all 250ms ease-out;
+        }
+    }
+
+    .btn-details-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $media-query-m) {
+    .project-preview {
+        .project-preview-img-wrapper > .btn-details {
+            display: none;
+        }
+
+        p {
+            margin-bottom: 32px;
+        }
+
+        .btn-details-mobile {
+            display: flex;
+            align-self: flex-end;
         }
     }
 }

@@ -31,6 +31,9 @@
             Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign
             users and categories.
         </p>
+        <app-button [routerLink]="['projects', 'join']" [isDark]="true" class="btn-details-mobile"
+            >Project details</app-button
+        >
     </section>
     <section class="project-preview">
         <button [routerLink]="['projects', 'el-pollo-loco']" class="project-preview-img-wrapper">
@@ -46,5 +49,8 @@
             Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to
             fight against the crazy hen.
         </p>
+        <app-button [routerLink]="['projects', 'el-pollo-loco']" [isDark]="true" class="btn-details-mobile"
+            >Project details</app-button
+        >
     </section>
 </article>
