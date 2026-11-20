@@ -1,24 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Button } from '../elements/button/button';
+import { RouterLink } from '@angular/router';
 import { DarkService } from '../../services/dark-service';
 import { HeaderService } from '../../services/header-service';
+import { ProjectDetails } from './project-details/project-details';
 
 @Component({
-    imports: [RouterLink, Button],
+    imports: [RouterLink, ProjectDetails],
     selector: 'app-content-projects',
     styleUrl: './content-projects.scss',
     templateUrl: './content-projects.html',
 })
 export class ContentProjects {
-    private route = inject(ActivatedRoute);
-    projectStr: string | null;
     darkService = inject(DarkService);
     headerService = inject(HeaderService);
-
-    constructor() {
-        this.projectStr = this.route.snapshot.paramMap.get('name');
-    }
 
     ngOnInit() {
         this.darkService.setDarkRequired(true);

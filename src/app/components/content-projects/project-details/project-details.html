@@ -1,0 +1,48 @@
+<!-- in that component use yet another service to fetch data by name -->
+<article class="section-project-content-wrapper">
+    <section class="section-project-summary">
+        <h2>{{ projectStr }}</h2>
+        <div class="section-project-summary-description">
+            <h3>Description</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque distinctio quas natus repellendus,
+                assumenda totam minima laborum enim ipsa voluptates.
+            </p>
+            <h3>Implementation Details</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum voluptatum totam enim
+                recusandae nobis. Optio amet quasi odit ipsa cumque rem corporis consectetur repudiandae itaque dolores
+                autem sit, vel quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus
+                reiciendis accusantium? Repellendus minima, provident facilis explicabo unde dolorem voluptate quidem!
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaafasss quibusdam debitis maxime delectus
+                obcaecati culpa distinctio laudantium repellendus reiciendis accusantium? Repellendus minima, provident
+                facilis explicabo unde dolorem voluptate quidem! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaa quibusdam debitis maxime delectus obcaecati culpa distinctio laudantium repellendus reiciendis
+                accusantium? Repellendus minima, provident facilis explicabo unde dolorem voluptate quidem!
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaa
+            </p>
+        </div>
+        <div class="section-project-summary-details">
+            <p><b>Duration:</b> 5 weeks</p>
+            <div class="section-project-summary-tech">
+                <app-skill [isSmall]="true" [skillStr]="'css'"></app-skill>
+                <app-skill [isSmall]="true" [skillStr]="'html'"></app-skill>
+                <app-skill [isSmall]="true" [skillStr]="'ts'"></app-skill>
+                <app-skill [isSmall]="true" [skillStr]="'angular'"></app-skill>
+                <app-skill [isSmall]="true" [skillStr]="'supabase'"></app-skill>
+            </div>
+        </div>
+    </section>
+    <section class="section-project-preview">
+        <img
+            class="section-project-preview-img"
+            src="./assets/img/preview-pollo-loco.webp"
+            alt="preview of {{ projectStr }}"
+        />
+        <img class="brand" src="./assets/design/03_stickers/00_round/sticker-brand-green.webp" alt="brand sticker" />
+        <nav class="section-project-links">
+            <app-button [isDark]="false">GitHub</app-button>
+            <app-button [isDark]="false">Live Test</app-button>
+        </nav>
+    </section>
+</article>
