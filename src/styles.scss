@@ -95,12 +95,6 @@ a {
     line-height: all.$font-height-nav;
 }
 
-ul,
-li {
-    @include all.flex-center;
-    list-style-type: none;
-}
-
 .d-none {
     display: none !important;
 }

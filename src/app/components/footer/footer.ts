@@ -1,15 +1,22 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { Logo } from '../elements/logo/logo';
-import { isActive, Router } from '@angular/router';
+import { isActive, Router, RouterLink } from '@angular/router';
+import { DarkService } from '../../services/dark-service';
 
 @Component({
-    imports: [Logo],
+    imports: [Logo, RouterLink],
     selector: 'app-footer',
     styleUrl: './footer.scss',
     templateUrl: './footer.html',
 })
 export class Footer {
     private router = inject(Router);
+    readonly darkService = inject(DarkService);
+
+    colorMode = computed(() => {
+        return this.darkService.footerDark() ? '#0e1013' : '#f8f9fa';
+    });
+
     isProjectPageActive = isActive('/projects', this.router, {
         paths: 'subset',
         queryParams: 'ignored',

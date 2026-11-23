@@ -137,6 +137,12 @@
     cursor: pointer;
 }
 
+ul,
+li {
+    @include flex-center;
+    list-style-type: none;
+}
+
 @media screen and (max-width: $media-query-sm) {
     .nav-list {
         gap: 42px;
