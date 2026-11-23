@@ -10,7 +10,11 @@
     </button>
     <app-project-details></app-project-details>
     <nav class="bot-project-nav-wrapper">
-        <button class="project-nav-btn left-hover">
+        <button
+            [routerLink]="['/projects', projectPrevStr()]"
+            class="project-nav-btn left-hover"
+            [disabled]="projectPrevStr() === undefined"
+        >
             <img
                 class="project-nav-arrow"
                 id="project-arrow-left"
@@ -19,7 +23,11 @@
             />
             <label for="project-arrow-left">Previous Project</label>
         </button>
-        <button class="project-nav-btn right-hover">
+        <button
+            [routerLink]="['/projects', projectNextStr()]"
+            class="project-nav-btn right-hover"
+            [disabled]="projectNextStr() === undefined"
+        >
             <label for="project-arrow-right">Next Project</label>
             <img
                 class="project-nav-arrow project-nav-arrow--right"

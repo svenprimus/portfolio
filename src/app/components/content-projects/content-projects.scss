@@ -30,6 +30,17 @@ app-project-details {
 
 .project-nav-btn {
     gap: 8px;
+
+    &:disabled {
+        pointer-events: none;
+        label {
+            opacity: 0.3;
+        }
+        img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
+    }
 }
 
 .bot-project-nav-wrapper {

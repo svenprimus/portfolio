@@ -19,7 +19,7 @@
         "duration": "3 weeks",
         "techs": ["js", "html", "css"],
         "preview": "./assets/img/preview-pollo-loco.webp",
-        "featured": true,
+        "featured": false,
         "github": "https://github.com/svenprimus/el-pollo-loco",
         "livetest": "https://el-pollo-loco.svenprimus.com/"
     }
