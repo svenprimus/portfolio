@@ -31,7 +31,8 @@ export class Header {
         this.opacity.set(Math.max(0, Math.min(1, this.opacity() - delta / (2 * 80))));
         this.lastY = scroll;
         const bgOpacity = Math.max(0, Math.min(Math.round(255 * 0.85), Math.round((scroll / (2 * 80)) * 255)));
-        this.bg.set(scroll < 10 ? 'transparent' : '#0e1013' + bgOpacity.toString(16));
+        const minBackground = this.darkService.socialMinBg() ? '#0e101380' : 'transparent';
+        this.bg.set(scroll < 10 ? minBackground : '#0e1013' + bgOpacity.toString(16));
         this.pointerEvents = this.opacity() < 0.2 ? 'none' : 'all';
         this.setLastScrollEvent();
     }

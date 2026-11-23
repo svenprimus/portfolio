@@ -12,9 +12,11 @@ export class ContentLegal {
 
     constructor() {
         this.darkService.setFooterDark(true);
+        this.darkService.setSocialMinBg(true);
     }
 
     ngOnDestroy() {
         this.darkService.setFooterDark(false);
+        this.darkService.setSocialMinBg(false);
     }
 }
