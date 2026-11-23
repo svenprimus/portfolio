@@ -1,0 +1,26 @@
+[
+    {
+        "key": "join",
+        "title": "Join",
+        "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. Developed collaboratively by a team of three software developers.",
+        "details": "My role focused on the application's core functionality and user experience, from Supabase authentication and SPA routing to the responsive Kanban board with animated drag-and-drop interactions. I also developed the database service and reusable UI components for dynamic buttons and user icons.",
+        "duration": "5 weeks",
+        "techs": ["css", "html", "ts", "angular", "supabase"],
+        "preview": "./assets/img/preview-join.webp",
+        "featured": true,
+        "github": "https://github.com/svenprimus/join",
+        "livetest": "https://join.svenprimus.com"
+    },
+    {
+        "key": "el-pollo-loco",
+        "title": "El Pollo Loco",
+        "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "details": "Independently developed the entire game, including its object-oriented architecture and core gameplay mechanics. Implemented self-managed game intervals with pause functionality, desktop and mobile controls with touch input, and various enemies, collectibles, and throwable objects. All game elements feature animations, complemented by immersive backgrounds with parallax scrolling, dynamic camera movement, and a fullscreen mode with automatic asset scaling.",
+        "duration": "3 weeks",
+        "techs": ["js", "html", "css"],
+        "preview": "./assets/img/preview-pollo-loco.webp",
+        "featured": true,
+        "github": "https://github.com/svenprimus/el-pollo-loco",
+        "livetest": "https://el-pollo-loco.svenprimus.com/"
+    }
+]
