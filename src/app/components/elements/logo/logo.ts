@@ -10,4 +10,5 @@ import { DarkService } from '../../../services/dark-service';
 export class Logo {
     darkService = inject(DarkService);
     light = input<boolean | undefined>(undefined);
+    isFooter = input<boolean>(false);
 }

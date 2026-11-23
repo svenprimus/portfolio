@@ -3,7 +3,7 @@
         [src]="
             light()
                 ? './assets/icons/logo/logo-for-dark.svg'
-                : darkService.requiresDark()
+                : darkService.requiresDark() || (isFooter() && darkService.footerDark())
                 ? './assets/icons/logo/logo-for-bright.svg'
                 : './assets/icons/logo/logo-for-dark.svg'
         "
@@ -13,7 +13,7 @@
         [src]="
             light()
                 ? './assets/icons/logo/logo-for-dark-hover.svg'
-                : darkService.requiresDark()
+                : darkService.requiresDark() || (isFooter() && darkService.footerDark())
                 ? './assets/icons/logo/logo-for-bright-hover.svg'
                 : './assets/icons/logo/logo-for-dark-hover.svg'
         "

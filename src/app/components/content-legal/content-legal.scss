@@ -1,0 +1,65 @@
+@use '../../../../public/styles/abstract/variables.scss' as *;
+@use '../../../../public/styles/abstract/mixin.scss' as *;
+@use '../../../../public/styles/abstract/functions.scss' as *;
+
+:host {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    @include content-limit-1440p(16, 120);
+    @include flex-column-top;
+    align-items: flex-start;
+
+    padding-block: calc($height-header + clamp-px(50, 120));
+    width: 100%;
+    height: fit-content;
+    background-image: url('../../../../public/assets/design/01_backgrounds/02_skills.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 100%;
+}
+article {
+    padding-bottom: calc($height-footer + clamp-px(60, 80));
+    background-color: $color-base-light;
+}
+
+section {
+    @include content-limit-1440p(16, 120);
+
+    margin-top: 24px;
+
+    &:first-of-type {
+        margin-top: clamp-px(16, 80);
+    }
+}
+
+h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    margin-top: 24px;
+}
+
+h3,
+h4,
+.hl-2 {
+    color: $color-high-2;
+}
+
+p {
+    color: $color-base-dark;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+ul,
+li {
+    font-family: 'Bricolage Grotesque';
+    list-style-position: inside;
+    padding-left: 8px;
+}
