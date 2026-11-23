@@ -11,4 +11,5 @@ export const routes: Routes = [
         path: 'projects/:name',
         component: ContentProjects,
     },
+    { path: '**', redirectTo: '' },
 ];

@@ -21,8 +21,16 @@
     }
 }
 
+.extra-shader {
+    li {
+        img {
+            @include micro-shader;
+        }
+    }
+}
+
 .nav-option {
-    mix-blend-mode: difference;
+    @include blend;
 }
 
 .nav-about,
@@ -70,7 +78,8 @@
 
 .lang-hover-btn {
     label {
-        color: $color-base-light;
+        color: $color-high-3;
+
         font-family: 'Bricolage Grotesque';
         font-size: 16px;
         font-weight: 600;
@@ -80,8 +89,12 @@
 
     &:disabled {
         > label {
-            color: $color-high-3;
+            color: $color-base-light;
             cursor: auto;
+        }
+
+        .label-shader {
+            @include light-shader;
         }
     }
 

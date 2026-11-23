@@ -1,18 +1,22 @@
 <a class="logo" href="#page-top" aria-label="go to top of page">
     <img
         [src]="
-            darkService.requiresDark()
+            light()
+                ? './assets/icons/logo/logo-for-dark.svg'
+                : darkService.requiresDark()
                 ? './assets/icons/logo/logo-for-bright.svg'
                 : './assets/icons/logo/logo-for-dark.svg'
         "
-        alt="Logo Sven Primus"
+        alt="Logo Default Sven Primus"
     />
     <img
         [src]="
-            darkService.requiresDark()
+            light()
+                ? './assets/icons/logo/logo-for-dark-hover.svg'
+                : darkService.requiresDark()
                 ? './assets/icons/logo/logo-for-bright-hover.svg'
                 : './assets/icons/logo/logo-for-dark-hover.svg'
         "
-        alt="Logo Sven Primus"
+        alt="Logo Hover Sven Primus"
     />
 </a>

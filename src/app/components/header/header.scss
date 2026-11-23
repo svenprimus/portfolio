@@ -6,11 +6,19 @@
     position: absolute;
     width: 100%;
     height: $height-header;
+    transition:
+        opacity $delay-header-fadeout ease-in-out,
+        background-color $delay-header-fadeout ease-in-out;
+
+    @media screen and (max-width: $media-query-sm) {
+        background-image: linear-gradient($color-base-dark-medium, transparent);
+    }
 }
 
 .fixed {
     position: fixed;
     z-index: 10;
+    background-image: none;
 }
 
 .socials-desktop {
@@ -33,7 +41,7 @@
     transform: translateY(-100%);
     transition: transform 300ms ease-out;
 
-    @include flex-column-top;
+    display: none;
     @include content-limit-1440p(16, 72);
     width: 100%;
     height: 656px;
@@ -61,6 +69,7 @@
 
 .dropdown {
     transform: translateY(0);
+    display: none;
 }
 
 .header-list-mobile,
@@ -104,5 +113,13 @@
     .socials-desktop,
     .header-list {
         display: none;
+    }
+
+    .header-nav-mobile {
+        @include flex-column-top;
+    }
+
+    .dropdown {
+        display: flex;
     }
 }

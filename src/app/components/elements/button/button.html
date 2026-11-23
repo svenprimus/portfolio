@@ -2,6 +2,7 @@
     class="btn3d"
     [class.btnDark]="isDark() == true"
     [class.btnLight]="isDark() != true"
+    [class.blend]="blend()"
     [style.min-width]="minWidth()"
 >
     <ng-content></ng-content>
