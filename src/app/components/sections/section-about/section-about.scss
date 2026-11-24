@@ -81,6 +81,8 @@
 
         p {
             margin-block: clamp-px(32, 48, 1400, 400);
+            font-size: $font-size-h4;
+            line-height: 120%;
         }
 
         > img {

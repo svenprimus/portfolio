@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { Skill } from '../../elements/skill/skill';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    imports: [Skill],
+    imports: [Skill, TranslatePipe],
     selector: 'app-section-skills',
     styleUrl: './section-skills.scss',
     templateUrl: './section-skills.html',
