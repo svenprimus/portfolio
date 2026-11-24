@@ -13,6 +13,6 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class SectionHero {
     translate = inject(TranslateService);
     isDE = computed(()=>{
-        return this.translate.currentLang() === 'de-DE';
+        return this.translate.currentLang() === 'de';
     });
 }
