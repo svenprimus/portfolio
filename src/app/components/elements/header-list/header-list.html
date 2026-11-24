@@ -18,8 +18,8 @@
         <img class="nav-contact" src="./assets/design/00_hand-drawn-lines/00_header/4.webp" aria-hidden="true" />
         <a class="nav-option" href="#section-contact">Contact </a>
     </li>
-    <li class="lang-slider">
-        <button class="lang-hover-btn" (click)="useLanguage('en-US')" [disabled]="languageSliderValue() === 0">
+    <li class="lang-slider" (click)="toggleLanguage()">
+        <button class="lang-hover-btn" [disabled]="languageSliderValue() === 0">
             <img
                 class="lang-hover"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
@@ -35,9 +35,8 @@
             min="0"
             max="1"
             [value]="languageSliderValue()"
-            (click) = "toggleLanguage()"
         />
-        <button class="lang-hover-btn" (click)="useLanguage('de-DE')" [disabled]="languageSliderValue() === 1">
+        <button class="lang-hover-btn" [disabled]="languageSliderValue() === 1">
             <img
                 class="lang-hover lang-hover--rotate"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"

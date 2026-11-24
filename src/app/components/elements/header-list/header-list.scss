@@ -61,6 +61,11 @@
 
 .lang-slider {
     gap: 9px;
+    cursor: pointer;
+
+    &:hover .lang-hover-btn:not(:disabled) .lang-hover {
+        clip-path: inset(0);
+    }
 }
 
 .lang-hover {
@@ -94,12 +99,6 @@
 
         .label-shader {
             @include light-shader;
-        }
-    }
-
-    &:not(:disabled):hover {
-        .lang-hover {
-            clip-path: inset(0);
         }
     }
 }

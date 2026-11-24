@@ -4,8 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Skill } from '../../elements/skill/skill';
 import { ProjectsService } from '../../../services/projects-service';
 import { IProject } from '../../../interfaces/iproject';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
-    imports: [Button, Skill],
+    imports: [Button, Skill, TranslatePipe],
     selector: 'app-project-details',
     styleUrl: './project-details.scss',
     templateUrl: './project-details.html',

@@ -2,7 +2,7 @@
 <article class="section-project-content-wrapper">
     <section class="section-project-summary">
         <header>
-            <h2>{{ project()?.title }}</h2>
+            <h2>{{ 'projects.' + project()?.key + '.title' | translate }}</h2>
             <img
                 class="underline"
                 [style.width]="project()?.title.length + 'ch'"
@@ -11,13 +11,16 @@
             />
         </header>
         <div class="section-project-summary-description">
-            <h3>Description</h3>
-            <p>{{ project()?.description }}</p>
-            <h3>Implementation Details</h3>
-            <p>{{ project()?.details }}</p>
+            <h3>{{ 'projects.description' | translate }}</h3>
+            <p>{{ 'projects.' + project()?.key + '.description' | translate }}</p>
+            <h3>{{ 'projects.details' | translate }}</h3>
+            <p>{{ 'projects.' + project()?.key + '.details' | translate }}</p>
         </div>
         <div class="section-project-summary-details">
-            <p><b>Duration:</b>{{ ' ' + project()?.duration }}</p>
+            <p>
+                <b>{{ 'projects.duration' | translate }}:</b>
+                {{ 'projects.' + project()?.key + '.duration' | translate }}
+            </p>
             <div class="section-project-summary-tech">
                 @for (tech of project()?.techs; track $index) {
                     <app-skill [isSmall]="true" [skillStr]="tech"></app-skill>
@@ -35,7 +38,9 @@
         <img class="brand" src="{{ featuredSrc() }}" alt="brand sticker" />
         <nav class="section-project-links">
             <app-button (click)="openLink(project()?.github)" [isDark]="false" [blend]="true">GitHub</app-button>
-            <app-button (click)="openLink(project()?.livetest)" [isDark]="false" [blend]="true">Live Test</app-button>
+            <app-button (click)="openLink(project()?.livetest)" [isDark]="false" [blend]="true">{{
+                'projects.test' | translate
+            }}</app-button>
         </nav>
     </section>
 </article>
