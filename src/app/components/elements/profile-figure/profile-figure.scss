@@ -17,18 +17,20 @@
         margin-top: 3px;
         filter: grayscale(100%);
         animation: color-unblend 800ms ease-in-out forwards;
-
-        &:hover {
-            animation: color-blend 800ms ease-out forwards;
-        }
     }
 
-    &:has(img:hover) .profile-caption > div figcaption {
-        &:nth-child(1) {
-            opacity: 0;
+    &:hover {
+        img {
+            animation: color-blend 800ms ease-out forwards;
         }
-        &:nth-child(2) {
-            opacity: 1;
+
+        .profile-caption > div figcaption {
+            &:nth-child(1) {
+                opacity: 0;
+            }
+            &:nth-child(2) {
+                opacity: 1;
+            }
         }
     }
 

@@ -2,15 +2,11 @@
     <div id="section-projects" class="section-anchor"></div>
     <section class="section-projects-headline">
         <header>
-            <h4>MY CRAFT</h4>
-            <h2>Projects</h2>
+            <h4>{{ 'section-projects.subtitle' | translate }}</h4>
+            <h2>{{ 'section-projects.title' | translate }}</h2>
             <img src="./assets/design/00_hand-drawn-lines/03_portfolio/underline.webp" aria-hidden="true" />
         </header>
-        <p>
-            Take a look around and explore what I build. From responsive layouts to smooth interactions, I combine
-            clean, efficient code with a strong focus on usability and detail to create web experiences that are made to
-            be enjoyed.
-        </p>
+        <p>{{ 'section-projects.text' | translate }}</p>
     </section>
     <section class="project-preview">
         <button [routerLink]="['projects', 'join']" class="project-preview-img-wrapper">
@@ -27,10 +23,7 @@
             <app-button class="btn-details" [isDark]="false">Project details</app-button>
         </button>
         <h3>Join</h3>
-        <p>
-            Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign
-            users and categories.
-        </p>
+        <p>{{ 'projects.join.description' | translate }}</p>
         <app-button [routerLink]="['projects', 'join']" [isDark]="true" class="btn-details-mobile"
             >Project details</app-button
         >
@@ -45,10 +38,7 @@
             <app-button class="btn-details" [isDark]="false">Project details</app-button>
         </button>
         <h3>El Pollo Loco</h3>
-        <p>
-            Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to
-            fight against the crazy hen.
-        </p>
+        <p>{{ 'projects.el-pollo-loco.description' | translate }}</p>
         <app-button [routerLink]="['projects', 'el-pollo-loco']" [isDark]="true" class="btn-details-mobile"
             >Project details</app-button
         >

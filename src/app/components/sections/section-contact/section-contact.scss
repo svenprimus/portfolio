@@ -188,6 +188,12 @@
     }
 }
 
+input::placeholder {
+    text-overflow: ellipsis;
+    font-family: 'Bricolage Grotesque';
+    color: $color-base-light;
+}
+
 .section-contact-send {
     width: 100%;
     @include flex-end;

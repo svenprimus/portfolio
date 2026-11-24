@@ -12,6 +12,7 @@ h1 {
     @include content-limit-1440p(16, 120);
     @include flex-column-top;
     align-items: flex-start;
+    font-size: $font-size-h2;
 
     padding-block: calc($height-header + clamp-px(50, 120));
     width: 100%;
@@ -21,6 +22,7 @@ h1 {
     background-size: cover;
     background-position: 0 100%;
 }
+
 article {
     padding-bottom: calc($height-footer + clamp-px(60, 80));
     background-color: $color-base-light;

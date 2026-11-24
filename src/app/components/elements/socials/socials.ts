@@ -1,7 +1,8 @@
 import { Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [],
+  imports: [TranslatePipe],
   selector: 'app-socials',
   styleUrl: './socials.scss',
   templateUrl: './socials.html',

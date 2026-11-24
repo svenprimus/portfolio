@@ -1,7 +1,8 @@
 import { Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    imports: [],
+    imports: [TranslatePipe],
     selector: 'app-testimonial',
     styleUrl: './testimonial.scss',
     templateUrl: './testimonial.html',

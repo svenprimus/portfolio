@@ -104,3 +104,22 @@ figcaption {
     font-family: 'Bricolage Grotesque';
     font-weight: 400;
 }
+
+.hl-2 {
+    color: all.$color-high-2;
+}
+
+.section-contact-a {
+    text-overflow: ellipsis;
+    font-family: 'Bricolage Grotesque';
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: all.$font-weight-p;
+    color: all.$color-high-2-light;
+
+    &:hover {
+        color: all.$color-high-1;
+    }
+}

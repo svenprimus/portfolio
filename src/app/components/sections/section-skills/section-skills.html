@@ -1,17 +1,12 @@
 <article id="section-skills" class="section-skills">
     <div class="section-skills-intro">
         <header>
-            <h4>MY STACK</h4>
-            <h2>Skill set</h2>
+            <h4>{{ 'section-skills.subtitle' | translate }}</h4>
+            <h2>{{ 'section-skills.title' | translate }}</h2>
             <img src="./assets/design/00_hand-drawn-lines/02_skills/circle.webp" aria-hidden="true" />
         </header>
         <div>
-            <p>
-                <br />I create modern, responsive, and engaging web experiences with JavaScript, TypeScript, Angular,
-                HTML, and SCSS. With a strong foundation in software engineering and a proven ability to master and
-                adapt to new technologies, I turn new challenges into opportunities to build, learn, and improve. My
-                background in C++ and embedded systems adds a strong engineering perspective to my frontend expertise.
-            </p>
+            <p>{{ 'section-skills.text' | translate }}</p>
             <img src="./assets/design/02_ripped-paper/bg-skills.webp" aria-hidden="true" />
         </div>
     </div>
@@ -28,7 +23,6 @@
                 <app-skill [skillStr]="'rest'"></app-skill>
                 <app-skill [skillStr]="'scrum'"></app-skill>
                 <app-skill [skillStr]="'material'"></app-skill>
-
             </div>
         </div>
 
@@ -39,7 +33,7 @@
                     src="./assets/design/03_stickers/01_skills-peel-off/3_final.webp"
                     aria-hidden="true"
                 />
-                <p>Also, I'm interested in diving into:</p>
+                <p>{{ 'section-skills.sticker-after' | translate }}</p>
                 <div>
                     <figure>
                         <img src="./assets/icons/skills/react-transparent.svg" alt="react icon" />
@@ -66,7 +60,7 @@
                     alt="peel sticker"
                 />
                 <img class="peel-layer-arrow" src="./assets/design/03_stickers/arrow.webp" aria-hidden="true" />
-                <p>Pull to peel</p>
+                <p>{{ 'section-skills.sticker' | translate }}</p>
             </div>
         </div>
     </div>

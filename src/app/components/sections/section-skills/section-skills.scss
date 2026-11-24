@@ -55,8 +55,9 @@
 
         > p {
             color: $color-base-dark;
-            padding: 48px clamp-px(24, 32, 1400, 400);
+            padding: 64px clamp-px(24, 32, 1400, 400);
             z-index: 2;
+            line-height: 120%;
         }
 
         > img {
@@ -135,6 +136,7 @@
         }
 
         .peel-layer-3:hover {
+            cursor: grab;
             transform: skewX(10deg) skewY(10deg) scale(1.5) translateX(-15%) translateY(15%);
         }
 

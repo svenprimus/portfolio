@@ -4,9 +4,10 @@ import { DarkService } from '../../services/dark-service';
 import { HeaderService } from '../../services/header-service';
 import { ProjectDetails } from './project-details/project-details';
 import { ProjectsService } from '../../services/projects-service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    imports: [RouterLink, ProjectDetails],
+    imports: [RouterLink, ProjectDetails, TranslatePipe],
     selector: 'app-content-projects',
     styleUrl: './content-projects.scss',
     templateUrl: './content-projects.html',

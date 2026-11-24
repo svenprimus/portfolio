@@ -71,7 +71,7 @@
 .hello-wrapper {
     position: relative;
     @include flex-end;
-    align-items: flex-center;
+    align-items: center;
     width: fit-content;
     height: $height-btn;
     transition: all 1s cubic-bezier(0.41, 0.8, 0, 1);
@@ -80,7 +80,7 @@
         opacity: 0;
         height: $height-btn;
         padding-inline: $padding-btn;
-        width: 200px;
+        width: var((--animation-width));
     }
 
     > img {
@@ -94,8 +94,8 @@
         animation: rollout 1s cubic-bezier(0.41, 0.8, 0, 1) forwards;
     }
 
-    &::before,
-    &::after {
+    .hello-wrapper-before,
+    .hello-wrapper-after {
         position: absolute;
         left: 0;
         @include flex-center;
@@ -110,14 +110,12 @@
         white-space: nowrap;
     }
 
-    &::before {
-        content: 'Hello World';
-        width: calc(150px - 2 * $padding-btn);
+    .hello-wrapper-before {
+        width: 150px;
     }
 
-    &::after {
+    .hello-wrapper-after {
         opacity: 0;
-        content: "I'M SVEN PRIMUS";
         background-color: $color-high-2;
         overflow: hidden;
         justify-content: flex-start;
@@ -126,11 +124,10 @@
     }
 
     &:hover {
-        &::before {
+        .hello-wrapper-before {
             opacity: 0;
         }
-        &::after {
-            width: calc(200px - 2 * $padding-btn);
+        .hello-wrapper-after {
             opacity: 1;
             animation: hello-grow 1s linear forwards;
         }
@@ -140,29 +137,29 @@
             animation: rollin 1s linear forwards;
         }
     }
-}
 
-@keyframes hello-grow {
-    0% {
-        width: 0;
+    @keyframes hello-grow {
+        0% {
+            width: 0;
+        }
+        25% {
+            width: calc(1.1 * var(--animation-width));
+        }
+        55% {
+            width: calc(0.95 * var(--animation-width));
+        }
+        100% {
+            width: var(--animation-width);
+        }
     }
-    25% {
-        width: calc(1.1 * (200px - 2 * $padding-btn));
-    }
-    55% {
-        width: calc(0.95 * (200px - 2 * $padding-btn));
-    }
-    100% {
-        width: calc(200px - 2 * $padding-btn);
-    }
-}
 
-@keyframes hello-shrink {
-    0% {
-        width: calc(200px - 2 * $padding-btn);
-    }
-    100% {
-        width: calc(150px - 2 * $padding-btn);
+    @keyframes hello-shrink {
+        0% {
+            width: var(--animation-width);
+        }
+        100% {
+            width: calc(150px - 2 * $padding-btn);
+        }
     }
 }
 
@@ -190,6 +187,10 @@ h1 {
 .lower:hover {
     text-transform: uppercase;
     text-align: left;
+}
+
+.w41 {
+    width: clamp-px(18, 41, 1050, 600);
 }
 
 .w51 {
@@ -246,6 +247,14 @@ h1 {
 
 .w93 {
     width: clamp-px(32, 93, 1050, 600);
+}
+
+.w99 {
+    width: clamp-px(32, 99, 1050, 600);
+}
+
+.w123 {
+    width: clamp-px(32, 123, 1050, 600);
 }
 
 .left01:hover {

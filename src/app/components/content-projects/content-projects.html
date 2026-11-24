@@ -6,7 +6,7 @@
             src="./assets/design/00_hand-drawn-lines/03_portfolio/arrow-left.webp"
             alt="arrow back"
         />
-        <label for="project-arrow-back">Go Back</label>
+        <label for="project-arrow-back">{{ 'projects.goBack' | translate }}</label>
     </button>
     <app-project-details></app-project-details>
     <nav class="bot-project-nav-wrapper">
@@ -21,14 +21,14 @@
                 src="./assets/design/00_hand-drawn-lines/03_portfolio/arrow-left.webp"
                 alt="arrow left"
             />
-            <label for="project-arrow-left">Previous Project</label>
+            <label for="project-arrow-left">{{ 'projects.goPrev' | translate }}</label>
         </button>
         <button
             [routerLink]="['/projects', projectNextStr()]"
             class="project-nav-btn right-hover"
             [disabled]="projectNextStr() === undefined"
         >
-            <label for="project-arrow-right">Next Project</label>
+            <label for="project-arrow-right">{{ 'projects.goNext' | translate }}</label>
             <img
                 class="project-nav-arrow project-nav-arrow--right"
                 id="project-arrow-right"

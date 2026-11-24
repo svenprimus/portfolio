@@ -4,22 +4,22 @@
     </li>
     <li>
         <img class="nav-about" src="./assets/design/00_hand-drawn-lines/00_header/1.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-about">About Me </a>
+        <a class="nav-option" href="#section-about">{{ 'header.about' | translate }} </a>
     </li>
     <li>
         <img class="nav-skills" src="./assets/design/00_hand-drawn-lines/00_header/2.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-skills">Skills </a>
+        <a class="nav-option" href="#section-skills">{{ 'header.skills' | translate }} </a>
     </li>
     <li>
         <img class="nav-projects" src="./assets/design/00_hand-drawn-lines/00_header/3.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-projects">Projects </a>
+        <a class="nav-option" href="#section-projects">{{ 'header.projects' | translate }} </a>
     </li>
     <li>
         <img class="nav-contact" src="./assets/design/00_hand-drawn-lines/00_header/4.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-contact">Contact </a>
+        <a class="nav-option" href="#section-contact">{{ 'header.contact' | translate }} </a>
     </li>
-    <li class="lang-slider">
-        <button class="lang-hover-btn" >
+    <li class="lang-slider" (click)="toggleLanguage()">
+        <button class="lang-hover-btn" [disabled]="languageSliderValue() === 0">
             <img
                 class="lang-hover"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
@@ -27,8 +27,16 @@
             />
             <label [class.label-shader]="!headerService.isFixed()" for="language">EN</label>
         </button>
-        <input class="slider" id="language" name="language" type="range" min="0" max="1" value="0" />
-        <button class="lang-hover-btn" disabled>
+        <input
+            class="slider"
+            id="language"
+            name="language"
+            type="range"
+            min="0"
+            max="1"
+            [value]="languageSliderValue()"
+        />
+        <button class="lang-hover-btn" [disabled]="languageSliderValue() === 1">
             <img
                 class="lang-hover lang-hover--rotate"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"

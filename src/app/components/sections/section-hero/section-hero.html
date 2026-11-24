@@ -2,9 +2,11 @@
     <div class="section-hero__content">
         <section class="headline-top">
             <div>
-                <div class="hello-wrapper">
+                <div class="hello-wrapper" [style.--animation-width]="isDE() ? '240px' : '200px'">
+                    <span class="hello-wrapper-before">{{ 'section-hero.hello' | translate }}</span>
+                    <span class="hello-wrapper-after">{{ 'section-hero.hello-hover' | translate }}</span>
                     <img src="./assets/icons/misc/waving_hand.svg" alt="waving hand" />
-                    <p class="pseudo">I'M SVEN PRIMUS</p>
+                    <p class="pseudo">{{ 'section-hero.hello-hover' | translate }}</p>
                 </div>
                 <h1>
                     <span class="upper w76">F</span>
@@ -22,17 +24,38 @@
         <section class="headline-bot">
             <div>
                 <h1>
-                    <span class="upper w90">D</span>
-                    <span class="upper w80">E</span>
-                    <span class="upper w86">V</span>
-                    <span class="upper w80">E</span>
-                    <span class="upper w65">L</span>
-                    <span class="upper w93">O</span>
-                    <span class="upper w83">P</span>
-                    <span class="upper w80">E</span>
-                    <span class="upper w87">R</span>
+                    <span class="upper" [class.w90]="!isDE()" [class.w80]="isDE()">{{
+                        'section-hero.developer.1' | translate
+                    }}</span>
+                    <span class="upper" [class.w80]="!isDE()" [class.w99]="isDE()">{{
+                        'section-hero.developer.2' | translate
+                    }}</span>
+                    <span class="upper" [class.w86]="!isDE()" [class.w80]="isDE()">{{
+                        'section-hero.developer.3' | translate
+                    }}</span>
+                    <span class="upper" [class.w80]="!isDE()" [class.w123]="isDE()">{{
+                        'section-hero.developer.4' | translate
+                    }}</span>
+                    <span class="upper" [class.w65]="!isDE()" [class.w41]="isDE()">{{
+                        'section-hero.developer.5' | translate
+                    }}</span>
+                    <span class="upper" [class.w93]="!isDE()" [class.w87]="isDE()">{{
+                        'section-hero.developer.6' | translate
+                    }}</span>
+                    <span class="upper" [class.w83]="!isDE()" [class.w90]="isDE()">{{
+                        'section-hero.developer.7' | translate
+                    }}</span>
+                    <span class="upper" [class.w80]="!isDE()" [class.w65]="isDE()">{{
+                        'section-hero.developer.8' | translate
+                    }}</span>
+                    <span class="upper" [class.w87]="!isDE()" [class.w80]="isDE()">{{
+                        'section-hero.developer.9' | translate
+                    }}</span>
+                    <span class="upper w87" [class.d-none]="!isDE()">R</span>
                 </h1>
-                <app-button [routerLink]="['']" fragment="section-contact" [isDark]="false">Get In Touch</app-button>
+                <app-button [routerLink]="['']" fragment="section-contact" [isDark]="false">{{
+                    'section-hero.touch' | translate
+                }}</app-button>
             </div>
         </section>
         <section class="figure-mobile-wrapper">
