@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Button } from '../../elements/button/button';
 import {
     AbstractControl,
@@ -9,14 +9,17 @@ import {
     ValidatorFn,
     Validators,
 } from '@angular/forms';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
-    imports: [Button, ReactiveFormsModule],
+    imports: [Button, ReactiveFormsModule, TranslatePipe],
     selector: 'app-section-contact',
     styleUrl: './section-contact.scss',
     templateUrl: './section-contact.html',
 })
 export class SectionContact {
+    private translate = inject(TranslateService);
+
     isError = {
         name: false,
         mail: false,
@@ -24,15 +27,15 @@ export class SectionContact {
     };
 
     contactForm = new FormGroup({
-        name: new FormControl('Your name goes here', {
+        name: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z]*')],
         }),
-        mail: new FormControl('youremail@email.com', {
+        mail: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(5), this.customMailValidator()],
         }),
-        msg: new FormControl('Hello Sven, I am interested in...', {
+        msg: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(10)],
         }),
@@ -72,11 +75,12 @@ export class SectionContact {
         switch (true) {
             case pathRef?.hasError('required'):
                 pathRef?.patchValue('Oops! It seems your name is missing.');
+                pathRef?.patchValue(this.translate.instant('section-contact.error.name-empty'));
                 break;
             case pathRef?.hasError('minlength'):
                 break;
             case pathRef?.hasError('pattern'):
-                pathRef?.patchValue('Mmh... Please consider a real name.');
+                pathRef?.patchValue(this.translate.instant('section-contact.error.name-fake'));
                 break;
             default:
                 this.isError.name = false;

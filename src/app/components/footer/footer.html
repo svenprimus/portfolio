@@ -6,7 +6,7 @@
                 <div class="footer-legal-creator">
                     <p [style.color]="colorMode()">© Sven Primus 2026</p>
                     <div class="footer-legal-hoverable">
-                        <a [routerLink]="['legal']" [style.color]="colorMode()">Legal Notice</a>
+                        <a [routerLink]="['legal']" [style.color]="colorMode()">{{ 'footer.legal' | translate }}</a>
                         <img
                             class="nav-contact"
                             src="./assets/design/00_hand-drawn-lines/00_header/4.webp"
@@ -53,10 +53,7 @@
                                 [attr.fill]="colorMode()"
                             />
                         </svg>
-                        <a
-                            href="https://www.linkedin.com/in/sven-primus-691738190"
-                            target="_blank"
-                            [style.color]="colorMode()"
+                        <a href="{{ 'socials.linkedin' | translate }}" target="_blank" [style.color]="colorMode()"
                             >LinkedIn</a
                         >
                     </div>
@@ -91,7 +88,9 @@
                             </g>
                         </svg>
 
-                        <a href="mailto:svenprimus@gmail.com" [style.color]="colorMode()">Email</a>
+                        <a href="mailto:svenprimus@gmail.com" [style.color]="colorMode()">{{
+                            'footer.mail' | translate
+                        }}</a>
                     </div>
                 </div>
             </nav>

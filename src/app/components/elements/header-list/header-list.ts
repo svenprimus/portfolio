@@ -1,10 +1,10 @@
 import { Component, inject, SecurityContext, signal } from '@angular/core';
 import { Logo } from '../logo/logo';
 import { HeaderService } from '../../../services/header-service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
-    imports: [Logo],
+    imports: [Logo, TranslatePipe],
     selector: 'app-header-list',
     styleUrl: './header-list.scss',
     templateUrl: './header-list.html',
@@ -15,7 +15,7 @@ export class HeaderList {
 
     private translate = inject(TranslateService);
 
-constructor(private sanitizer: DomSanitizer) {}
+    constructor(private sanitizer: DomSanitizer) {}
 
     useLanguage(language: string): void {
         this.languageSliderValue.set(language === 'de-DE' ? 1 : 0);

@@ -62,7 +62,6 @@
 .lang-slider {
     gap: 9px;
     cursor: pointer;
-
     &:hover .lang-hover-btn:not(:disabled) .lang-hover {
         clip-path: inset(0);
     }
