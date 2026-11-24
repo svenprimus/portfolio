@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { DarkService } from '../../services/dark-service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    imports: [],
+    imports: [TranslatePipe],
     selector: 'app-content-legal',
     styleUrl: './content-legal.scss',
     templateUrl: './content-legal.html',

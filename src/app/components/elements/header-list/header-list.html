@@ -19,7 +19,7 @@
         <a class="nav-option" href="#section-contact">Contact </a>
     </li>
     <li class="lang-slider">
-        <button class="lang-hover-btn" >
+        <button class="lang-hover-btn" (click)="useLanguage('en-US')" [disabled]="languageSliderValue() === 0">
             <img
                 class="lang-hover"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"
@@ -27,8 +27,17 @@
             />
             <label [class.label-shader]="!headerService.isFixed()" for="language">EN</label>
         </button>
-        <input class="slider" id="language" name="language" type="range" min="0" max="1" value="0" />
-        <button class="lang-hover-btn" disabled>
+        <input
+            class="slider"
+            id="language"
+            name="language"
+            type="range"
+            min="0"
+            max="1"
+            [value]="languageSliderValue()"
+            (click) = "toggleLanguage()"
+        />
+        <button class="lang-hover-btn" (click)="useLanguage('de-DE')" [disabled]="languageSliderValue() === 1">
             <img
                 class="lang-hover lang-hover--rotate"
                 src="./assets/design/00_hand-drawn-lines/00_header/toggle.webp"

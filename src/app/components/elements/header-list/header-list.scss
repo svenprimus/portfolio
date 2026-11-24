@@ -78,8 +78,7 @@
 
 .lang-hover-btn {
     label {
-        color: $color-high-3;
-
+        color: $color-base-light;
         font-family: 'Bricolage Grotesque';
         font-size: 16px;
         font-weight: 600;
@@ -89,8 +88,8 @@
 
     &:disabled {
         > label {
-            color: $color-base-light;
-            cursor: auto;
+            color: $color-high-3;
+            cursor: pointer;
         }
 
         .label-shader {
