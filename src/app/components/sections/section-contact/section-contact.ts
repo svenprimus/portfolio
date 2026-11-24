@@ -74,7 +74,6 @@ export class SectionContact {
 
         switch (true) {
             case pathRef?.hasError('required'):
-                pathRef?.patchValue('Oops! It seems your name is missing.');
                 pathRef?.patchValue(this.translate.instant('section-contact.error.name-empty'));
                 break;
             case pathRef?.hasError('minlength'):
