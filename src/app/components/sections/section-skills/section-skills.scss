@@ -135,6 +135,7 @@
         }
 
         .peel-layer-3:hover {
+            cursor: grab;
             transform: skewX(10deg) skewY(10deg) scale(1.5) translateX(-15%) translateY(15%);
         }
 
