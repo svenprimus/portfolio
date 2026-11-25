@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: clamp-px(10, 160);
+    gap: clamp-px(20, 160, 1400, $media-raw-sm);
 
     .section-contact-intro {
         h4 {
@@ -80,6 +80,7 @@
 
         transition: all 100ms ease-in;
 
+        textarea,
         label,
         input {
             font-size: 24px;
@@ -87,29 +88,44 @@
             line-height: 120%;
         }
 
+        textarea,
         input {
             border: none;
             font-size: $font-size-p-default;
             font-weight: $font-weight-p;
             width: 100%;
+            resize: vertical;
+            height: 1.2 * $font-size-p-default;
+            min-height: 2 * 1.2 * $font-size-p-default;
+            color-scheme: dark;
+            cursor: text;
+            @include scrollbar-light;
+        }
+
+        .ta-fixed {
+            height: fit-content;
+            max-height: 2 * 1.2 * $font-size-p-default;
+            resize: none;
         }
     }
 
     .contact-input-wrapper,
     .privacy-policy-check {
+        textarea,
         label,
         input,
         a {
             text-overflow: ellipsis;
+            white-space: wrap;
             font-family: 'Bricolage Grotesque';
             color: $color-base-light;
             background-color: transparent;
             width: 100%;
-            cursor: pointer;
         }
 
-        .form-error {
-            color: $color-invalid;
+        a,
+        label {
+            cursor: pointer;
         }
 
         a {
@@ -188,10 +204,24 @@
     }
 }
 
-input::placeholder {
-    text-overflow: ellipsis;
-    font-family: 'Bricolage Grotesque';
-    color: $color-base-light;
+textarea,
+input {
+    &::placeholder {
+        text-overflow: ellipsis;
+        font-family: 'Bricolage Grotesque';
+        color: $color-base-light;
+    }
+
+    &:focus::placeholder {
+        opacity: 0;
+    }
+}
+
+.form-error {
+    &::placeholder {
+        color: $color-invalid;
+    }
+    color: $color-invalid;
 }
 
 .section-contact-send {

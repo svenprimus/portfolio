@@ -2,6 +2,10 @@
 
 button {
     white-space: nowrap;
+    &:disabled {
+        opacity: 0.2;
+        pointer-events: none;
+    }
 }
 
 .btn3d {

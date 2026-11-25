@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { DarkService } from '../../../services/dark-service';
 
 @Component({
@@ -11,4 +11,5 @@ export class Logo {
     darkService = inject(DarkService);
     light = input<boolean | undefined>(undefined);
     isFooter = input<boolean>(false);
+    done = output<boolean>();
 }

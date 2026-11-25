@@ -1,9 +1,11 @@
 <button
     class="btn3d"
+    [type]="buttonType()"
     [class.btnDark]="isDark() == true"
     [class.btnLight]="isDark() != true"
     [class.blend]="blend()"
     [style.min-width]="minWidth()"
+    [disabled]="disabled()"
 >
     <ng-content></ng-content>
 </button>

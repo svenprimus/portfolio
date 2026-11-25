@@ -1,15 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Button } from '../../elements/button/button';
-import {
-    AbstractControl,
-    FormControl,
-    FormGroup,
-    ReactiveFormsModule,
-    ValidationErrors,
-    ValidatorFn,
-    Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { ValidatorService } from '../../../services/validator-service';
 
 @Component({
     imports: [Button, ReactiveFormsModule, TranslatePipe],
@@ -19,71 +12,129 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class SectionContact {
     private translate = inject(TranslateService);
+    validator = inject(ValidatorService);
 
-    isError = {
-        name: false,
-        mail: false,
-        msg: false,
+    errorStr = {
+        name: signal<string | undefined>(undefined),
+        mail: signal<string | undefined>(undefined),
+        msg: signal<string | undefined>(undefined),
+    };
+
+    valueStr = {
+        name: signal<string | undefined>(undefined),
+        mail: signal<string | undefined>(undefined),
+        msg: signal<string | undefined>(undefined),
     };
 
     contactForm = new FormGroup({
         name: new FormControl('', {
             nonNullable: true,
-            validators: [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z]*')],
+            validators: [
+                Validators.required,
+                this.validator.customFullNameValidator(),
+                this.validator.customNameValidator(),
+            ],
+            updateOn: 'blur',
         }),
         mail: new FormControl('', {
             nonNullable: true,
-            validators: [Validators.required, Validators.minLength(5), this.customMailValidator()],
+            validators: [Validators.required, this.validator.customMailValidator()],
         }),
         msg: new FormControl('', {
             nonNullable: true,
-            validators: [Validators.required, Validators.minLength(10)],
+            validators: [Validators.required, Validators.minLength(20)],
+        }),
+        policy: new FormControl(false, {
+            nonNullable: true,
+            validators: [Validators.requiredTrue],
         }),
     });
-
-    customMailValidator(): ValidatorFn {
-        return (control: AbstractControl): ValidationErrors | null => {
-            return false === /^.+@.+\..+$/.test(control.value) ? { forbiddenName: { value: control.value } } : null;
-        };
-    }
-
-    // ngOnInit() {
-    //     this.patchForm();
-    // }
-
-    // patchForm() {
-    //     this.contactForm.patchValue({
-    //         name: 'Your name goes here',
-    //     });
-    // }
 
     formSubmit() {
         // placeholder
     }
 
     onInputFocus(path: string) {
-        this.contactForm.get(path)?.patchValue('');
-        if (path in this.isError) {
-            this.isError[path as keyof typeof this.isError] = false;
+        if (path in this.valueStr) {
+            const value = this.valueStr[path as keyof typeof this.errorStr]();
+            if (value) {
+                this.contactForm.get(path)?.patchValue(value);
+            }
         }
     }
 
     onNameBlur() {
         const pathRef = this.contactForm.get('name');
-        this.isError.name = true;
-
         switch (true) {
             case pathRef?.hasError('required'):
-                pathRef?.patchValue(this.translate.instant('section-contact.error.name-empty'));
+                this.errorStr.name.set(this.translate.instant('section-contact.error.name-empty'));
                 break;
-            case pathRef?.hasError('minlength'):
+            case pathRef?.hasError('fullName'):
+                this.errorStr.name.set(this.translate.instant('section-contact.error.name-full'));
                 break;
-            case pathRef?.hasError('pattern'):
-                pathRef?.patchValue(this.translate.instant('section-contact.error.name-fake'));
+            case pathRef?.hasError('namePattern'):
+                this.errorStr.name.set(this.translate.instant('section-contact.error.name-pattern'));
                 break;
             default:
-                this.isError.name = false;
+                this.errorStr.name.set(undefined);
                 break;
+        }
+        this.valueStr.name.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.name()) {
+            pathRef?.patchValue('');
+        }
+    }
+
+    onMailBlur() {
+        const pathRef = this.contactForm.get('mail');
+        switch (true) {
+            case pathRef?.hasError('required'):
+                this.errorStr.mail.set(this.translate.instant('section-contact.error.mail-empty'));
+                break;
+            case pathRef?.hasError('emailPattern'):
+                this.errorStr.mail.set(this.translate.instant('section-contact.error.mail-pattern'));
+                break;
+            default:
+                this.errorStr.mail.set(undefined);
+                break;
+        }
+        this.valueStr.mail.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.mail()) {
+            pathRef?.patchValue('');
+        }
+    }
+
+    onMsgBlur() {
+        const pathRef = this.contactForm.get('msg');
+        switch (true) {
+            case pathRef?.hasError('required'):
+                this.errorStr.msg.set(this.translate.instant('section-contact.error.msg-empty'));
+                break;
+            case pathRef?.hasError('minlength'):
+                this.errorStr.msg.set(this.translate.instant('section-contact.error.msg-minLength'));
+                break;
+            default:
+                this.errorStr.msg.set(undefined);
+                break;
+        }
+        this.valueStr.msg.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.msg()) {
+            pathRef?.patchValue('');
+        }
+    }
+
+    focusNext(event: KeyboardEvent) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+
+            const current = event.target as HTMLElement;
+            const form = current.closest('form');
+
+            const elements = Array.from(
+                form?.querySelectorAll<HTMLElement>('input:not(:disabled), textarea:not(:disabled)') ?? []
+            );
+
+            elements[elements.indexOf(current) + 1]?.focus();
         }
     }
 }

@@ -781,7 +781,22 @@
 								<name>error</name>
 								<children>
 									<concept_node>
-										<name>name-empty</name>
+										<name>mail-empty</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>true</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>true</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>mail-pattern</name>
 										<description/>
 										<comment/>
 										<translations>
@@ -796,7 +811,7 @@
 										</translations>
 									</concept_node>
 									<concept_node>
-										<name>name-fake</name>
+										<name>msg-empty</name>
 										<description/>
 										<comment/>
 										<translations>
@@ -807,6 +822,66 @@
 											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>msg-minLength</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>name-empty</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>true</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>true</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>name-full</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>true</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>true</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>name-pattern</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>true</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>true</approved>
 											</translation>
 										</translations>
 									</concept_node>

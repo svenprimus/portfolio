@@ -4,21 +4,23 @@
     </li>
     <li>
         <img class="nav-about" src="./assets/design/00_hand-drawn-lines/00_header/1.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-about">{{ 'header.about' | translate }} </a>
+        <a class="nav-option" href="#section-about" (click)="done.emit(true)">{{ 'header.about' | translate }} </a>
     </li>
     <li>
         <img class="nav-skills" src="./assets/design/00_hand-drawn-lines/00_header/2.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-skills">{{ 'header.skills' | translate }} </a>
+        <a class="nav-option" href="#section-skills" (click)="done.emit(true)">{{ 'header.skills' | translate }} </a>
     </li>
     <li>
         <img class="nav-projects" src="./assets/design/00_hand-drawn-lines/00_header/3.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-projects">{{ 'header.projects' | translate }} </a>
+        <a class="nav-option" href="#section-projects" (click)="done.emit(true)"
+            >{{ 'header.projects' | translate }}
+        </a>
     </li>
     <li>
         <img class="nav-contact" src="./assets/design/00_hand-drawn-lines/00_header/4.webp" aria-hidden="true" />
-        <a class="nav-option" href="#section-contact">{{ 'header.contact' | translate }} </a>
+        <a class="nav-option" href="#section-contact" (click)="done.emit(true)">{{ 'header.contact' | translate }} </a>
     </li>
-    <li class="lang-slider" (click)="myTranslationService.toggleLanguage()">
+    <li class="lang-slider" (click)="myTranslationService.toggleLanguage(); done.emit(true)">
         <button class="lang-hover-btn" [disabled]="myTranslationService.languageSliderValue() === 0">
             <img
                 class="lang-hover"
