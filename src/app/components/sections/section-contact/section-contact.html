@@ -22,37 +22,50 @@
         >
             <div class="contact-input-wrapper contact-input-wrapper-1">
                 <label for="contact-name">{{ 'section-contact.name' | translate }}</label>
-                <input
+                <textarea
+                    class="ta-fixed"
                     type="text"
                     id="contact-name"
                     formControlName="name"
+                    (keydown)="focusNext($event)"
                     (focus)="onInputFocus('name')"
                     (blur)="onNameBlur()"
-                    [class.form-error]="this.isError.name"
-                    [placeholder]="'section-contact.namesub' | translate"
-                />
+                    [class.form-error]="this.errorStr.name()"
+                    [placeholder]="
+                        this.errorStr.name() ?? this.valueStr.name() ?? ('section-contact.namesub' | translate)
+                    "
+                ></textarea>
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-2">
                 <label for="contact-mail">{{ 'section-contact.mail' | translate }}</label>
-                <input
+                <textarea
+                    class="ta-fixed"
                     type="text"
                     id="contact-mail"
                     formControlName="mail"
+                    (keydown)="focusNext($event)"
                     (focus)="onInputFocus('mail')"
-                    [class.form-error]="contactForm.get('mail')?.invalid"
-                    [placeholder]="'section-contact.mailsub' | translate"
-                />
+                    (blur)="onMailBlur()"
+                    [class.form-error]="this.errorStr.mail()"
+                    [placeholder]="
+                        this.errorStr.mail() ?? this.valueStr.mail() ?? ('section-contact.mailsub' | translate)
+                    "
+                ></textarea>
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-3">
                 <label for="contact-msg">{{ 'section-contact.message' | translate }}</label>
-                <input
+                <textarea
                     type="text"
                     id="contact-msg"
                     formControlName="msg"
+                    (keydown)="focusNext($event)"
                     (focus)="onInputFocus('msg')"
-                    [class.form-error]="contactForm.get('msg')?.invalid"
-                    [placeholder]="'section-contact.messagesub' | translate"
-                />
+                    [class.form-error]="this.errorStr.msg()"
+                    (blur)="onMsgBlur()"
+                    [placeholder]="
+                        this.errorStr.msg() ?? this.valueStr.msg() ?? ('section-contact.messagesub' | translate)
+                    "
+                ></textarea>
             </div>
             <div class="privacy-policy-check">
                 <div class="privacy-policy-check-wrapper">
