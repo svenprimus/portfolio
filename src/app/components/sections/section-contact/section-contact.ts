@@ -34,6 +34,7 @@ export class SectionContact {
                 this.validator.customFullNameValidator(),
                 this.validator.customNameValidator(),
             ],
+            updateOn: 'blur',
         }),
         mail: new FormControl('', {
             nonNullable: true,
@@ -42,6 +43,10 @@ export class SectionContact {
         msg: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(20)],
+        }),
+        policy: new FormControl(false, {
+            nonNullable: true,
+            validators: [Validators.requiredTrue],
         }),
     });
 
@@ -60,7 +65,6 @@ export class SectionContact {
 
     onNameBlur() {
         const pathRef = this.contactForm.get('name');
-
         switch (true) {
             case pathRef?.hasError('required'):
                 this.errorStr.name.set(this.translate.instant('section-contact.error.name-empty'));
@@ -76,12 +80,13 @@ export class SectionContact {
                 break;
         }
         this.valueStr.name.set(pathRef ? pathRef.value : undefined);
-        pathRef?.patchValue('');
+        if (this.errorStr.name()) {
+            pathRef?.patchValue('');
+        }
     }
 
     onMailBlur() {
         const pathRef = this.contactForm.get('mail');
-
         switch (true) {
             case pathRef?.hasError('required'):
                 this.errorStr.mail.set(this.translate.instant('section-contact.error.mail-empty'));
@@ -94,18 +99,13 @@ export class SectionContact {
                 break;
         }
         this.valueStr.mail.set(pathRef ? pathRef.value : undefined);
-        console.log(
-            this.errorStr.mail(),
-            this.errorStr.mail(),
-            this.contactForm.get('mail')?.invalid,
-            this.errorStr.mail() !== undefined || this.contactForm.get('mail')?.invalid
-        );
-        pathRef?.patchValue('');
+        if (this.errorStr.mail()) {
+            pathRef?.patchValue('');
+        }
     }
 
     onMsgBlur() {
         const pathRef = this.contactForm.get('msg');
-
         switch (true) {
             case pathRef?.hasError('required'):
                 this.errorStr.msg.set(this.translate.instant('section-contact.error.msg-empty'));
@@ -118,7 +118,9 @@ export class SectionContact {
                 break;
         }
         this.valueStr.msg.set(pathRef ? pathRef.value : undefined);
-        pathRef?.patchValue('');
+        if (this.errorStr.msg()) {
+            pathRef?.patchValue('');
+        }
     }
 
     focusNext(event: KeyboardEvent) {

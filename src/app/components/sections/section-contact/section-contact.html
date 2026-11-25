@@ -69,7 +69,7 @@
             </div>
             <div class="privacy-policy-check">
                 <div class="privacy-policy-check-wrapper">
-                    <input type="checkbox" id="contact-legal" />
+                    <input type="checkbox" id="contact-legal" formControlName="policy" />
                 </div>
                 <label for="contact-legal" [innerHTML]="'section-contact.terms' | translate"> </label>
             </div>
@@ -84,7 +84,15 @@
                     src="./assets/design/00_hand-drawn-lines/05_contact/arrow-right.webp"
                     aria-hidden="true"
                 />
-                <app-button [isDark]="false" [minWidth]="'154px'">{{ 'section-contact.btn' | translate }}</app-button>
+
+                <app-button
+                    type="submit"
+                    [buttonType]="'submit'"
+                    [disabled]="contactForm.invalid"
+                    [isDark]="false"
+                    [minWidth]="'154px'"
+                    >{{ 'section-contact.btn' | translate }}</app-button
+                >
             </div>
         </form>
     </div>
