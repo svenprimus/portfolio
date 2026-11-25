@@ -26,7 +26,7 @@
 
 <header [class]="classListNavMobile">
     <div class="header-nav-mobile--logo-wrapper">
-        <app-logo [light]="true" class="logo-mobile"></app-logo>
+        <app-logo (done)="hideMenu()" [light]="true" class="logo-mobile"></app-logo>
         <button class="mobile-btn" (click)="hideMenu()">
             <img src="./assets/icons/misc/close.svg" alt="menu button" />
             <img src="./assets/icons/misc/close-push.svg" alt="menu button pushed" />
@@ -34,7 +34,7 @@
     </div>
 
     <nav>
-        <app-header-list class="header-list-mobile"></app-header-list>
+        <app-header-list (done)="hideMenu()" class="header-list-mobile"></app-header-list>
         <app-socials class="socials-mobile" [flexDir]="'row'" [bgColor]="bg()"></app-socials>
     </nav>
 </header>
