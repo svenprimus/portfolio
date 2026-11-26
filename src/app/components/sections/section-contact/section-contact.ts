@@ -3,6 +3,7 @@ import { Button } from '../../elements/button/button';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ValidatorService } from '../../../services/validator-service';
+import { ContactService } from '../../../services/contact-service';
 
 @Component({
     imports: [Button, ReactiveFormsModule, TranslatePipe],
@@ -13,17 +14,18 @@ import { ValidatorService } from '../../../services/validator-service';
 export class SectionContact {
     private translate = inject(TranslateService);
     validator = inject(ValidatorService);
+    contactService = inject(ContactService);
 
     errorStr = {
         name: signal<string | undefined>(undefined),
-        mail: signal<string | undefined>(undefined),
-        msg: signal<string | undefined>(undefined),
+        email: signal<string | undefined>(undefined),
+        userMessage: signal<string | undefined>(undefined),
     };
 
     valueStr = {
         name: signal<string | undefined>(undefined),
-        mail: signal<string | undefined>(undefined),
-        msg: signal<string | undefined>(undefined),
+        email: signal<string | undefined>(undefined),
+        userMessage: signal<string | undefined>(undefined),
     };
 
     contactForm = new FormGroup({
@@ -36,11 +38,11 @@ export class SectionContact {
             ],
             updateOn: 'blur',
         }),
-        mail: new FormControl('', {
+        email: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, this.validator.customMailValidator()],
         }),
-        msg: new FormControl('', {
+        userMessage: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(20)],
         }),
@@ -51,7 +53,24 @@ export class SectionContact {
     });
 
     formSubmit() {
-        // placeholder
+        if (this.contactForm.invalid) {
+            this.contactForm.markAllAsTouched();
+            return;
+        }
+
+        const data = this.contactForm.getRawValue();
+
+        this.contactService.sendMessage(data).subscribe({
+            next: (response) => {
+                if (response.success) {
+                    console.log('message sent!');
+                    this.contactForm.reset();
+                }
+            },
+            error: (error) => {
+                console.log('Sending failed:', error);
+            },
+        });
     }
 
     onInputFocus(path: string) {
@@ -86,39 +105,39 @@ export class SectionContact {
     }
 
     onMailBlur() {
-        const pathRef = this.contactForm.get('mail');
+        const pathRef = this.contactForm.get('email');
         switch (true) {
             case pathRef?.hasError('required'):
-                this.errorStr.mail.set(this.translate.instant('section-contact.error.mail-empty'));
+                this.errorStr.email.set(this.translate.instant('section-contact.error.email-empty'));
                 break;
             case pathRef?.hasError('emailPattern'):
-                this.errorStr.mail.set(this.translate.instant('section-contact.error.mail-pattern'));
+                this.errorStr.email.set(this.translate.instant('section-contact.error.email-pattern'));
                 break;
             default:
-                this.errorStr.mail.set(undefined);
+                this.errorStr.email.set(undefined);
                 break;
         }
-        this.valueStr.mail.set(pathRef ? pathRef.value : undefined);
-        if (this.errorStr.mail()) {
+        this.valueStr.email.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.email()) {
             pathRef?.patchValue('');
         }
     }
 
     onMsgBlur() {
-        const pathRef = this.contactForm.get('msg');
+        const pathRef = this.contactForm.get('userMessage');
         switch (true) {
             case pathRef?.hasError('required'):
-                this.errorStr.msg.set(this.translate.instant('section-contact.error.msg-empty'));
+                this.errorStr.userMessage.set(this.translate.instant('section-contact.error.userMessage-empty'));
                 break;
             case pathRef?.hasError('minlength'):
-                this.errorStr.msg.set(this.translate.instant('section-contact.error.msg-minLength'));
+                this.errorStr.userMessage.set(this.translate.instant('section-contact.error.userMessage-minLength'));
                 break;
             default:
-                this.errorStr.msg.set(undefined);
+                this.errorStr.userMessage.set(undefined);
                 break;
         }
-        this.valueStr.msg.set(pathRef ? pathRef.value : undefined);
-        if (this.errorStr.msg()) {
+        this.valueStr.userMessage.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.userMessage()) {
             pathRef?.patchValue('');
         }
     }
