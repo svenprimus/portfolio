@@ -933,6 +933,21 @@
 								</translations>
 							</concept_node>
 							<concept_node>
+								<name>messagesub</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>false</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
 								<name>name</name>
 								<description/>
 								<comment/>
@@ -1009,21 +1024,6 @@
 							</concept_node>
 							<concept_node>
 								<name>title</name>
-								<description/>
-								<comment/>
-								<translations>
-									<translation>
-										<language>de-DE</language>
-										<approved>false</approved>
-									</translation>
-									<translation>
-										<language>en-US</language>
-										<approved>false</approved>
-									</translation>
-								</translations>
-							</concept_node>
-							<concept_node>
-								<name>userMessagesub</name>
 								<description/>
 								<comment/>
 								<translations>

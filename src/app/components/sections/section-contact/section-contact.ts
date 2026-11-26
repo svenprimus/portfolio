@@ -57,14 +57,12 @@ export class SectionContact {
             this.contactForm.markAllAsTouched();
             return;
         }
-
         const data = this.contactForm.getRawValue();
-
         this.contactService.sendMessage(data).subscribe({
             next: (response) => {
                 if (response.success) {
                     console.log('message sent!');
-                    this.contactForm.reset();
+                    this.resetForm();
                 }
             },
             error: (error) => {
@@ -80,6 +78,19 @@ export class SectionContact {
                 this.contactForm.get(path)?.patchValue(value);
             }
         }
+    }
+
+    resetForm() {
+        this.contactForm.reset();
+        this.valueStr.name.set(undefined);
+        this.valueStr.email.set(undefined);
+        this.valueStr.message.set(undefined);
+        this.errorStr.name.set(undefined);
+        this.errorStr.email.set(undefined);
+        this.errorStr.message.set(undefined);
+        this.contactForm.get('name')?.patchValue('');
+        this.contactForm.get('email')?.patchValue('');
+        this.contactForm.get('message')?.patchValue('');
     }
 
     onNameBlur() {
