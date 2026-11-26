@@ -20,6 +20,7 @@ export class Header {
     pointerEvents: string = 'all';
     lastY: number | null = null;
     lastScrollEvent: number = 0;
+    isAtTop: boolean = true;
 
     classListNavMobile = 'header-nav-mobile';
     classMobileDropdown = 'dropdown';
@@ -32,20 +33,23 @@ export class Header {
         this.lastY = scroll;
         const bgOpacity = Math.max(0, Math.min(Math.round(255 * 0.85), Math.round((scroll / (2 * 80)) * 255)));
         const minBackground = this.darkService.socialMinBg() ? '#0e101380' : 'transparent';
-        this.bg.set(scroll < 10 ? minBackground : '#0e1013' + bgOpacity.toString(16));
+        this.isAtTop = scroll < 10;
+        this.bg.set(this.isAtTop ? minBackground : '#0e1013' + bgOpacity.toString(16));
         this.pointerEvents = this.opacity() < 0.2 ? 'none' : 'all';
         this.setLastScrollEvent();
     }
 
     fadeIn() {
-        this.bg.set('#0e1013d9');
-        this.opacity.set(1.0);
-        this.pointerEvents = 'all';
+        if (!this.isAtTop) {
+            this.bg.set('#0e1013d9');
+            this.opacity.set(1.0);
+            this.pointerEvents = 'all';
+        }
     }
 
     fadeAfterTimeout() {
         setTimeout(() => {
-            if (Date.now() - this.lastScrollEvent > 5000 && this.bg() !== 'transparent') {
+            if (Date.now() - this.lastScrollEvent > 5000 && this.bg() !== 'transparent' && !this.isAtTop) {
                 this.bg.set('transparent');
                 this.opacity.set(0);
                 this.pointerEvents = 'none';

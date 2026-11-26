@@ -14,6 +14,19 @@
     "target": "ES2022",
     "module": "preserve",
     "resolveJsonModule": true,
+    // Custom
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnusedLabels": false,
+    "noUncheckedSideEffectImports": true,
+    "allowUnreachableCode": false,
+    "paths": {
+      "@/*": ["./public/assets/"]
+    },
+    // Custom optional
+    "noUncheckedIndexedAccess": true,
+    "erasableSyntaxOnly": false,
+    "exactOptionalPropertyTypes": true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

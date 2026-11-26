@@ -777,11 +777,41 @@
 									</translation>
 								</translations>
 							</concept_node>
+							<concept_node>
+								<name>email</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>false</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
+								<name>emailsub</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>false</approved>
+									</translation>
+								</translations>
+							</concept_node>
 							<folder_node>
 								<name>error</name>
 								<children>
 									<concept_node>
-										<name>mail-empty</name>
+										<name>email-empty</name>
 										<description/>
 										<comment/>
 										<translations>
@@ -796,37 +826,7 @@
 										</translations>
 									</concept_node>
 									<concept_node>
-										<name>mail-pattern</name>
-										<description/>
-										<comment/>
-										<translations>
-											<translation>
-												<language>de-DE</language>
-												<approved>false</approved>
-											</translation>
-											<translation>
-												<language>en-US</language>
-												<approved>false</approved>
-											</translation>
-										</translations>
-									</concept_node>
-									<concept_node>
-										<name>msg-empty</name>
-										<description/>
-										<comment/>
-										<translations>
-											<translation>
-												<language>de-DE</language>
-												<approved>false</approved>
-											</translation>
-											<translation>
-												<language>en-US</language>
-												<approved>false</approved>
-											</translation>
-										</translations>
-									</concept_node>
-									<concept_node>
-										<name>msg-minLength</name>
+										<name>email-pattern</name>
 										<description/>
 										<comment/>
 										<translations>
@@ -885,68 +885,38 @@
 											</translation>
 										</translations>
 									</concept_node>
+									<concept_node>
+										<name>userMessage-empty</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>userMessage-minLength</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>en-US</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
 								</children>
 							</folder_node>
-							<concept_node>
-								<name>mail</name>
-								<description/>
-								<comment/>
-								<translations>
-									<translation>
-										<language>de-DE</language>
-										<approved>false</approved>
-									</translation>
-									<translation>
-										<language>en-US</language>
-										<approved>false</approved>
-									</translation>
-								</translations>
-							</concept_node>
-							<concept_node>
-								<name>mailsub</name>
-								<description/>
-								<comment/>
-								<translations>
-									<translation>
-										<language>de-DE</language>
-										<approved>false</approved>
-									</translation>
-									<translation>
-										<language>en-US</language>
-										<approved>false</approved>
-									</translation>
-								</translations>
-							</concept_node>
-							<concept_node>
-								<name>message</name>
-								<description/>
-								<comment/>
-								<translations>
-									<translation>
-										<language>de-DE</language>
-										<approved>false</approved>
-									</translation>
-									<translation>
-										<language>en-US</language>
-										<approved>false</approved>
-									</translation>
-								</translations>
-							</concept_node>
-							<concept_node>
-								<name>messagesub</name>
-								<description/>
-								<comment/>
-								<translations>
-									<translation>
-										<language>de-DE</language>
-										<approved>false</approved>
-									</translation>
-									<translation>
-										<language>en-US</language>
-										<approved>false</approved>
-									</translation>
-								</translations>
-							</concept_node>
 							<concept_node>
 								<name>name</name>
 								<description/>
@@ -1024,6 +994,36 @@
 							</concept_node>
 							<concept_node>
 								<name>title</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>false</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
+								<name>userMessage</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>false</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
+								<name>userMessagesub</name>
 								<description/>
 								<comment/>
 								<translations>

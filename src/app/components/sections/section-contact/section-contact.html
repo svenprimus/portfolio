@@ -37,33 +37,33 @@
                 ></textarea>
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-2">
-                <label for="contact-mail">{{ 'section-contact.mail' | translate }}</label>
+                <label for="contact-email">{{ 'section-contact.email' | translate }}</label>
                 <textarea
                     class="ta-fixed"
                     type="text"
-                    id="contact-mail"
-                    formControlName="mail"
+                    id="contact-email"
+                    formControlName="email"
                     (keydown)="focusNext($event)"
-                    (focus)="onInputFocus('mail')"
+                    (focus)="onInputFocus('email')"
                     (blur)="onMailBlur()"
-                    [class.form-error]="this.errorStr.mail()"
+                    [class.form-error]="this.errorStr.email()"
                     [placeholder]="
-                        this.errorStr.mail() ?? this.valueStr.mail() ?? ('section-contact.mailsub' | translate)
+                        this.errorStr.email() ?? this.valueStr.email() ?? ('section-contact.emailsub' | translate)
                     "
                 ></textarea>
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-3">
-                <label for="contact-msg">{{ 'section-contact.message' | translate }}</label>
+                <label for="contact-userMessage">{{ 'section-contact.userMessage' | translate }}</label>
                 <textarea
                     type="text"
-                    id="contact-msg"
-                    formControlName="msg"
+                    id="contact-userMessage"
+                    formControlName="userMessage"
                     (keydown)="focusNext($event)"
-                    (focus)="onInputFocus('msg')"
-                    [class.form-error]="this.errorStr.msg()"
+                    (focus)="onInputFocus('userMessage')"
+                    [class.form-error]="this.errorStr.userMessage()"
                     (blur)="onMsgBlur()"
                     [placeholder]="
-                        this.errorStr.msg() ?? this.valueStr.msg() ?? ('section-contact.messagesub' | translate)
+                        this.errorStr.userMessage() ?? this.valueStr.userMessage() ?? ('section-contact.userMessagesub' | translate)
                     "
                 ></textarea>
             </div>

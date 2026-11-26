@@ -23,7 +23,6 @@ export class TranslationService {
     }
 
     toggleLanguage() {
-        const html = this.translate.instant('legal.acceptance.text');
         this.useLanguage(this.languageSliderValue() === 1 ? 'en' : 'de');
     }
 }
