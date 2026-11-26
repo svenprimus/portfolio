@@ -19,13 +19,13 @@ export class SectionContact {
     errorStr = {
         name: signal<string | undefined>(undefined),
         email: signal<string | undefined>(undefined),
-        userMessage: signal<string | undefined>(undefined),
+        message: signal<string | undefined>(undefined),
     };
 
     valueStr = {
         name: signal<string | undefined>(undefined),
         email: signal<string | undefined>(undefined),
-        userMessage: signal<string | undefined>(undefined),
+        message: signal<string | undefined>(undefined),
     };
 
     contactForm = new FormGroup({
@@ -42,7 +42,7 @@ export class SectionContact {
             nonNullable: true,
             validators: [Validators.required, this.validator.customMailValidator()],
         }),
-        userMessage: new FormControl('', {
+        message: new FormControl('', {
             nonNullable: true,
             validators: [Validators.required, Validators.minLength(20)],
         }),
@@ -124,20 +124,20 @@ export class SectionContact {
     }
 
     onMsgBlur() {
-        const pathRef = this.contactForm.get('userMessage');
+        const pathRef = this.contactForm.get('message');
         switch (true) {
             case pathRef?.hasError('required'):
-                this.errorStr.userMessage.set(this.translate.instant('section-contact.error.userMessage-empty'));
+                this.errorStr.message.set(this.translate.instant('section-contact.error.message-empty'));
                 break;
             case pathRef?.hasError('minlength'):
-                this.errorStr.userMessage.set(this.translate.instant('section-contact.error.userMessage-minLength'));
+                this.errorStr.message.set(this.translate.instant('section-contact.error.message-minLength'));
                 break;
             default:
-                this.errorStr.userMessage.set(undefined);
+                this.errorStr.message.set(undefined);
                 break;
         }
-        this.valueStr.userMessage.set(pathRef ? pathRef.value : undefined);
-        if (this.errorStr.userMessage()) {
+        this.valueStr.message.set(pathRef ? pathRef.value : undefined);
+        if (this.errorStr.message()) {
             pathRef?.patchValue('');
         }
     }

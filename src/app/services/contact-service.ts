@@ -7,7 +7,7 @@ export class ContactService {
 
     private apiUrl = 'https://api.svenprimus.com/contact.php';
 
-    sendMessage(data: { name: string; email: string; userMessage: string }) {
+    sendMessage(data: { name: string; email: string; message: string }) {
         return this.http.post<{ success: boolean }>(this.apiUrl, data);
     }
 }

@@ -53,17 +53,17 @@
                 ></textarea>
             </div>
             <div class="contact-input-wrapper contact-input-wrapper-3">
-                <label for="contact-userMessage">{{ 'section-contact.userMessage' | translate }}</label>
+                <label for="contact-message">{{ 'section-contact.message' | translate }}</label>
                 <textarea
                     type="text"
-                    id="contact-userMessage"
-                    formControlName="userMessage"
+                    id="contact-message"
+                    formControlName="message"
                     (keydown)="focusNext($event)"
-                    (focus)="onInputFocus('userMessage')"
-                    [class.form-error]="this.errorStr.userMessage()"
+                    (focus)="onInputFocus('message')"
+                    [class.form-error]="this.errorStr.message()"
                     (blur)="onMsgBlur()"
                     [placeholder]="
-                        this.errorStr.userMessage() ?? this.valueStr.userMessage() ?? ('section-contact.userMessagesub' | translate)
+                        this.errorStr.message() ?? this.valueStr.message() ?? ('section-contact.messagesub' | translate)
                     "
                 ></textarea>
             </div>
