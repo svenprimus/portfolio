@@ -1,4 +1,4 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Button } from '../../elements/button/button';
 import { ActivatedRoute } from '@angular/router';
 import { Skill } from '../../elements/skill/skill';
