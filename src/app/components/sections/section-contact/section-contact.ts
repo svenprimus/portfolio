@@ -18,6 +18,10 @@ export class SectionContact {
     contactService = inject(ContactService);
     mobile = inject(MobileService);
 
+    isPopup = signal<boolean>(false);
+    isPopupFading = signal<boolean>(false);
+    popupMsg = signal<string>('');
+
     errorStr = {
         name: signal<string | undefined>(undefined),
         email: signal<string | undefined>(undefined),
@@ -54,6 +58,18 @@ export class SectionContact {
         }),
     });
 
+    showPopup(msg: string) {
+        this.popupMsg.set(msg);
+        this.isPopup.set(true);
+        setTimeout(() => {
+            this.isPopupFading.set(true);
+        }, 4000);
+        setTimeout(() => {
+            this.isPopupFading.set(false);
+            this.isPopup.set(false);
+        }, 5000);
+    }
+
     formSubmit() {
         setTimeout(
             () => {
@@ -64,12 +80,12 @@ export class SectionContact {
                 this.contactService.sendMessage(this.contactForm.getRawValue()).subscribe({
                     next: (response) => {
                         if (response.success) {
-                            console.log('message sent!'); // TODO
+                            this.showPopup('Thanks for reaching out!');
                             this.resetForm();
                         }
                     },
-                    error: (error) => {
-                        console.log('Sending failed:', error); // TODO
+                    error: () => {
+                        this.showPopup('Something went wrong.');
                     },
                 });
             },

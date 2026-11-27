@@ -1,6 +1,7 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 @use '../../../../../public/styles/abstract/functions.scss' as *;
+@use '../../../../../public/styles/abstract/keyframes.scss' as *;
 
 .section-contact {
     @include content-limit-1440p(16, 120);
@@ -278,4 +279,50 @@ input {
         align-self: center;
         width: clamp-px(80, 152, 400, 300);
     }
+}
+
+.popup {
+    position: fixed;
+    z-index: 4;
+    width: 300px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    img,
+    label {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    label {
+        color: $color-base-light;
+        font-size: 1.25rem;
+        font-family: 'Bricolage Grotesque';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+
+        animation: stamp 100ms 400ms ease-in forwards;
+        @include light-shader;
+    }
+
+    img:nth-child(1) {
+        clip-path: inset(0 100% 0 0);
+        animation: draw-line 500ms ease-out forwards;
+    }
+
+    img:nth-child(2) {
+        clip-path: inset(0 0 0 100%);
+        animation: draw-line-reverse 500ms 150ms ease-out forwards;
+    }
+}
+
+.fading {
+    transition: opacity 1s ease-out;
+    opacity: 0;
 }
