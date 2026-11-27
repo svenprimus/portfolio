@@ -1,7 +1,6 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 @use '../../../../../public/styles/abstract/functions.scss' as *;
-@use '../../../../../public/styles/abstract/keyframes.scss' as *;
 
 .section-contact {
     @include content-limit-1440p(16, 120);
@@ -67,12 +66,18 @@
 }
 
 .section-contact-content-column {
-    @include flex-column-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     width: 50%;
     height: 100%;
 
     .contact-input-wrapper {
-        @include flex-column-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
         width: 100%;
         padding: 16px 24px;
         border-top: 1px solid transparent;
@@ -98,9 +103,8 @@
             resize: vertical;
             height: 1.2 * $font-size-p-default;
             min-height: 2 * 1.2 * $font-size-p-default;
-            color-scheme: dark;
             cursor: text;
-            @include scrollbar-light;
+            color-scheme: dark;
         }
 
         .ta-fixed {

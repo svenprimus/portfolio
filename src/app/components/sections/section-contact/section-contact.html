@@ -58,7 +58,6 @@
                     type="text"
                     id="contact-message"
                     formControlName="message"
-                    (keydown)="focusNext($event)"
                     (focus)="onInputFocus('message')"
                     [class.form-error]="this.errorStr.message()"
                     (blur)="onMsgBlur()"
