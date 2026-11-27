@@ -81,6 +81,7 @@
 }
 
 .lang-hover-btn {
+    pointer-events: none;
     label {
         color: $color-base-light;
         font-family: 'Bricolage Grotesque';
@@ -111,6 +112,7 @@
     border: 1px solid $color-base-light;
     background: $color-high-3;
     outline: none;
+    pointer-events: none;
 }
 
 .slider::-webkit-slider-thumb {
