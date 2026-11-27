@@ -1,6 +1,14 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 
+:host {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    touch-action: none;
+}
+
 .profile-figure {
     @include flex-column-start;
     justify-content: flex-start;
@@ -16,7 +24,6 @@
         max-width: $width-polaroid;
         margin-top: 3px;
         filter: grayscale(100%);
-        animation: color-unblend 800ms ease-in-out forwards;
     }
 
     &:hover {
@@ -67,6 +74,26 @@
                 top: 0;
                 opacity: 0;
             }
+        }
+    }
+}
+
+.normal-hover {
+    img:nth-child(1) {
+        animation: color-unblend 800ms ease-in-out forwards;
+    }
+}
+.auto-hover {
+    img {
+        animation: auto-blend 10s linear infinite;
+    }
+
+    .profile-caption > div figcaption {
+        &:nth-child(1) {
+            animation: auto-before 10s linear infinite;
+        }
+        &:nth-child(2) {
+            animation: auto-in 10s linear infinite;
         }
     }
 }

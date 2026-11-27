@@ -1,6 +1,7 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 @use '../../../../../public/styles/abstract/functions.scss' as *;
+@use '../../../../../public/styles/abstract/keyframes.scss' as *;
 
 .section-hero {
     @include flex-center;
@@ -130,6 +131,7 @@
         .hello-wrapper-before {
             opacity: 0;
         }
+
         .hello-wrapper-after {
             opacity: 1;
             animation: hello-grow 1s linear forwards;
@@ -163,6 +165,20 @@
         100% {
             width: calc(150px - 2 * $padding-btn);
         }
+    }
+}
+
+.auto-hover {
+    .hello-wrapper-before {
+        animation: auto-before 10s linear infinite;
+    }
+
+    .hello-wrapper-after {
+        animation: auto-after 10s linear infinite;
+    }
+
+    > img {
+        animation: auto-rollin 10s linear infinite;
     }
 }
 

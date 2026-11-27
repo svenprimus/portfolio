@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MobileService } from '../../../services/mobile-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './profile-figure.scss',
   templateUrl: './profile-figure.html',
 })
-export class ProfileFigure {}
+export class ProfileFigure {
+  mobile = inject(MobileService);
+}

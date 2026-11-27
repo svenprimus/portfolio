@@ -2,7 +2,11 @@
     <div class="section-hero__content">
         <section class="headline-top">
             <div>
-                <div class="hello-wrapper" [style.--animation-width]="isDE() ? '240px' : '200px'">
+                <div
+                    class="hello-wrapper"
+                    [class.auto-hover]="!mobile.canHover()"
+                    [style.--animation-width]="isDE() ? '240px' : '200px'"
+                >
                     <span class="hello-wrapper-before">{{ 'section-hero.hello' | translate }}</span>
                     <span class="hello-wrapper-after">{{ 'section-hero.hello-hover' | translate }}</span>
                     <img src="./assets/icons/misc/waving_hand.svg" alt="waving hand" />

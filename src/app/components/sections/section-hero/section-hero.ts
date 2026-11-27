@@ -3,6 +3,7 @@ import { ProfileFigure } from '../../elements/profile-figure/profile-figure';
 import { Button } from '../../elements/button/button';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { MobileService } from '../../../services/mobile-service';
 
 @Component({
     imports: [ProfileFigure, Button, RouterLink, TranslatePipe],
@@ -12,6 +13,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class SectionHero {
     translate = inject(TranslateService);
+    mobile = inject(MobileService);
+    
     isDE = computed(()=>{
         return this.translate.currentLang() === 'de';
     });
