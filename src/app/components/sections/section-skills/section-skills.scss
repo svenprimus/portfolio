@@ -1,6 +1,7 @@
 @use '../../../../../public/styles/abstract/variables.scss' as *;
 @use '../../../../../public/styles/abstract/mixin.scss' as *;
 @use '../../../../../public/styles/abstract/functions.scss' as *;
+@use '../../../../../public/styles/abstract/keyframes.scss' as *;
 
 .section-skills {
     @include content-limit-1440p(16, 120);
@@ -139,7 +140,28 @@
             cursor: grab;
             transform: skewX(10deg) skewY(10deg) scale(1.5) translateX(-15%) translateY(15%);
         }
+        
+        .auto-hover {
+            animation: auto-peelhint 10s linear infinite;
+        }
 
+        @keyframes auto-peelhint {
+            0% {
+                transform: skewX(0) skewY(0) scale(1) translateX(0) translateY(0);
+            }
+            40% {
+                transform: skewX(0) skewY(0) scale(1) translateX(0) translateY(0);
+            }
+            45% {
+                transform: skewX(10deg) skewY(10deg) scale(1.5) translateX(-15%) translateY(15%);
+            }
+            50% {
+                transform: skewX(0) skewY(0) scale(1) translateX(0) translateY(0);
+            }
+            100% {
+                transform: skewX(0) skewY(0) scale(1) translateX(0) translateY(0);
+            }
+        }
         .peel-layer-1 {
             @include flex-column;
             gap: 8px;

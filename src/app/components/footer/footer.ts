@@ -3,6 +3,7 @@ import { Logo } from '../elements/logo/logo';
 import { isActive, Router, RouterLink } from '@angular/router';
 import { DarkService } from '../../services/dark-service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileService } from '../../services/mobile-service';
 
 @Component({
     imports: [Logo, RouterLink, TranslatePipe],
@@ -13,6 +14,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Footer {
     private router = inject(Router);
     readonly darkService = inject(DarkService);
+    readonly mobile = inject(MobileService);
 
     colorMode = computed(() => {
         return this.darkService.footerDark() ? '#0e1013' : '#f8f9fa';

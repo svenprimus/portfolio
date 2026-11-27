@@ -9,7 +9,7 @@
         <p>{{ 'section-projects.text' | translate }}</p>
     </section>
     <section class="project-preview">
-        <button [routerLink]="['projects', 'join']" class="project-preview-img-wrapper">
+        <button (click)="nav.navigate('projects', 'join', undefined, 100)" class="project-preview-img-wrapper">
             <img
                 class="project-preview-highlight"
                 src="./assets/img/preview-join-laptop.webp"
@@ -24,12 +24,15 @@
         </button>
         <h3>Join</h3>
         <p>{{ 'projects.join.description' | translate }}</p>
-        <app-button [routerLink]="['projects', 'join']" [isDark]="true" class="btn-details-mobile"
+        <app-button
+            (click)="nav.navigate('projects', 'join', undefined, 100)"
+            [isDark]="true"
+            class="btn-details-mobile"
             >Project details</app-button
         >
     </section>
     <section class="project-preview">
-        <button [routerLink]="['projects', 'el-pollo-loco']" class="project-preview-img-wrapper">
+        <button (click)="nav.navigate('projects', 'el-pollo-loco', undefined, 100)" class="project-preview-img-wrapper">
             <img
                 class="project-preview-img"
                 src="./assets/img/preview-pollo-loco.webp"
@@ -39,7 +42,10 @@
         </button>
         <h3>El Pollo Loco</h3>
         <p>{{ 'projects.el-pollo-loco.description' | translate }}</p>
-        <app-button [routerLink]="['projects', 'el-pollo-loco']" [isDark]="true" class="btn-details-mobile"
+        <app-button
+            (click)="nav.navigate('projects', 'el-pollo-loco', undefined, 100)"
+            [isDark]="true"
+            class="btn-details-mobile"
             >Project details</app-button
         >
     </section>

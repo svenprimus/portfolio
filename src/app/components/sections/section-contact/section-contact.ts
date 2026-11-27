@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ValidatorService } from '../../../services/validator-service';
 import { ContactService } from '../../../services/contact-service';
+import { MobileService } from '../../../services/mobile-service';
 
 @Component({
     imports: [Button, ReactiveFormsModule, TranslatePipe],
@@ -15,6 +16,11 @@ export class SectionContact {
     private translate = inject(TranslateService);
     validator = inject(ValidatorService);
     contactService = inject(ContactService);
+    mobile = inject(MobileService);
+
+    isPopup = signal<boolean>(false);
+    isPopupFading = signal<boolean>(false);
+    popupMsg = signal<string>('');
 
     errorStr = {
         name: signal<string | undefined>(undefined),
@@ -52,23 +58,39 @@ export class SectionContact {
         }),
     });
 
+    showPopup(msg: string) {
+        this.popupMsg.set(msg);
+        this.isPopup.set(true);
+        setTimeout(() => {
+            this.isPopupFading.set(true);
+        }, 4000);
+        setTimeout(() => {
+            this.isPopupFading.set(false);
+            this.isPopup.set(false);
+        }, 5000);
+    }
+
     formSubmit() {
-        if (this.contactForm.invalid) {
-            this.contactForm.markAllAsTouched();
-            return;
-        }
-        const data = this.contactForm.getRawValue();
-        this.contactService.sendMessage(data).subscribe({
-            next: (response) => {
-                if (response.success) {
-                    console.log('message sent!');
-                    this.resetForm();
+        setTimeout(
+            () => {
+                if (this.contactForm.invalid) {
+                    this.contactForm.markAllAsTouched();
+                    return;
                 }
+                this.contactService.sendMessage(this.contactForm.getRawValue()).subscribe({
+                    next: (response) => {
+                        if (response.success) {
+                            this.showPopup('Thanks for reaching out!');
+                            this.resetForm();
+                        }
+                    },
+                    error: () => {
+                        this.showPopup('Something went wrong.');
+                    },
+                });
             },
-            error: (error) => {
-                console.log('Sending failed:', error);
-            },
-        });
+            this.mobile.canHover() ? 0 : 100
+        );
     }
 
     onInputFocus(path: string) {

@@ -52,7 +52,7 @@
                     aria-hidden="true"
                 />
             </div>
-            <div class="peel-layer-3" [class.d-none]="visibleLayerNow() != 3">
+            <div class="peel-layer-3" [class.auto-hover]="!mobile.canHover()" [class.d-none]="visibleLayerNow() != 3">
                 <img
                     id="peel-img"
                     class="peel-layer-img"

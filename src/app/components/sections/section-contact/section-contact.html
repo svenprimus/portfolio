@@ -97,3 +97,10 @@
         </form>
     </div>
 </article>
+@if (isPopup()) {
+    <aside class="popup" [class.fading]="isPopupFading()">
+        <img src="./assets/img/popup-back.webp" aria-hidden="true" />
+        <img src="./assets/img/popup-front.webp" aria-hidden="true" />
+        <label>{{popupMsg()}}</label>
+    </aside>
+}

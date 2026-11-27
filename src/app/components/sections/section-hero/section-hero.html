@@ -2,7 +2,11 @@
     <div class="section-hero__content">
         <section class="headline-top">
             <div>
-                <div class="hello-wrapper" [style.--animation-width]="isDE() ? '240px' : '200px'">
+                <div
+                    class="hello-wrapper"
+                    [class.auto-hover]="!mobile.canHover()"
+                    [style.--animation-width]="isDE() ? '240px' : '200px'"
+                >
                     <span class="hello-wrapper-before">{{ 'section-hero.hello' | translate }}</span>
                     <span class="hello-wrapper-after">{{ 'section-hero.hello-hover' | translate }}</span>
                     <img src="./assets/icons/misc/waving_hand.svg" alt="waving hand" />
@@ -36,7 +40,7 @@
                     <span class="upper" [class.w80]="!isDE()" [class.w123]="isDE()">{{
                         'section-hero.developer.4' | translate
                     }}</span>
-                    <span class="upper" [class.w65]="!isDE()" [class.w41]="isDE()">{{
+                    <span class="upper" [class.w65]="!isDE()" [class.w32]="isDE()">{{
                         'section-hero.developer.5' | translate
                     }}</span>
                     <span class="upper" [class.w93]="!isDE()" [class.w87]="isDE()">{{
@@ -53,7 +57,7 @@
                     }}</span>
                     <span class="upper w87" [class.d-none]="!isDE()">R</span>
                 </h1>
-                <app-button [routerLink]="['']" fragment="section-contact" [isDark]="false">{{
+                <app-button (click)="nav.navigate('', undefined, 'section-contact', 100)" [isDark]="false">{{
                     'section-hero.touch' | translate
                 }}</app-button>
             </div>
