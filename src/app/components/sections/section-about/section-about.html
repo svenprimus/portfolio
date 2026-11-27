@@ -27,7 +27,7 @@
         <h2>{{ 'section-about.title' | translate }}</h2>
         <img src="./assets/design/00_hand-drawn-lines/01_about-me/line.webp" aria-hidden="true" />
         <p [innerHTML]="'section-about.text' | translate"></p>
-        <app-button [routerLink]="['']" fragment="section-contact" class="btn-right" [isDark]="true">{{
+        <app-button (click)="nav.navigate('', undefined, 'section-contact', 100)" class="btn-right" [isDark]="true">{{
             'section-about.btn' | translate
         }}</app-button>
     </section>

@@ -291,6 +291,27 @@
     }
 }
 
+@keyframes auto-background {
+    0% {
+        background-color: transparent;
+    }
+    30% {
+        background-color: transparent;
+    }
+    34% {
+        background-color: #7e4ae7;
+    }
+    50% {
+        background-color: #7e4ae7;
+    }
+    54% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
 @keyframes auto-blend {
     0% {
         filter: grayscale(100%);

@@ -57,7 +57,7 @@
                     }}</span>
                     <span class="upper w87" [class.d-none]="!isDE()">R</span>
                 </h1>
-                <app-button [routerLink]="['']" fragment="section-contact" [isDark]="false">{{
+                <app-button (click)="nav.navigate('', undefined, 'section-contact', 100)" [isDark]="false">{{
                     'section-hero.touch' | translate
                 }}</app-button>
             </div>

@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ValidatorService } from '../../../services/validator-service';
 import { ContactService } from '../../../services/contact-service';
+import { MobileService } from '../../../services/mobile-service';
 
 @Component({
     imports: [Button, ReactiveFormsModule, TranslatePipe],
@@ -15,6 +16,7 @@ export class SectionContact {
     private translate = inject(TranslateService);
     validator = inject(ValidatorService);
     contactService = inject(ContactService);
+    mobile = inject(MobileService);
 
     errorStr = {
         name: signal<string | undefined>(undefined),
@@ -53,22 +55,26 @@ export class SectionContact {
     });
 
     formSubmit() {
-        if (this.contactForm.invalid) {
-            this.contactForm.markAllAsTouched();
-            return;
-        }
-        const data = this.contactForm.getRawValue();
-        this.contactService.sendMessage(data).subscribe({
-            next: (response) => {
-                if (response.success) {
-                    console.log('message sent!');
-                    this.resetForm();
+        setTimeout(
+            () => {
+                if (this.contactForm.invalid) {
+                    this.contactForm.markAllAsTouched();
+                    return;
                 }
+                this.contactService.sendMessage(this.contactForm.getRawValue()).subscribe({
+                    next: (response) => {
+                        if (response.success) {
+                            console.log('message sent!'); // TODO
+                            this.resetForm();
+                        }
+                    },
+                    error: (error) => {
+                        console.log('Sending failed:', error); // TODO
+                    },
+                });
             },
-            error: (error) => {
-                console.log('Sending failed:', error);
-            },
-        });
+            this.mobile.canHover() ? 0 : 100
+        );
     }
 
     onInputFocus(path: string) {

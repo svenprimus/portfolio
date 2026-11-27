@@ -144,6 +144,31 @@
     }
 }
 
+.auto-hover1 {
+    a {
+        animation: auto-background 15s linear infinite;
+    }
+    > .animated-social {
+        animation: auto-rollin 15s linear infinite;
+    }
+}
+.auto-hover2 {
+    a {
+        animation: auto-background 15s linear 5s infinite;
+    }
+    > .animated-social {
+        animation: auto-rollin 15s linear 5s infinite;
+    }
+}
+.auto-hover3 {
+    a {
+        animation: auto-background 15s linear 10s infinite ;
+    }
+    > .animated-social {
+        animation: auto-rollin 15s linear 10s infinite ;
+    }
+}
+
 ul,
 li {
     @include flex-center;

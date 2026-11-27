@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Button } from '../../elements/button/button';
-import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { NavigateService } from '../../../services/navigate-service';
 
 @Component({
-    imports: [Button, RouterLink, TranslatePipe],
+    imports: [Button, TranslatePipe],
     selector: 'app-section-projects',
     styleUrl: './section-projects.scss',
     templateUrl: './section-projects.html',
 })
-export class SectionProjects {}
+export class SectionProjects {
+    nav = inject(NavigateService);
+}

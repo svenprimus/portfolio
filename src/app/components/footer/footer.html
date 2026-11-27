@@ -17,7 +17,7 @@
             </div>
             <nav class="footer-nav">
                 <div class="footer-nav-place-wrapper">
-                    <div class="footer-nav-animation-wrapper">
+                    <div class="footer-nav-animation-wrapper" [class.auto-hover1]="!mobile.canHover()">
                         <svg
                             class="animated-social"
                             width="32"
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="footer-nav-place-wrapper">
-                    <div class="footer-nav-animation-wrapper">
+                    <div class="footer-nav-animation-wrapper" [class.auto-hover2]="!mobile.canHover()">
                         <svg
                             class="animated-social"
                             width="32"
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="footer-nav-place-wrapper">
-                    <div class="footer-nav-animation-wrapper">
+                    <div class="footer-nav-animation-wrapper" [class.auto-hover3]="!mobile.canHover()">
                         <svg
                             class="animated-social"
                             width="32"
