@@ -9,6 +9,12 @@
     touch-action: none;
 }
 
+.normal-hover {
+    img:nth-child(1) {
+        animation: uncolor-blend 800ms ease-in-out forwards;
+    }
+}
+
 .profile-figure {
     @include flex-column-start;
     justify-content: flex-start;
@@ -78,11 +84,6 @@
     }
 }
 
-.normal-hover {
-    img:nth-child(1) {
-        animation: color-unblend 800ms ease-in-out forwards;
-    }
-}
 .auto-hover {
     img {
         animation: auto-blend 10s linear infinite;
