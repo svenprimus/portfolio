@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Skill } from '../../elements/skill/skill';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileService } from '../../../services/mobile-service';
 
 @Component({
     imports: [Skill, TranslatePipe],
@@ -10,6 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class SectionSkills {
     visibleLayerNow = signal<number>(3);
+    mobile = inject(MobileService);
 
     togglePeel() {
         if (this.visibleLayerNow() == 3) {
