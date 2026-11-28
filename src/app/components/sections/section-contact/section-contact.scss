@@ -26,6 +26,13 @@
     align-items: flex-start;
     gap: clamp-px(20, 160, 1400, $media-raw-sm);
 
+    opacity: 0;
+    transform: translateY(10%) scale(0.95);
+
+    &.animate {
+        animation: section-fadeup $duration-fadeup ease-out forwards;
+    }
+
     .section-contact-intro {
         h4 {
             margin-bottom: 16px;

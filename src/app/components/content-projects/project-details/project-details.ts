@@ -5,6 +5,7 @@ import { Skill } from '../../elements/skill/skill';
 import { ProjectsService } from '../../../services/projects-service';
 import { IProject } from '../../../interfaces/iproject';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileService } from '../../../services/mobile-service';
 @Component({
     imports: [Button, Skill, TranslatePipe],
     selector: 'app-project-details',
@@ -14,6 +15,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class ProjectDetails {
     private route = inject(ActivatedRoute);
     private projects = inject(ProjectsService);
+    mobile = inject(MobileService);
     projectStr: string | undefined = undefined;
 
     readonly project = signal<IProject | undefined>(undefined);
@@ -44,7 +46,12 @@ export class ProjectDetails {
 
     openLink(url: string | undefined) {
         if (url) {
-            window.open(url, '_blank');
+            setTimeout(
+                () => {
+                    window.open(url, '_blank');
+                },
+                this.mobile.canHover() ? 0 : 100
+            );
         }
     }
 }

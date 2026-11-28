@@ -1,10 +1,11 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, inject, signal } from '@angular/core';
 import { Button } from '../../elements/button/button';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ValidatorService } from '../../../services/validator-service';
 import { ContactService } from '../../../services/contact-service';
 import { MobileService } from '../../../services/mobile-service';
+import { ScrollService } from '../../../services/scroll-service';
 
 @Component({
     imports: [Button, ReactiveFormsModule, TranslatePipe],
@@ -17,6 +18,28 @@ export class SectionContact {
     validator = inject(ValidatorService);
     contactService = inject(ContactService);
     mobile = inject(MobileService);
+    scroll = inject(ScrollService);
+
+    private el = inject(ElementRef);
+    private observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                this.scroll.snapshot();
+            } else if (this.scroll.isScrollingUp()) {
+                entry.target.classList.remove('animate');
+            }
+        });
+    });
+
+    ngAfterViewInit(): void {
+        const element = this.el.nativeElement.querySelector('.section-contact-content');
+        this.observer.observe(element);
+    }
+
+    ngOnDestroy(): void {
+        this.observer.disconnect();
+    }
 
     isPopup = signal<boolean>(false);
     isPopupFading = signal<boolean>(false);
