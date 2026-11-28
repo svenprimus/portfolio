@@ -10,6 +10,13 @@
     height: 100%;
     gap: clamp-px(10, 40, 850, 500);
 
+    opacity: 0;
+    transform: translateY(10%) scale(0.95);
+
+    &.animate {
+        animation: section-fadeup $duration-fadeup ease-out forwards;
+    }
+
     > aside {
         @include flex-column-end;
         min-width: $width-location;

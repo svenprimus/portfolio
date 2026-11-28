@@ -14,6 +14,13 @@
     h4 {
         color: $color-base-dark;
     }
+
+    opacity: 0;
+    transform: translateY(10%) scale(0.95);
+
+    &.animate {
+        animation: section-fadeup $duration-fadeup ease-out forwards;
+    }
 }
 
 .section-testimonials-header {
